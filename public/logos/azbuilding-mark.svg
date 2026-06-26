@@ -1,0 +1,20 @@
+<svg width="120" height="140" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AZBUILDING mark">
+  <!-- Stylized architectural "A": left ramp + right stepped tower.
+       Replace with the official brand SVG when available. -->
+  <g stroke="currentColor" stroke-width="1.4" fill="none" stroke-linejoin="round">
+    <!-- left diagonal ramp -->
+    <path d="M14 116 L70 24" />
+    <path d="M24 116 L74 34" />
+    <path d="M34 116 L78 44" />
+    <!-- crossbar -->
+    <path d="M16 78 L104 78" />
+    <path d="M16 84 L104 84" />
+    <!-- right stepped tower -->
+    <path d="M70 24 L96 24 L96 116 L78 116" />
+    <path d="M78 40 H96" />
+    <path d="M80 56 H96" />
+    <path d="M82 72 H96" />
+    <path d="M84 88 H96" />
+    <path d="M86 104 H96" />
+  </g>
+</svg>

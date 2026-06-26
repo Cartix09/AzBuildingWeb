@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  * {
+    /* Industrial = sharp. No rounded corners anywhere by default. */
+    border-radius: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-slate-deep text-base font-sans antialiased;
+    margin: 0;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  ::selection {
+    @apply bg-orange-brand text-white;
+  }
+
+  /* Focus ring for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid #ea580c;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-container px-6 md:px-12;
+  }
+
+  /* Monospace technical eyebrow label, e.g. "[01] STRUCTURAL METRICS" */
+  .eyebrow {
+    @apply font-mono text-xs font-medium uppercase tracking-[0.25em] text-steel;
+  }
+
+  /* Display headline */
+  .display {
+    @apply font-display font-extrabold tracking-tight;
+  }
+
+  /* Primary orange CTA — square corners. Add the `group` class at call sites
+     for the icon hover animations. */
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden border border-orange-brand bg-orange-brand px-7 py-3.5 font-mono text-xs font-medium uppercase tracking-[0.2em] text-white transition-colors;
+  }
+  .btn-primary:hover {
+    @apply bg-orange-brand/90;
+  }
+
+  /* Ghost / outline button */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 border border-steel/50 bg-transparent px-7 py-3.5 font-mono text-xs font-medium uppercase tracking-[0.2em] text-white transition-colors hover:border-orange-brand hover:bg-orange-brand;
+  }
+
+  /* The "Orange Beam" vertical accent that precedes H2 headlines */
+  .orange-beam::before {
+    content: '';
+    @apply mb-5 block h-12 w-0.5 bg-orange-brand;
+  }
+}
+
+/* Hide scrollbars on horizontal scroll regions while keeping scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
