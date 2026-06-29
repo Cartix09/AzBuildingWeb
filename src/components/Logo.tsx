@@ -13,15 +13,15 @@ interface LogoProps {
  */
 export function Logo({ className, showWordmark = true }: LogoProps) {
   return (
-    <Link to="/" className={cn('group flex items-center gap-3', className)} aria-label="AZBUILDING MMC — home">
+    <Link to="/" className={cn('group flex shrink-0 items-center gap-3', className)} aria-label="AZBUILDING MMC — home">
       <img
         src="/logos/azbuilding-mark.svg"
         alt=""
         aria-hidden="true"
-        className="h-9 w-auto text-base transition-transform duration-300 group-hover:scale-105"
+        className="h-9 w-auto shrink-0 text-base transition-transform duration-300 group-hover:scale-105"
       />
       {showWordmark && (
-        <span className="font-display text-xl font-extrabold tracking-tight text-base">
+        <span className="whitespace-nowrap font-display text-lg font-extrabold tracking-tight text-base lg:text-xl">
           AZBUILDING <span className="text-steel">MMC</span>
         </span>
       )}

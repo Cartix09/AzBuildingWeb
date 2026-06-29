@@ -7,7 +7,7 @@ import { useDocumentMeta } from '../lib/useDocumentMeta'
 import { projects, projectTypeLabels, type ProjectType } from '../data/projects'
 import { cn } from '../lib/cn'
 
-const TYPES: (ProjectType | 'all')[] = ['all', 'residential', 'commercial', 'industrial', 'renovation']
+const TYPES: (ProjectType | 'all')[] = ['all', 'residential', 'infrastructure', 'fitout', 'private', 'siteworks', 'engineering']
 
 export function Projects() {
   const { t, lang } = useLanguage()
@@ -28,12 +28,12 @@ export function Projects() {
     <>
       <PageHero
         eyebrow={t('sections.featuredTag')}
-        title={pick({ az: 'Layihələr Portfoliosu', ru: 'Портфолио проектов', en: 'Project Portfolio' }, lang)}
+        title={pick({ az: 'Seçilmiş Layihələr', ru: 'Избранные проекты', en: 'Selected Projects' }, lang)}
         description={pick(
           {
-            az: 'Tamamlanmış tikinti, dizayn və yenidənqurma layihələrimizdən seçmələr.',
-            ru: 'Подборка завершённых проектов в строительстве, дизайне и реновации.',
-            en: 'A selection of our completed construction, design and renovation projects.',
+            az: 'Tikinti, fit-out, infrastruktur və mühəndislik dəstəyi üzrə işlərimizdən nümunələr. Bəzi layihələr məxfidir və sifarişçinin razılığı ilə paylaşılır.',
+            ru: 'Примеры наших работ по строительству, fit-out, инфраструктуре и инженерной поддержке. Некоторые проекты конфиденциальны и публикуются с согласия заказчика.',
+            en: 'Representative examples of our work across construction, fit-out, infrastructure and engineering support. Some projects are confidential and shown with client permission.',
           },
           lang,
         )}

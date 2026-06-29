@@ -3,30 +3,36 @@ import type { Lang } from './translations'
 type Loc = Record<Lang, string>
 
 export interface Metric {
-  /** Display value, kept as a string so "100%" / "120+" render exactly. */
+  /** Display value, kept as a string so "2009" / "15+" render exactly. */
   value: string
   label: Loc
 }
 
 /**
- * STRUCTURAL METRICS — EDITABLE PLACEHOLDER VALUES.
- * Replace these numbers with the client's verified figures before publishing.
+ * STRUCTURAL METRICS — EDITABLE values, kept honest and non-exaggerated.
+ * The company was founded in 2009 and its portfolio is modest and growing, so
+ * these communicate experience and breadth WITHOUT inflated project counts.
+ * Confirm/refine with the client before publishing.
  */
 export const metrics: Metric[] = [
   {
+    value: '2009',
+    label: { az: 'Təsis ili', ru: 'Год основания', en: 'Established' },
+  },
+  {
     value: '15+',
-    label: { az: 'İllik təcrübə', ru: 'Лет опыта', en: 'Years of Expertise' },
+    label: { az: 'İllik praktiki təcrübə', ru: 'Лет практического опыта', en: 'Years of practical experience' },
   },
   {
-    value: '120+',
-    label: { az: 'İcra edilmiş layihə', ru: 'Реализованных проектов', en: 'Projects Executed' },
+    value: '9',
+    label: { az: 'Xidmət istiqaməti', ru: 'Направлений услуг', en: 'Service areas' },
   },
   {
-    value: '45+',
-    label: { az: 'Sənaye tərəfdaşı', ru: 'Отраслевых партнёров', en: 'Industrial Partners' },
-  },
-  {
-    value: '100%',
-    label: { az: 'Sənədləşmə diqqəti', ru: 'Фокус на документации', en: 'Documentation Focus' },
+    value: '4',
+    label: {
+      az: 'Əsas istiqamət: tikinti · mühəndislik · ekspertiza · koordinasiya',
+      ru: 'Ключевых направления: строительство · инжиниринг · экспертиза · координация',
+      en: 'Core disciplines: construction · engineering · expertise · coordination',
+    },
   },
 ]

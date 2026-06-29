@@ -24,6 +24,8 @@ export function ProjectDetail() {
     { label: t('misc.year'), value: String(project.year) },
     { label: t('misc.location'), value: pick(project.location, lang) },
     { label: t('misc.type'), value: pick(projectTypeLabels[project.type], lang) },
+    { label: t('misc.client'), value: pick(project.client, lang) },
+    { label: t('misc.role'), value: pick(project.role, lang) },
     { label: t('misc.scope'), value: pick(project.scopeTag, lang) },
   ]
 

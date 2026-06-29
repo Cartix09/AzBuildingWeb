@@ -30,16 +30,16 @@ export function LogoMarquee({ items, duration = 40, reverse = false }: LogoMarqu
       >
         {doubled.map((item, i) => {
           const box = (
-            <div className="flex h-24 w-44 items-center justify-center border border-white/10 bg-slate-surface/30 transition-colors hover:border-orange-brand/40">
+            <div className="group/box flex h-24 w-44 items-center justify-center border border-white/10 bg-slate-surface/30 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.06] hover:border-orange-brand hover:bg-slate-surface/70">
               {item.logo ? (
-                <img src={item.logo} alt={item.name} className="max-h-12 max-w-[70%] object-contain opacity-70 transition-opacity hover:opacity-100" loading="lazy" />
+                <img src={item.logo} alt={item.name} className="max-h-12 max-w-[70%] object-contain opacity-70 transition-opacity duration-300 group-hover/box:opacity-100" loading="lazy" />
               ) : (
-                <span className="font-mono text-[10px] uppercase tracking-widest text-steel/50">{item.name}</span>
+                <span className="font-mono text-[10px] uppercase tracking-widest text-steel/50 transition-colors duration-300 group-hover/box:text-orange-brand">{item.name}</span>
               )}
             </div>
           )
           return (
-            <li key={i} className="mx-2 shrink-0" aria-hidden={i >= items.length}>
+            <li key={i} className="relative mx-2 shrink-0 hover:z-10" aria-hidden={i >= items.length}>
               {item.url ? (
                 <a href={item.url} target="_blank" rel="noreferrer">
                   {box}

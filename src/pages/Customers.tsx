@@ -16,9 +16,9 @@ export function Customers() {
         title={t('sections.customersTitle')}
         description={pick(
           {
-            az: 'Müxtəlif sahələrdən müştərilərlə işləyərək uzunmüddətli etibar qurmuşuq. Loqolar nümunə kimi yerləşdirilib və real müştəri loqoları ilə əvəz olunacaq.',
-            ru: 'Мы выстроили долгосрочное доверие, работая с клиентами из разных отраслей. Логотипы — это плейсхолдеры и будут заменены реальными.',
-            en: 'We have built long-term trust working with clients across sectors. The logos are placeholders and will be replaced with real client logos.',
+            az: 'Etibarlı münasibətlərə dəyər veririk. Müştəri və tərəfdaş loqoları sifarişçilərin razılığından sonra əlavə olunacaq.',
+            ru: 'Мы ценим доверительные отношения. Логотипы клиентов и партнёров будут добавлены после их согласия.',
+            en: 'We value trusted relationships. Client and partner logos will be added after their approval.',
           },
           lang,
         )}
@@ -26,6 +26,10 @@ export function Customers() {
       />
       <section className="bg-slate-deep py-20 md:py-28">
         <div className="container-x">
+          <p className="eyebrow mb-8">
+            <span className="text-orange-brand">+ </span>
+            {pick({ az: 'Loqolar təsdiqdən sonra əlavə olunacaq', ru: 'Логотипы будут добавлены после согласования', en: 'Logos will be added after approval' }, lang)}
+          </p>
           <LogoGrid items={customers} />
         </div>
       </section>

@@ -41,7 +41,7 @@ export function Timeline() {
                   left ? 'md:col-start-1 md:text-right' : 'md:col-start-2',
                 )}
               >
-                <span className="font-mono text-xs uppercase tracking-widest text-orange-brand">{m.year}</span>
+                <span className="font-mono text-xs uppercase tracking-widest text-orange-brand">{pick(m.year, lang)}</span>
                 <h3 className="mt-2 font-display text-xl font-bold text-base">{pick(m.title, lang)}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-steel">{pick(m.description, lang)}</p>
               </motion.div>

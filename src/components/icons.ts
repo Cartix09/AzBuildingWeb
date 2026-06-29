@@ -10,6 +10,12 @@ import {
   Crosshair,
   Compass,
   FileCheck2,
+  Calculator,
+  Boxes,
+  Network,
+  Truck,
+  HardHat,
+  Ruler,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -26,6 +32,12 @@ export const iconMap: Record<string, LucideIcon> = {
   Crosshair,
   Compass,
   FileCheck2,
+  Calculator,
+  Boxes,
+  Network,
+  Truck,
+  HardHat,
+  Ruler,
 }
 
 export function getIcon(name: string): LucideIcon {

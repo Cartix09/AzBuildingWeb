@@ -49,7 +49,7 @@ export function Header() {
           <Logo />
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+          <nav className="hidden shrink-0 items-center gap-4 lg:flex xl:gap-5" aria-label="Primary">
             {mainNav.map((item) =>
               item.labelKey === 'nav.services' ? (
                 <div key={item.to} className="group relative">
@@ -57,13 +57,13 @@ export function Header() {
                     to={item.to}
                     className={({ isActive }) =>
                       cn(
-                        'flex items-center gap-1 font-mono text-xs uppercase tracking-widest transition-colors hover:text-orange-brand',
+                        'flex items-center gap-1 whitespace-nowrap font-mono text-xs uppercase tracking-widest transition-colors hover:text-orange-brand',
                         isActive ? 'text-orange-brand' : 'text-base',
                       )
                     }
                   >
                     {t(item.labelKey)}
-                    <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180" />
+                    <ChevronDown className="h-3 w-3 shrink-0 transition-transform group-hover:rotate-180" />
                   </NavLink>
                   {/* Dropdown */}
                   <div className="invisible absolute left-1/2 top-full w-64 -translate-x-1/2 translate-y-2 border border-white/10 bg-slate-deep opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
@@ -85,7 +85,7 @@ export function Header() {
                   end={item.to === '/'}
                   className={({ isActive }) =>
                     cn(
-                      'font-mono text-xs uppercase tracking-widest transition-colors hover:text-orange-brand',
+                      'whitespace-nowrap font-mono text-xs uppercase tracking-widest transition-colors hover:text-orange-brand',
                       isActive ? 'text-orange-brand' : 'text-base',
                     )
                   }
@@ -97,7 +97,7 @@ export function Header() {
           </nav>
 
           {/* Right controls */}
-          <div className="flex items-center gap-4">
+          <div className="flex shrink-0 items-center gap-3 xl:gap-4">
             <button
               type="button"
               onClick={() => setSearchOpen(true)}
@@ -107,7 +107,7 @@ export function Header() {
               <Search className="h-5 w-5" />
             </button>
             <LanguageSwitcher className="hidden sm:flex" />
-            <Link to="/contact" className="group btn-primary hidden xl:inline-flex">
+            <Link to="/contact" className="group btn-primary hidden min-[1360px]:inline-flex min-[1360px]:!px-5 2xl:!px-7">
               {t('cta.requestProject')}
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>

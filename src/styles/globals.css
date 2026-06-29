@@ -61,9 +61,10 @@
   }
 
   /* Primary orange CTA — square corners. Add the `group` class at call sites
-     for the icon hover animations. */
+     for the icon hover animations. `whitespace-nowrap` keeps longer locales
+     (e.g. AZ "Layihə sifariş et") on a single line. */
   .btn-primary {
-    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden border border-orange-brand bg-orange-brand px-7 py-3.5 font-mono text-xs font-medium uppercase tracking-[0.2em] text-white transition-colors;
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden whitespace-nowrap border border-orange-brand bg-orange-brand px-7 py-3.5 font-mono text-xs font-medium uppercase tracking-[0.2em] text-white transition-colors;
   }
   .btn-primary:hover {
     @apply bg-orange-brand/90;
@@ -71,7 +72,7 @@
 
   /* Ghost / outline button */
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 border border-steel/50 bg-transparent px-7 py-3.5 font-mono text-xs font-medium uppercase tracking-[0.2em] text-white transition-colors hover:border-orange-brand hover:bg-orange-brand;
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap border border-steel/50 bg-transparent px-7 py-3.5 font-mono text-xs font-medium uppercase tracking-[0.2em] text-white transition-colors hover:border-orange-brand hover:bg-orange-brand;
   }
 
   /* The "Orange Beam" vertical accent that precedes H2 headlines */

@@ -31,7 +31,12 @@ export function ProjectCard({ project }: { project: Project }) {
         </p>
         <h3 className="mt-2 font-display text-xl font-bold leading-tight text-base">{pick(project.name, lang)}</h3>
         <p className="mt-3 flex-1 text-sm leading-relaxed text-steel">{pick(project.short, lang)}</p>
-        <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-4">
+        {/* AZBUILDING role — important for an engineering/office company */}
+        <p className="mt-4 font-mono text-[10px] uppercase tracking-widest text-steel">
+          <span className="text-orange-brand">{t('misc.role')}: </span>
+          {pick(project.role, lang)}
+        </p>
+        <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-4">
           <span className="font-mono text-[10px] uppercase tracking-widest text-steel">{pick(project.scopeTag, lang)}</span>
           <span className="inline-flex items-center gap-1 font-mono text-xs uppercase tracking-widest text-orange-brand">
             {t('cta.viewProject')}

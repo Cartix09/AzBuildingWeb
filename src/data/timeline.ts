@@ -3,60 +3,56 @@ import type { Lang } from './translations'
 type Loc = Record<Lang, string>
 
 export interface Milestone {
-  /** Placeholder marker — these are NOT verified years. Confirm with the client. */
-  year: string
+  /** 2009 is the verified founding year. Other markers are placeholders — keep
+   *  them as period labels (no invented exact years) until the client confirms.
+   *  Localized so labels like "Today" translate per language. */
+  year: Loc
   title: Loc
   description: Loc
 }
 
+const plain = (s: string): Loc => ({ az: s, ru: s, en: s })
+
 /**
- * COMPANY MILESTONES — PLACEHOLDER timeline.
- * Years are placeholders shown as labels; replace with real history.
+ * COMPANY MILESTONES.
+ * Founding year 2009 is real; later milestones are honest period placeholders
+ * and deliberately avoid inventing specific achievement years.
  */
 export const timeline: Milestone[] = [
   {
-    year: '—',
+    year: plain('2009'),
     title: { az: 'Təməl qoyuldu', ru: 'Основание компании', en: 'Foundation Established' },
     description: {
-      az: 'AZBUILDING MMC kiçik tikinti briqadası kimi fəaliyyətə başladı.',
-      ru: 'AZBUILDING MMC начала работу как небольшая строительная бригада.',
-      en: 'AZBUILDING MMC began operations as a focused construction team.',
+      az: 'AZBUILDING MMC tikinti, texniki icra və layihə təhvili istiqamətində fəaliyyətə başladı.',
+      ru: 'AZBUILDING MMC начала работу с фокусом на строительство, техническое исполнение и сдачу проектов.',
+      en: 'AZBUILDING MMC was founded with a focus on construction, technical execution and project delivery.',
     },
   },
   {
-    year: '—',
-    title: { az: 'İlk böyük layihə', ru: 'Первый крупный проект', en: 'First Major Project' },
+    year: plain('—'),
+    title: { az: 'Tikinti və Layihə Təcrübəsi', ru: 'Строительный и проектный опыт', en: 'Construction & Project Experience' },
     description: {
-      az: 'İlk irimiqyaslı yaşayış obyekti uğurla təhvil verildi.',
-      ru: 'Успешно сдан первый крупный жилой объект.',
-      en: 'Successfully delivered the first large-scale residential project.',
+      az: 'Seçilmiş yaşayış, infrastruktur və yenidənqurma işləri şirkətin praktiki layihə təcrübəsini formalaşdırdı.',
+      ru: 'Избранные жилые, инфраструктурные и реновационные работы сформировали практический проектный опыт компании.',
+      en: 'Selected residential, infrastructure and renovation works developed the company’s practical project experience.',
     },
   },
   {
-    year: '—',
-    title: { az: 'İcra gücü genişləndi', ru: 'Расширение мощностей', en: 'Expanded Project Capacity' },
+    year: plain('—'),
+    title: { az: 'Mühəndislik və Koordinasiya Gücü', ru: 'Инженерные и координационные возможности', en: 'Engineering & Coordination Capacity' },
     description: {
-      az: 'Komanda və texniki baza eyni vaxtda bir neçə layihə üçün gücləndirildi.',
-      ru: 'Команда и техническая база усилены для одновременного ведения нескольких проектов.',
-      en: 'Team and equipment scaled to run multiple projects in parallel.',
+      az: 'Şirkət rolunu mühəndislik dəstəyi, texniki müayinə, təchizat və subpodratçı koordinasiyasına doğru genişləndirdi.',
+      ru: 'Компания расширила роль в сторону инженерной поддержки, технического обследования, закупок и координации субподрядчиков.',
+      en: 'The company expanded its role toward engineering support, technical inspection, procurement and subcontractor coordination.',
     },
   },
   {
-    year: '—',
-    title: { az: 'Dizayn və yenidənqurma xidmətləri', ru: 'Услуги дизайна и реновации', en: 'Design & Renovation Services Developed' },
+    year: { az: 'Bu gün', ru: 'Сегодня', en: 'Today' },
+    title: { az: 'Tikinti, Mühəndislik və Layihə İcrası', ru: 'Строительство, инжиниринг и реализация', en: 'Construction, Engineering & Project Execution' },
     description: {
-      az: 'Tikintiyə əlavə olaraq dizayn və yenidənqurma istiqamətləri inkişaf etdirildi.',
-      ru: 'В дополнение к строительству развиты направления дизайна и реновации.',
-      en: 'Added design and renovation capabilities alongside core construction.',
-    },
-  },
-  {
-    year: '—',
-    title: { az: 'Bu gün', ru: 'Сегодня', en: 'Today' },
-    description: {
-      az: 'Tikinti, dizayn və yenidənqurma üzrə tam portfolio ilə fəaliyyət göstəririk.',
-      ru: 'Работаем с полным портфолио строительства, дизайна и реновации.',
-      en: 'Operating with a full portfolio across construction, design and renovation.',
+      az: 'AZBUILDING MMC qiymətləndirmə və planlaşdırmadan icra və təhvilə qədər layihələri dəstəkləyən peşəkar tikinti və mühəndislik ofisi kimi təqdim olunur.',
+      ru: 'AZBUILDING MMC представляет себя как профессиональный строительно-инженерный офис, поддерживающий проекты от оценки и планирования до исполнения и сдачи.',
+      en: 'AZBUILDING MMC presents itself as a professional construction and engineering office supporting projects from evaluation and planning to execution and handover.',
     },
   },
 ]

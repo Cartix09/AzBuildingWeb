@@ -43,7 +43,7 @@ export function About() {
       <section className="border-b border-white/5 bg-slate-deep py-24 md:py-32">
         <div className="container-x">
           <SectionHeading index="[01]" eyebrow="PRINCIPLES" title={pick({ az: 'Prinsiplərimiz', ru: 'Наши принципы', en: 'Our principles' }, lang)} className="mb-14" />
-          <div className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
             {a.principles.map((p, i) => (
               <Reveal key={i} index={i} className="bg-slate-deep p-8">
                 <span className="font-display text-4xl font-extrabold text-white/10">0{i + 1}</span>
