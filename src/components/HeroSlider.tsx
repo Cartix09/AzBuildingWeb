@@ -11,7 +11,7 @@ const slides = [
   '/images/hero/hero-3.svg',
 ]
 
-const ROTATE_MS = 6000
+const ROTATE_MS = 8000
 
 export function HeroSlider() {
   const { t, lang } = useLanguage()
@@ -38,9 +38,11 @@ export function HeroSlider() {
           transition={{ duration: 1.2, ease: 'easeOut' }}
         />
       </AnimatePresence>
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-slate-deep/70" />
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-deep via-slate-deep/30 to-slate-deep/60" />
+      {/* Dark overlays — lighter veil so the industrial art reads stronger,
+          with a left-darker gradient that keeps the headline crisp. */}
+      <div className="absolute inset-0 bg-slate-deep/45" />
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-deep/85 via-slate-deep/40 to-slate-deep/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-deep/80 via-transparent to-slate-deep/40" />
 
       {/* Coordinate marker eyebrow */}
       <div className="container-x relative z-10 flex h-full flex-col justify-center pt-10">
