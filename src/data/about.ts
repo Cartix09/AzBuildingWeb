@@ -5,88 +5,89 @@ type Loc = Record<Lang, string>
 export const aboutContent = {
   eyebrow: { az: 'HAQQIMIZDA', ru: 'О КОМПАНИИ', en: 'ABOUT US' } as Loc,
   title: {
-    az: '2009-cu ildən tikinti və mühəndislik ofisi.',
-    ru: 'Строительно-инженерный офис с 2009 года.',
-    en: 'A construction and engineering office since 2009.',
+    az: 'Mülki-sənaye və infrastruktur tikintisində 2009-cu ildən.',
+    ru: 'В гражданско-промышленном и инфраструктурном строительстве с 2009 года.',
+    en: 'In civil-industrial and infrastructure construction since 2009.',
   } as Loc,
   intro: {
-    az: 'AZBUILDING MMC 2009-cu ildə təsis edilmiş tikinti, mühəndislik və layihə icrası şirkətidir. Yalnız fiziki tikinti deyil; texniki ekspertiza, tikinti müayinəsi, dəyər qiymətləndirməsi, təchizat və subpodratçı koordinasiyası, material logistikası, fit-out və yenidənqurma vasitəsilə layihələrdə iştirak edən ofis əsaslı şirkətdir.',
-    ru: 'AZBUILDING MMC — компания в области строительства, инжиниринга и реализации проектов, основанная в 2009 году. Это офисная компания, которая участвует в проектах не только через физическое строительство, но и через техническую экспертизу, строительное обследование, оценку стоимости, координацию закупок и субподрядчиков, логистику материалов, fit-out и реновацию.',
-    en: 'AZBUILDING MMC is a construction, engineering and project execution company founded in 2009. It is an office-based company that participates in projects not only through physical construction, but through technical expertise, construction inspection, cost evaluation, procurement and subcontractor coordination, material logistics, fit-out and renovation.',
+    az: 'AZBİLDİNQ MMC 2009-cu ildən mülki-sənaye və infrastruktur tikinti sektorunda fəaliyyət göstərir. Şirkət bu dövr ərzində aparıcı tərəfdaşlarla birgə iri miqyaslı mülki tikinti, eləcə də Azərbaycan, Gürcüstan və Ukraynada avtomobil yolu tikintisi layihələrində tikinti və mühəndislik dəstəyi xidmətləri göstərmişdir. Azbildinq infrastruktur layihələrdə subpodratçı, mülki və sənaye tikintilərində podratçı kimi, o cümlədən fərdi yaşayış evlərinin tikintisində sərmayədar kimi çıxış etmişdir. Şirkətin yanaşması etibarlılıq, vaxtında icra və texniki dəqiqlik prinsiplərinə əsaslanır. AZBUILDING özünü tikinti və infrastruktur sahəsində təcrübəli, çoxprofilli icra tərəfdaşı kimi təqdim edir.',
+    ru: 'AZBİLDİNQ MMC работает в сфере гражданско-промышленного и инфраструктурного строительства с 2009 года. За этот период компания совместно с ведущими партнёрами оказывала строительные и инженерные услуги в крупных проектах гражданского строительства, а также в проектах строительства автомобильных дорог в Азербайджане, Грузии и Украине. AZBİLDİNQ участвовала в инфраструктурных проектах в качестве субподрядчика, в гражданском и промышленном строительстве в качестве подрядчика, а также в строительстве индивидуальных жилых домов как инвестор/участник. Подход компании основан на надёжности, своевременном исполнении и технической точности. AZBUILDING позиционирует себя как опытный многопрофильный исполнительный партнёр в сфере строительства и инфраструктуры.',
+    en: 'AZBİLDİNQ MMC has operated in the civil-industrial and infrastructure construction sector since 2009. During this period, the company has provided construction and engineering support services together with leading partners in large-scale civil construction works, as well as road construction projects in Azerbaijan, Georgia and Ukraine. AZBİLDİNQ has participated in infrastructure projects as a subcontractor, in civil and industrial construction as a contractor, and in individual residential construction as an investor/participant. The company’s approach is based on reliability, timely execution and technical precision. AZBUILDING presents itself as an experienced, multi-profile execution partner in construction and infrastructure.',
   } as Loc,
   mission: {
     title: { az: 'Missiya', ru: 'Миссия', en: 'Mission' } as Loc,
     body: {
-      az: 'Tikinti və inkişaf layihələrini etibarlı icra, mühəndis əsaslı qərarlar, texniki qiymətləndirmə, təchizat koordinasiyası və intizamlı layihə təhvili ilə dəstəkləmək.',
-      ru: 'Поддерживать строительные и девелоперские проекты надёжным исполнением, инженерно обоснованными решениями, технической оценкой, координацией закупок и дисциплинированной сдачей проектов.',
-      en: 'To support construction and development projects with reliable execution, engineering-based decision making, technical evaluation, procurement coordination and disciplined project delivery.',
+      az: 'Mülki-sənaye və infrastruktur layihələrini etibarlı tikinti icrası, mühəndislik dəstəyi, vaxtında təhvil və texniki dəqiqliklə dəstəkləmək.',
+      ru: 'Поддерживать гражданско-промышленные и инфраструктурные проекты надёжным строительным исполнением, инженерной поддержкой, своевременной сдачей и технической точностью.',
+      en: 'To support civil-industrial and infrastructure projects with reliable construction execution, engineering support, timely delivery and technical precision.',
     } as Loc,
   },
   vision: {
     title: { az: 'Vizyon', ru: 'Видение', en: 'Vision' } as Loc,
     body: {
-      az: 'Praktiki təcrübə, texniki dəqiqlik və layihələri qiymətləndirmədən icraya qədər koordinasiya etmək bacarığı ilə tanınan, Azərbaycanda etibarlı tikinti və mühəndislik tərəfdaşına çevrilmək.',
-      ru: 'Стать надёжным строительно-инженерным партнёром в Азербайджане, известным практическим опытом, технической точностью и способностью координировать проекты от оценки до исполнения.',
-      en: 'To become a trusted construction and engineering partner in Azerbaijan, known for practical experience, technical precision and the ability to coordinate projects from evaluation to execution.',
+      az: 'Azərbaycanın tikinti və infrastruktur sektorunda etibarlılıq, texniki dəqiqlik və praktiki layihə təcrübəsi ilə tanınan, etibarlı çoxprofilli icra tərəfdaşına çevrilmək.',
+      ru: 'Стать надёжным многопрофильным исполнительным партнёром в строительном и инфраструктурном секторе Азербайджана, известным надёжностью, технической точностью и практическим проектным опытом.',
+      en: 'To become a trusted multi-profile execution partner in Azerbaijan’s construction and infrastructure sector, known for reliability, technical accuracy and practical project experience.',
     } as Loc,
   },
   principles: [
     {
-      title: { az: 'Texniki dəqiqlik', ru: 'Техническая точность', en: 'Technical accuracy' } as Loc,
+      title: { az: 'Etibarlılıq', ru: 'Надёжность', en: 'Reliability' } as Loc,
       body: {
-        az: 'Qərarlar mühəndis məntiqinə və texniki həqiqətə əsaslanır.',
-        ru: 'Решения основаны на инженерной логике и технической достоверности.',
-        en: 'Decisions grounded in engineering logic and technical accuracy.',
+        az: 'Tərəfdaşların etibar etdiyi sabit və məsuliyyətli icra.',
+        ru: 'Стабильное и ответственное исполнение, которому доверяют партнёры.',
+        en: 'Stable, responsible execution that partners rely on.',
       } as Loc,
     },
     {
-      title: { az: 'Məsuliyyətli icra', ru: 'Ответственное исполнение', en: 'Responsible execution' } as Loc,
+      title: { az: 'Vaxtında icra', ru: 'Своевременное исполнение', en: 'Timely execution' } as Loc,
       body: {
-        az: 'İşi vədə uyğun, intizamlı və nəzarətli şəkildə təhvil veririk.',
-        ru: 'Сдаём работу дисциплинированно, под контролем и в соответствии с обязательствами.',
-        en: 'We deliver work disciplined, supervised and as committed.',
+        az: 'Qrafikə və öhdəliklərə hörmət.',
+        ru: 'Уважение к графику и обязательствам.',
+        en: 'Respect for schedule and commitments.',
       } as Loc,
     },
     {
-      title: { az: 'Aydın koordinasiya', ru: 'Чёткая координация', en: 'Clear coordination' } as Loc,
+      title: { az: 'Texniki dəqiqlik', ru: 'Техническая точность', en: 'Technical precision' } as Loc,
       body: {
-        az: 'Təchizatçı, subpodratçı və komandalar arasında aydın əlaqələndirmə.',
-        ru: 'Чёткая координация между поставщиками, субподрядчиками и командами.',
-        en: 'Clear coordination across suppliers, subcontractors and teams.',
+        az: 'Mühəndis məntiqinə əsaslanan dəqiq həllər.',
+        ru: 'Точные решения, основанные на инженерной логике.',
+        en: 'Accurate solutions grounded in engineering logic.',
       } as Loc,
     },
     {
-      title: { az: 'Praktiki təcrübə', ru: 'Практический опыт', en: 'Practical experience' } as Loc,
+      title: { az: 'Mühəndislik dəstəyi', ru: 'Инженерная поддержка', en: 'Engineering support' } as Loc,
       body: {
-        az: '2009-cu ildən bəri real layihələrdə qazanılmış təcrübə.',
-        ru: 'Опыт, накопленный на реальных проектах с 2009 года.',
-        en: 'Experience built on real projects since 2009.',
+        az: 'Layihənin hər mərhələsində texniki dəstək.',
+        ru: 'Техническая поддержка на каждом этапе проекта.',
+        en: 'Technical support at every project stage.',
       } as Loc,
     },
     {
-      title: { az: 'Etibar və məxfilik', ru: 'Доверие и конфиденциальность', en: 'Trust & confidentiality' } as Loc,
+      title: { az: 'Məsuliyyətli podratçılıq', ru: 'Ответственное подрядничество', en: 'Responsible contracting' } as Loc,
       body: {
-        az: 'Sifarişçi məlumatlarına və şəxsi layihələrə hörmət və məxfilik.',
-        ru: 'Уважение и конфиденциальность данных заказчика и частных проектов.',
-        en: 'Respect and confidentiality for client data and private projects.',
+        az: 'Subpodratçı və podratçı kimi şəffaf və məsuliyyətli iştirak.',
+        ru: 'Прозрачное и ответственное участие в роли субподрядчика и подрядчика.',
+        en: 'Transparent, responsible participation as subcontractor and contractor.',
       } as Loc,
     },
     {
-      title: { az: 'Uzunmüddətli tərəfdaşlıq', ru: 'Долгосрочное партнёрство', en: 'Long-term partnerships' } as Loc,
+      title: { az: 'Çoxprofilli təcrübə', ru: 'Многопрофильный опыт', en: 'Multi-profile experience' } as Loc,
       body: {
-        az: 'Birdəfəlik işlərdən çox davamlı əməkdaşlıqlar qururuq.',
-        ru: 'Строим устойчивое сотрудничество, а не разовые работы.',
-        en: 'We build lasting cooperation, not one-off jobs.',
+        az: 'Mülki, sənaye və infrastruktur tikintisində geniş təcrübə.',
+        ru: 'Широкий опыт в гражданском, промышленном и инфраструктурном строительстве.',
+        en: 'Broad experience across civil, industrial and infrastructure construction.',
       } as Loc,
     },
   ],
   certificates: {
-    title: { az: 'Sertifikatlar və Lisenziyalar', ru: 'Сертификаты и лицензии', en: 'Certificates & Licenses' } as Loc,
-    // PLACEHOLDER: do not present these as held certifications until verified.
+    title: { az: 'Lisenziya və Sertifikatlar', ru: 'Лицензия и сертификаты', en: 'License & Certificates' } as Loc,
+    // License exists per the client; the document image is to be added later.
+    // Do NOT invent a license number or issue date.
     note: {
-      az: 'Sertifikat və lisenziyalar üçün yer ayrılıb. Rəsmi sənədlər təqdim edildikdə bura əlavə olunacaq.',
-      ru: 'Раздел зарезервирован под сертификаты и лицензии. Будет заполнен после предоставления официальных документов.',
-      en: 'This section is reserved for certificates and licenses. It will be populated once official documents are provided.',
+      az: 'Tikinti işləri üçün lisenziya var. Şəkil / sənəd təqdim olunacaq.',
+      ru: 'Имеется лицензия на строительные работы. Изображение / документ будет добавлено.',
+      en: 'Construction works license available. Image / document to be added.',
     } as Loc,
   },
 }

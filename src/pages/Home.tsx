@@ -1,36 +1,45 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { HeroSlider } from '../components/HeroSlider'
-import { MetricsSection } from '../components/MetricsSection'
 import { SectionHeading } from '../components/SectionHeading'
 import { ServicesGrid } from '../components/ServicesGrid'
 import { ProjectsGrid } from '../components/ProjectsGrid'
-import { ProcessSection } from '../components/ProcessSection'
-import { QualitySection } from '../components/QualitySection'
-import { Timeline } from '../components/Timeline'
 import { PartnersCarousel } from '../components/PartnersCarousel'
-import { LogoMarquee } from '../components/LogoMarquee'
 import { ContactForm } from '../components/ContactForm'
 import { MapEmbed } from '../components/MapEmbed'
 import { useLanguage } from '../i18n/LanguageContext'
 import { useDocumentMeta } from '../lib/useDocumentMeta'
 import { featuredServices } from '../data/services'
 import { featuredProjects } from '../data/projects'
-import { customers } from '../data/customers'
 
 export function Home() {
   const { t } = useLanguage()
   useDocumentMeta(
-    'Construction & Project Execution',
-    'AZBUILDING MMC — construction, project execution, design, renovation and repair. Industrial portfolio and completed projects across Azerbaijan.',
+    'Construction & Infrastructure',
+    'AZBUILDING LLC — AZBİLDİNQ MMC: civil-industrial and infrastructure construction since 2009. Selected projects across Azerbaijan, Georgia and Ukraine.',
   )
 
   return (
     <>
       <HeroSlider />
-      <MetricsSection />
 
-      {/* Services overview */}
+      {/* Selected / featured portfolio projects — the focus of the home page */}
+      <section className="border-b border-white/5 bg-slate-deep py-24 md:py-32">
+        <div className="container-x">
+          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+            <SectionHeading index="[01]" eyebrow={t('sections.featuredTag')} title={t('sections.featuredTitle')} />
+            <Link to="/projects" className="group btn-ghost shrink-0">
+              {t('cta.viewPortfolio')}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
+          <div className="mt-14">
+            <ProjectsGrid projects={featuredProjects()} />
+          </div>
+        </div>
+      </section>
+
+      {/* Services overview (compact) */}
       <section className="border-b border-white/5 bg-slate-deep py-24 md:py-32">
         <div className="container-x">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
@@ -46,52 +55,15 @@ export function Home() {
         </div>
       </section>
 
-      {/* Featured projects */}
+      {/* Partners carousel */}
       <section className="border-b border-white/5 bg-slate-deep py-24 md:py-32">
         <div className="container-x">
-          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <SectionHeading index="[03]" eyebrow={t('sections.featuredTag')} title={t('sections.featuredTitle')} />
-            <Link to="/projects" className="group btn-ghost shrink-0">
-              {t('cta.viewPortfolio')}
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-          <div className="mt-14">
-            <ProjectsGrid projects={featuredProjects().slice(0, 4)} />
-          </div>
-        </div>
-      </section>
-
-      <ProcessSection />
-      <QualitySection />
-
-      {/* Timeline */}
-      <section className="border-b border-white/5 bg-slate-deep py-24 md:py-32">
-        <div className="container-x">
-          <SectionHeading
-            index="[06]"
-            eyebrow={t('sections.timelineTag')}
-            title={t('sections.timelineTitle')}
-            align="center"
-            className="mb-16"
-          />
-          <Timeline />
-        </div>
-      </section>
-
-      {/* Partners + customers carousels */}
-      <section className="border-b border-white/5 bg-slate-deep py-24 md:py-32">
-        <div className="container-x">
-          <SectionHeading index="[07]" eyebrow={t('sections.partnersTag')} title={t('sections.partnersTitle')} />
+          <SectionHeading index="[03]" eyebrow={t('sections.partnersTag')} title={t('sections.partnersTitle')} />
         </div>
         <div className="mt-14">
           <PartnersCarousel />
         </div>
-        <div className="container-x mt-16">
-          <p className="eyebrow mb-6">{t('sections.customersTag')}</p>
-        </div>
-        <LogoMarquee items={customers} duration={55} />
-        <div className="container-x mt-10">
+        <div className="container-x mt-12">
           <Link to="/partners" className="group btn-ghost">
             {t('cta.becomePartner')}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -99,11 +71,11 @@ export function Home() {
         </div>
       </section>
 
-      {/* Contact + map */}
+      {/* Contact + location */}
       <section id="contact" className="bg-slate-deep py-24 md:py-32">
         <div className="container-x">
           <SectionHeading
-            index="[08]"
+            index="[04]"
             eyebrow={t('sections.contactTag')}
             title={t('sections.contactTitle')}
             className="mb-14"

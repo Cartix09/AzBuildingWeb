@@ -39,14 +39,14 @@ export const translations: Record<Lang, Tree> = {
       tagline: 'Tikinti və Mühəndislik Mükəmməlliyi',
     },
     hero: {
-      eyebrow: 'TİKİNTİ · MÜHƏNDİSLİK · LAYİHƏ İCRASI',
-      title: 'Tikinti və mühəndisliyi bir araya gətiririk',
+      eyebrow: 'TİKİNTİ · MÜLKİ-SƏNAYE · İNFRASTRUKTUR',
+      title: 'Tikinti və infrastrukturun icrası',
       subtitle:
-        '2009-cu ildən AZBUILDING MMC — tikinti, mühəndislik dəstəyi, texniki ekspertiza, dəyər qiymətləndirməsi, təchizat və layihə koordinasiyası ilə layihələri qiymətləndirmədən icraya qədər müşayiət edir.',
+        '2009-cu ildən AZBUILDING — AZBİLDİNQ MMC mülki, sənaye və infrastruktur tikintisini Azərbaycan, Gürcüstan və Ukraynada təcrübəli, çoxprofilli icra tərəfdaşı kimi həyata keçirir.',
     },
     sections: {
       metricsTag: 'ŞİRKƏT QISACA',
-      metricsTitle: '2009-cu ildən tikinti və mühəndislik ofisi.',
+      metricsTitle: '2009-cu ildən mülki, sənaye və infrastruktur tikintisi.',
       servicesTag: 'İMKANLARIMIZ',
       servicesTitle: 'Tikinti prosesinin hər mərhələsində bacarıqlar.',
       featuredTag: 'SEÇİLMİŞ İŞLƏR',
@@ -86,7 +86,7 @@ export const translations: Record<Lang, Tree> = {
     },
     footer: {
       summary:
-        'AZBUILDING MMC — sənaye, kommersiya və yaşayış obyektləri üçün tikinti, layihə icrası, dizayn və yenidənqurma həll yolları təqdim edir. Hər layihəni struktur dəqiqliklə təhvil veririk.',
+        'AZBUILDING LLC — AZBİLDİNQ MMC 2009-cu ildən mülki-sənaye və infrastruktur tikinti sektorunda fəaliyyət göstərən, təcrübəli çoxprofilli icra tərəfdaşıdır.',
       quickNav: 'Naviqasiya',
       company: 'Şirkət',
       contact: 'Əlaqə',
@@ -103,10 +103,13 @@ export const translations: Record<Lang, Tree> = {
     },
     misc: {
       year: 'İl',
+      period: 'Dövr',
       location: 'Yer',
       type: 'Növ',
       scope: 'İş həcmi',
       client: 'Sifarişçi',
+      partner: 'Tərəfdaş / Sifarişçi',
+      activity: 'Fəaliyyət',
       role: 'AZBUILDING rolu',
       status: 'Status',
       relatedProjects: 'Əlaqəli layihələr',
@@ -115,6 +118,14 @@ export const translations: Record<Lang, Tree> = {
       allYears: 'Bütün illər',
       allLocations: 'Bütün yerlər',
       filterBy: 'Filtrlə',
+      legalAddress: 'Hüquqi ünvan',
+      actualAddress: 'Faktiki ünvan',
+      website: 'Veb sayt',
+    },
+    projects: {
+      participationNote:
+        'Portfolio 2009–2025 və sonrakı dövrlərdə görülmüş işləri və iştirakı əks etdirir. Bəzi işlər tam rəsmi sənədləşmə ilə müşayiət olunmadığından, layihələr təcrübə / iştirak formatında, şirkətin rolu olduğu kimi göstərilməklə təqdim olunur.',
+      confidentialNote: 'Sifarişçinin istəyi ilə bəzi layihə təfərrüatları məxfi saxlanılır.',
     },
   },
 
@@ -143,14 +154,14 @@ export const translations: Record<Lang, Tree> = {
       tagline: 'Совершенство в строительстве и инжиниринге',
     },
     hero: {
-      eyebrow: 'СТРОИТЕЛЬСТВО · ИНЖИНИРИНГ · РЕАЛИЗАЦИЯ',
-      title: 'Соединяем строительство и инжиниринг',
+      eyebrow: 'СТРОИТЕЛЬСТВО · ГРАЖД.-ПРОМ. · ИНФРАСТРУКТУРА',
+      title: 'Строительство и инфраструктура',
       subtitle:
-        'С 2009 года AZBUILDING MMC сопровождает проекты от оценки до исполнения — через строительство, инженерную поддержку, техническую экспертизу, оценку стоимости, закупки и координацию проектов.',
+        'С 2009 года AZBUILDING — AZBİLDİNQ MMC реализует гражданское, промышленное и инфраструктурное строительство как опытный многопрофильный исполнительный партнёр в Азербайджане, Грузии и Украине.',
     },
     sections: {
       metricsTag: 'КОМПАНИЯ КРАТКО',
-      metricsTitle: 'Строительно-инженерный офис с 2009 года.',
+      metricsTitle: 'Гражданское, промышленное и инфраструктурное строительство с 2009 года.',
       servicesTag: 'НАШИ ВОЗМОЖНОСТИ',
       servicesTitle: 'Компетенции на каждом этапе строительного процесса.',
       featuredTag: 'ИЗБРАННЫЕ РАБОТЫ',
@@ -190,7 +201,7 @@ export const translations: Record<Lang, Tree> = {
     },
     footer: {
       summary:
-        'AZBUILDING MMC предоставляет решения по строительству, реализации проектов, проектированию и реновации для промышленных, коммерческих и жилых объектов. Каждый проект сдаём со структурной точностью.',
+        'AZBUILDING LLC — AZBİLDİNQ MMC работает в сфере гражданско-промышленного и инфраструктурного строительства с 2009 года как опытный многопрофильный исполнительный партнёр.',
       quickNav: 'Навигация',
       company: 'Компания',
       contact: 'Контакты',
@@ -207,10 +218,13 @@ export const translations: Record<Lang, Tree> = {
     },
     misc: {
       year: 'Год',
+      period: 'Период',
       location: 'Локация',
       type: 'Тип',
       scope: 'Объём работ',
       client: 'Заказчик',
+      partner: 'Партнёр / Заказчик',
+      activity: 'Деятельность',
       role: 'Роль AZBUILDING',
       status: 'Статус',
       relatedProjects: 'Похожие проекты',
@@ -219,6 +233,14 @@ export const translations: Record<Lang, Tree> = {
       allYears: 'Все годы',
       allLocations: 'Все локации',
       filterBy: 'Фильтр',
+      legalAddress: 'Юридический адрес',
+      actualAddress: 'Фактический адрес',
+      website: 'Веб-сайт',
+    },
+    projects: {
+      participationNote:
+        'Портфолио отражает работы и участие, выполненные в период 2009–2025 и позже. Поскольку часть работ не сопровождалась полной формальной документацией, проекты представлены в формате опыта / участия, с указанием роли компании как есть.',
+      confidentialNote: 'По просьбе заказчика отдельные детали проектов сохраняются конфиденциальными.',
     },
   },
 
@@ -247,14 +269,14 @@ export const translations: Record<Lang, Tree> = {
       tagline: 'Construction & Engineering Excellence',
     },
     hero: {
-      eyebrow: 'CONSTRUCTION · ENGINEERING · PROJECT EXECUTION',
-      title: 'Where construction meets engineering',
+      eyebrow: 'CONSTRUCTION · CIVIL-INDUSTRIAL · INFRASTRUCTURE',
+      title: 'Construction & infrastructure execution',
       subtitle:
-        'Since 2009, AZBUILDING MMC has supported projects from evaluation to execution — through construction, engineering support, technical expertise, cost evaluation, procurement and project coordination.',
+        'Since 2009, AZBUILDING — AZBİLDİNQ MMC has delivered civil, industrial and infrastructure construction across Azerbaijan, Georgia and Ukraine as an experienced, multi-profile execution partner.',
     },
     sections: {
       metricsTag: 'COMPANY AT A GLANCE',
-      metricsTitle: 'A construction and engineering office since 2009.',
+      metricsTitle: 'Civil, industrial and infrastructure construction since 2009.',
       servicesTag: 'OUR CAPABILITIES',
       servicesTitle: 'Capabilities across the full construction process.',
       featuredTag: 'SELECTED WORK',
@@ -294,7 +316,7 @@ export const translations: Record<Lang, Tree> = {
     },
     footer: {
       summary:
-        'AZBUILDING MMC delivers construction, project execution, design and renovation solutions for industrial, commercial and residential projects. Every project handed over with structural precision.',
+        'AZBUILDING LLC — AZBİLDİNQ MMC has worked in civil-industrial and infrastructure construction since 2009 as an experienced, multi-profile execution partner.',
       quickNav: 'Navigation',
       company: 'Company',
       contact: 'Contact',
@@ -311,10 +333,13 @@ export const translations: Record<Lang, Tree> = {
     },
     misc: {
       year: 'Year',
+      period: 'Period',
       location: 'Location',
       type: 'Type',
       scope: 'Scope',
       client: 'Client',
+      partner: 'Partner / Client',
+      activity: 'Activity',
       role: 'AZBUILDING role',
       status: 'Status',
       relatedProjects: 'Related projects',
@@ -323,24 +348,43 @@ export const translations: Record<Lang, Tree> = {
       allYears: 'All years',
       allLocations: 'All locations',
       filterBy: 'Filter',
+      legalAddress: 'Legal address',
+      actualAddress: 'Office address',
+      website: 'Website',
+    },
+    projects: {
+      participationNote:
+        'The portfolio reflects works and participation carried out during 2009–2025 and later. As some works were not accompanied by full formal documentation, projects are presented in an experience / participation format, with the company’s role shown as stated.',
+      confidentialNote: 'At the client’s request, certain project details are kept confidential.',
     },
   },
 }
 
-/** Company contact info — single source of truth, replace with real values. */
+/** Company contact info — single source of truth (AZB sayt info). */
 export const company = {
-  name: 'AZBUILDING MMC',
+  // Brand name for copyright/meta. Logo wordmark stays "AZBUILDING MMC".
+  name: 'AZBUILDING LLC — AZBİLDİNQ MMC',
   domain: 'azbuilding.az',
-  // TODO: replace with the real registered address
+  website: 'https://www.azbuilding.az',
+  // Actual office address — used for the main visible location + Google Maps.
   address: {
-    az: 'Bakı, Azərbaycan',
-    ru: 'Баку, Азербайджан',
-    en: 'Baku, Azerbaijan',
+    az: 'Bakı, Nizami rayonu, Şirin Mirzəyev küçəsi, ev 2535, mənzil A15',
+    ru: 'Баку, Низаминский р-н, ул. Ширин Мирзоев, дом 2535, кв. A15',
+    en: 'Baku, Nizami district, Shirin Mirzayev str. 2535, apt. A15',
   } as Record<Lang, string>,
-  // Google Maps link is generated from this query — replace with exact address.
-  mapsQuery: 'Baku, Azerbaijan',
-  phone: '+994 00 000 00 00', // TODO: replace
-  email: 'info@azbuilding.az', // TODO: confirm real inbox
+  // Legal (registered) address — shown alongside the actual address on Contact.
+  legalAddress: {
+    az: 'Bakı, Xətai rayonu, 8 Noyabr (Nobel) prospekti, ev 23, mənzil 56',
+    ru: 'Баку, Хатаинский р-н, проспект 8 Ноября (Нобель), дом 23, кв. 56',
+    en: 'Baku, Khatai district, 8 November (Nobel) ave. 23, apt. 56',
+  } as Record<Lang, string>,
+  // Google Maps query points at the ACTUAL office address.
+  mapsQuery: 'Şirin Mirzəyev küçəsi 2535, Nizami rayonu, Bakı, Azərbaycan',
+  phone: '+994 00 000 00 00', // TODO: client did not provide a phone — confirm.
+  // NOTE: the client PDF wrote "ingo@azbuilding.az", which looks like a typo for
+  // "info@azbuilding.az". Keeping the safer "info@" until the client confirms.
+  // TODO: confirm whether the email is ingo@azbuilding.az or info@azbuilding.az.
+  email: 'info@azbuilding.az',
   social: {
     instagram: 'https://instagram.com/', // TODO
     facebook: 'https://facebook.com/', // TODO

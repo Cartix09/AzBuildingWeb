@@ -3,16 +3,15 @@ import type { Lang } from './translations'
 type Loc = Record<Lang, string>
 
 export interface Metric {
-  /** Display value, kept as a string so "2009" / "15+" render exactly. */
+  /** Display value, kept as a string so "2009" / "3" render exactly. */
   value: string
   label: Loc
 }
 
 /**
- * STRUCTURAL METRICS — EDITABLE values, kept honest and non-exaggerated.
- * The company was founded in 2009 and its portfolio is modest and growing, so
- * these communicate experience and breadth WITHOUT inflated project counts.
- * Confirm/refine with the client before publishing.
+ * COMPANY METRICS — honest, non-exaggerated. Founded 2009; experience spans
+ * Azerbaijan, Georgia and Ukraine across civil, industrial and infrastructure
+ * works. Do not inflate project counts. Confirm/refine with the client.
  */
 export const metrics: Metric[] = [
   {
@@ -24,15 +23,19 @@ export const metrics: Metric[] = [
     label: { az: 'İllik praktiki təcrübə', ru: 'Лет практического опыта', en: 'Years of practical experience' },
   },
   {
-    value: '9',
-    label: { az: 'Xidmət istiqaməti', ru: 'Направлений услуг', en: 'Service areas' },
+    value: '3',
+    label: {
+      az: 'Ölkə: Azərbaycan · Gürcüstan · Ukrayna',
+      ru: 'Страны: Азербайджан · Грузия · Украина',
+      en: 'Countries: Azerbaijan · Georgia · Ukraine',
+    },
   },
   {
-    value: '4',
+    value: '3',
     label: {
-      az: 'Əsas istiqamət: tikinti · mühəndislik · ekspertiza · koordinasiya',
-      ru: 'Ключевых направления: строительство · инжиниринг · экспертиза · координация',
-      en: 'Core disciplines: construction · engineering · expertise · coordination',
+      az: 'İstiqamət: mülki · sənaye · infrastruktur',
+      ru: 'Направления: гражданское · промышленное · инфраструктура',
+      en: 'Profiles: civil · industrial · infrastructure',
     },
   },
 ]

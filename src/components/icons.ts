@@ -16,6 +16,10 @@ import {
   Truck,
   HardHat,
   Ruler,
+  Route,
+  LandPlot,
+  Cable,
+  Layers,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -38,6 +42,10 @@ export const iconMap: Record<string, LucideIcon> = {
   Truck,
   HardHat,
   Ruler,
+  Route,
+  LandPlot,
+  Cable,
+  Layers,
 }
 
 export function getIcon(name: string): LucideIcon {

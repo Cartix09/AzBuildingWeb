@@ -21,12 +21,12 @@ export function ProjectDetail() {
 
   const related = relatedProjects(project.slug, project.type)
   const meta = [
-    { label: t('misc.year'), value: String(project.year) },
+    { label: t('misc.period'), value: pick(project.period, lang) },
     { label: t('misc.location'), value: pick(project.location, lang) },
     { label: t('misc.type'), value: pick(projectTypeLabels[project.type], lang) },
-    { label: t('misc.client'), value: pick(project.client, lang) },
+    { label: t('misc.partner'), value: pick(project.partner, lang) },
     { label: t('misc.role'), value: pick(project.role, lang) },
-    { label: t('misc.scope'), value: pick(project.scopeTag, lang) },
+    { label: t('misc.activity'), value: pick(project.activity, lang) },
   ]
 
   return (
@@ -52,15 +52,16 @@ export function ProjectDetail() {
           <div className="lg:col-span-7">
             <p className="text-lg leading-relaxed text-steel">{pick(project.description, lang)}</p>
 
-            {/* Technical details */}
-            <div className="mt-10">
-              <h2 className="eyebrow mb-4">TECHNICAL DETAILS</h2>
-              <ul className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-2">
-                {pick(project.details, lang).map((d, i) => (
-                  <li key={i} className="bg-slate-deep p-5 font-mono text-sm text-base">{d}</li>
-                ))}
-              </ul>
-            </div>
+            {/* Careful "experience / participation" note */}
+            <p className="mt-8 border-l-2 border-orange-brand/60 pl-4 text-sm italic leading-relaxed text-steel">
+              {t('projects.participationNote')}
+            </p>
+
+            {project.confidential && (
+              <p className="mt-4 border-l-2 border-white/20 pl-4 text-sm leading-relaxed text-steel">
+                {t('projects.confidentialNote')}
+              </p>
+            )}
           </div>
 
           {/* Meta sidebar */}

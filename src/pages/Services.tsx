@@ -1,5 +1,7 @@
 import { PageHero } from '../components/PageHero'
 import { ServicesGrid } from '../components/ServicesGrid'
+import { ProcessSection } from '../components/ProcessSection'
+import { QualitySection } from '../components/QualitySection'
 import { ContactCta } from '../components/ContactCta'
 import { useLanguage } from '../i18n/LanguageContext'
 import { useDocumentMeta } from '../lib/useDocumentMeta'
@@ -22,6 +24,8 @@ export function Services() {
           <ServicesGrid services={services} />
         </div>
       </section>
+      <ProcessSection />
+      <QualitySection />
       <ContactCta />
     </>
   )

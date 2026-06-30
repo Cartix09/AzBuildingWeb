@@ -56,9 +56,10 @@ export function SearchOverlay({ open, onClose }: SearchOverlayProps) {
       if (
         pick(p.name, lang).toLowerCase().includes(q) ||
         pick(p.location, lang).toLowerCase().includes(q) ||
-        pick(p.scopeTag, lang).toLowerCase().includes(q)
+        pick(p.partner, lang).toLowerCase().includes(q) ||
+        pick(p.activity, lang).toLowerCase().includes(q)
       ) {
-        out.push({ group: t('search.projects'), label: pick(p.name, lang), sub: `${p.year} · ${pick(p.location, lang)}`, to: `/projects/${p.slug}` })
+        out.push({ group: t('search.projects'), label: pick(p.name, lang), sub: `${pick(p.activity, lang)} · ${pick(p.location, lang)}`, to: `/projects/${p.slug}` })
       }
     }
     for (const n of mainNav) {

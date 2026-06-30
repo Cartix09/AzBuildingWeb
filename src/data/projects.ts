@@ -1,220 +1,312 @@
 import type { Lang } from './translations'
 
 type Loc = Record<Lang, string>
-type LocList = Record<Lang, string[]>
 
 /** Project category — used for portfolio filtering. */
-export type ProjectType = 'residential' | 'infrastructure' | 'fitout' | 'private' | 'siteworks' | 'engineering'
+export type ProjectType = 'civil' | 'industrial' | 'infrastructure' | 'residential' | 'fitout'
 
 export interface Project {
   slug: string
   name: Loc
-  /** Placeholder year/status year — NOT verified. Confirm with the client. */
-  year: number
-  location: Loc
-  /** Client name or "Client Confidential" where private. */
-  client: Loc
   type: ProjectType
-  /** Short scope tag shown on cards, e.g. "Construction works" */
-  scopeTag: Loc
-  /** AZBUILDING's role in the project (key for an office/engineering company). */
+  /** City / country. */
+  location: Loc
+  /** Partner or client. Use a confidential label where the client is private. */
+  partner: Loc
+  /** AZBUILDING's role: subcontractor / contractor / investor-participant. */
   role: Loc
+  /** Activity type, e.g. Fit-out, Construction, Infrastructure. */
+  activity: Loc
+  /** Period context. Most works span 2009–2025; no exact per-project years were
+   *  provided, so we present a careful period rather than inventing dates. */
+  period: Loc
   short: Loc
   description: Loc
-  /** Technical detail rows shown on the detail page. */
-  details: LocList
-  /** Cover image (replace with real photo). */
+  /** When true, render a "confidential" note instead of exposing client detail. */
+  confidential?: boolean
   cover: string
-  /** Gallery images (replace with real photos). */
   gallery: string[]
   featured: boolean
 }
 
 /** Human labels for project types, localized. */
 export const projectTypeLabels: Record<ProjectType, Loc> = {
-  residential: { az: 'Yaşayış', ru: 'Жилой', en: 'Residential' },
+  civil: { az: 'Mülki tikinti', ru: 'Гражданское строительство', en: 'Civil construction' },
+  industrial: { az: 'Sənaye', ru: 'Промышленный', en: 'Industrial' },
   infrastructure: { az: 'İnfrastruktur', ru: 'Инфраструктура', en: 'Infrastructure' },
+  residential: { az: 'Yaşayış', ru: 'Жилой', en: 'Residential' },
   fitout: { az: 'Fit-out', ru: 'Fit-out', en: 'Fit-out' },
-  private: { az: 'Şəxsi', ru: 'Частный', en: 'Private' },
-  siteworks: { az: 'Sahə işləri', ru: 'Площадочные работы', en: 'Site works' },
-  engineering: { az: 'Mühəndislik', ru: 'Инжиниринг', en: 'Engineering' },
 }
 
+// Most portfolio entries reflect works / participation carried out across this
+// window. No exact per-project years were provided — do not invent them.
+const PERIOD: Loc = { az: '2009–2025', ru: '2009–2025', en: '2009–2025' }
+
+// Common role labels (careful, non-overstated wording).
+const SUBCONTRACTOR: Loc = { az: 'Subpodratçı', ru: 'Субподрядчик', en: 'Subcontractor' }
+const CONTRACTOR: Loc = { az: 'Podratçı', ru: 'Подрядчик', en: 'Contractor' }
+
 /**
- * REPRESENTATIVE WORKS — placeholder portfolio. THIS IS THE CENTRAL SECTION.
- * The company's real portfolio is modest and growing, so these are presented
- * honestly as selected/representative examples, NOT a large catalogue.
+ * PORTFOLIO — real projects from the client file (AZB sayt info).
+ * Works and participation carried out during 2009–2025 and later. Some works
+ * were not accompanied by full formal documentation, so the portfolio is
+ * presented in a careful "experience / participation" format — roles are shown
+ * exactly as the client described (mostly subcontractor / contractor).
  * Replace cover/gallery with real photography in /public/images/projects/.
- * Years, locations and clients are placeholders — confirm with the client.
- * Use "Client Confidential" for private work shown without permission.
  */
 export const projects: Project[] = [
   {
-    slug: 'residential-apartment-construction',
+    slug: 'flame-towers-baku',
     featured: true,
-    year: 2021,
-    type: 'residential',
-    cover: '/images/projects/project-01.svg',
-    gallery: ['/images/projects/project-01.svg', '/images/projects/project-02.svg', '/images/projects/project-03.svg'],
-    name: { az: 'Yaşayış / Mənzil Tikinti İşləri', ru: 'Жилые / квартирные строительные работы', en: 'Residential / Apartment Construction Works' },
-    location: { az: 'Azərbaycan', ru: 'Азербайджан', en: 'Azerbaijan' },
-    client: { az: 'Sifarişçi (məxfi)', ru: 'Заказчик (конфиденциально)', en: 'Client Confidential' },
-    scopeTag: { az: 'Tikinti işləri', ru: 'Строительные работы', en: 'Construction works' },
-    role: { az: 'Tikinti icrası', ru: 'Исполнение строительства', en: 'Construction execution' },
-    short: {
-      az: 'Yaşayış / mənzil binaları ilə bağlı seçilmiş tikinti işləri.',
-      ru: 'Избранные строительные работы по жилым / квартирным зданиям.',
-      en: 'Selected construction works related to residential / apartment buildings.',
-    },
-    description: {
-      az: 'Yaşayış və mənzil binaları üçün struktur və tikinti işlərində iştirak — beton, konstruksiya və sahə icrası daxil olmaqla.',
-      ru: 'Участие в конструктивных и строительных работах для жилых и квартирных зданий, включая бетон, конструкции и исполнение на площадке.',
-      en: 'Participation in structural and construction works for residential and apartment buildings, including concrete, structures and on-site execution.',
-    },
-    details: {
-      az: ['Növ: Yaşayış tikinti', 'Status: Nümunə (placeholder)', 'Rol: Tikinti icrası', 'Yer: Dəqiqləşdirilməli'],
-      ru: ['Тип: Жилое строительство', 'Статус: Пример (placeholder)', 'Роль: Исполнение строительства', 'Локация: Уточняется'],
-      en: ['Type: Residential construction', 'Status: Example (placeholder)', 'Role: Construction execution', 'Location: To be confirmed'],
-    },
-  },
-  {
-    slug: 'road-infrastructure-works',
-    featured: true,
-    year: 2020,
-    type: 'infrastructure',
-    cover: '/images/projects/project-02.svg',
-    gallery: ['/images/projects/project-02.svg', '/images/projects/project-05.svg', '/images/projects/project-03.svg'],
-    name: { az: 'Yol / İnfrastruktur İşləri', ru: 'Дорожные / инфраструктурные работы', en: 'Road / Infrastructure Works' },
-    location: { az: 'Azərbaycan', ru: 'Азербайджан', en: 'Azerbaijan' },
-    client: { az: 'Sifarişçi (məxfi)', ru: 'Заказчик (конфиденциально)', en: 'Client Confidential' },
-    scopeTag: { az: 'İnfrastruktur icrası', ru: 'Инфраструктурное исполнение', en: 'Infrastructure execution' },
-    role: { az: 'Tikinti dəstəyi və icra', ru: 'Строительная поддержка и исполнение', en: 'Construction support & execution' },
-    short: {
-      az: 'Yol və ya infrastruktur işlərinə tikinti dəstəyi və icrası.',
-      ru: 'Строительная поддержка и исполнение дорожных или инфраструктурных работ.',
-      en: 'Construction support and execution for road or infrastructure works.',
-    },
-    description: {
-      az: 'Yol və infrastruktur obyektlərində torpaq işləri, sahə hazırlığı və tikinti icrası üzrə dəstək.',
-      ru: 'Поддержка по земляным работам, подготовке площадки и исполнению строительства на дорожных и инфраструктурных объектах.',
-      en: 'Support across earthworks, site preparation and construction execution on road and infrastructure projects.',
-    },
-    details: {
-      az: ['Növ: İnfrastruktur', 'Status: Nümunə (placeholder)', 'Rol: Dəstək və icra', 'Yer: Dəqiqləşdirilməli'],
-      ru: ['Тип: Инфраструктура', 'Статус: Пример (placeholder)', 'Роль: Поддержка и исполнение', 'Локация: Уточняется'],
-      en: ['Type: Infrastructure', 'Status: Example (placeholder)', 'Role: Support & execution', 'Location: To be confirmed'],
-    },
-  },
-  {
-    slug: 'four-floor-clinic-fitout',
-    featured: true,
-    year: 2022,
     type: 'fitout',
+    cover: '/images/projects/project-01.svg',
+    gallery: ['/images/projects/project-01.svg', '/images/projects/project-03.svg', '/images/projects/project-02.svg'],
+    period: PERIOD,
+    name: { az: 'Bakı, Flame Towers', ru: 'Баку, Flame Towers', en: 'Baku, Flame Towers' },
+    location: { az: 'Bakı, Azərbaycan', ru: 'Баку, Азербайджан', en: 'Baku, Azerbaijan' },
+    partner: { az: 'DİA HOLDİNQ', ru: 'DİA HOLDİNQ', en: 'DİA HOLDİNQ' },
+    role: SUBCONTRACTOR,
+    activity: { az: 'Fit-out', ru: 'Fit-out', en: 'Fit-out' },
+    short: {
+      az: 'Logistika, beton işləri və fit-out. Subpodratçı rolunda iştirak.',
+      ru: 'Логистика, бетонные работы и fit-out. Участие в роли субподрядчика.',
+      en: 'Logistics, concrete works and fit-out. Participation in a subcontractor role.',
+    },
+    description: {
+      az: 'Flame Towers layihəsində logistika, beton işləri və fit-out işlərində subpodratçı kimi iştirak. İş təcrübə / iştirak formatında təqdim olunur.',
+      ru: 'Участие в роли субподрядчика в логистике, бетонных работах и fit-out в рамках проекта Flame Towers. Работа представлена в формате опыта / участия.',
+      en: 'Participation as a subcontractor in logistics, concrete works and fit-out within the Flame Towers project. Presented in an experience / participation format.',
+    },
+  },
+  {
+    slug: 'shahdag-tourism-center',
+    featured: true,
+    type: 'civil',
+    cover: '/images/projects/project-02.svg',
+    gallery: ['/images/projects/project-02.svg', '/images/projects/project-05.svg', '/images/projects/project-01.svg'],
+    period: PERIOD,
+    name: { az: 'Şahdağ Turizm Mərkəzi', ru: 'Туристический центр «Шахдаг»', en: 'Shahdag Tourism Center' },
+    location: { az: 'Şahdağ, Azərbaycan', ru: 'Шахдаг, Азербайджан', en: 'Shahdag, Azerbaijan' },
+    partner: { az: 'DİA HOLDİNQ', ru: 'DİA HOLDİNQ', en: 'DİA HOLDİNQ' },
+    role: SUBCONTRACTOR,
+    activity: { az: 'Tikinti', ru: 'Строительство', en: 'Construction' },
+    short: {
+      az: 'Torpaq, beton işləri və fit-out. Subpodratçı rolunda iştirak.',
+      ru: 'Земляные, бетонные работы и fit-out. Участие в роли субподрядчика.',
+      en: 'Earthworks, concrete works and fit-out. Participation in a subcontractor role.',
+    },
+    description: {
+      az: 'Şahdağ Turizm Mərkəzində torpaq işləri, beton işləri və fit-out üzrə subpodratçı kimi iştirak.',
+      ru: 'Участие в роли субподрядчика в земляных, бетонных работах и fit-out на объекте туристического центра «Шахдаг».',
+      en: 'Participation as a subcontractor in earthworks, concrete works and fit-out at the Shahdag Tourism Center.',
+    },
+  },
+  {
+    slug: 'xeyal-adalari',
+    featured: true,
+    type: 'civil',
     cover: '/images/projects/project-03.svg',
     gallery: ['/images/projects/project-03.svg', '/images/projects/project-06.svg', '/images/projects/project-01.svg'],
-    name: { az: 'Dördmərtəbəli Klinikanın Fit-out İşləri', ru: 'Fit-out четырёхэтажной клиники', en: 'Four-Floor Clinic Fit-out' },
-    location: { az: 'Azərbaycan', ru: 'Азербайджан', en: 'Azerbaijan' },
-    client: { az: 'Tibbi obyekt (məxfi)', ru: 'Медицинский объект (конфиденциально)', en: 'Medical facility (confidential)' },
-    scopeTag: { az: 'Tibbi fit-out', ru: 'Медицинский fit-out', en: 'Medical fit-out' },
-    role: { az: 'Fit-out və daxili icra', ru: 'Fit-out и внутреннее исполнение', en: 'Fit-out & interior execution' },
+    period: PERIOD,
+    name: { az: 'Xəyal Adaları', ru: 'Khazar Islands (Xəyal Adaları)', en: 'Khazar Islands (Xəyal Adaları)' },
+    location: { az: 'Bakı, Azərbaycan', ru: 'Баку, Азербайджан', en: 'Baku, Azerbaijan' },
+    partner: { az: 'İNNOVA - ANTİK', ru: 'İNNOVA - ANTİK', en: 'İNNOVA - ANTİK' },
+    role: SUBCONTRACTOR,
+    activity: { az: 'Tikinti / Fit-out', ru: 'Строительство / Fit-out', en: 'Construction / Fit-out' },
     short: {
-      az: 'Dördmərtəbəli klinika / tibbi obyekt üçün fit-out və daxili icra işləri.',
-      ru: 'Fit-out и внутренние работы для четырёхэтажной клиники / медицинского объекта.',
-      en: 'Fit-out and interior execution works for a four-floor clinic / medical facility.',
+      az: 'Apartamentlərin tikintisi və fit-out işlərinin icrası. Subpodratçı.',
+      ru: 'Строительство и fit-out апартаментов. Субподрядчик.',
+      en: 'Construction and fit-out execution for apartments. Subcontractor.',
     },
     description: {
-      az: 'Tibbi standartlara uyğun arakəsmələr, tamamlama, mühəndis sistemləri əlaqələndirməsi və daxili icra — oxşar layihənin necə idarə oluna biləcəyinə dair nümunə.',
-      ru: 'Перегородки, отделка, координация инженерных систем и внутреннее исполнение по медицинским требованиям — пример того, как может вестись подобный проект.',
-      en: 'Partitions, finishing, engineering-systems coordination and interior execution to medical requirements — an example of how a similar project can be handled.',
-    },
-    details: {
-      az: ['Növ: Tibbi fit-out', 'Mərtəbə: 4', 'Rol: Fit-out & daxili icra', 'Status: Nümunə (placeholder)'],
-      ru: ['Тип: Медицинский fit-out', 'Этажность: 4', 'Роль: Fit-out и исполнение', 'Статус: Пример (placeholder)'],
-      en: ['Type: Medical fit-out', 'Floors: 4', 'Role: Fit-out & execution', 'Status: Example (placeholder)'],
+      az: 'Layihə daxilində apartamentlərin tikintisi və fit-out işlərinin icrasında subpodratçı kimi iştirak.',
+      ru: 'Участие в роли субподрядчика в строительстве и fit-out апартаментов в рамках проекта.',
+      en: 'Participation as a subcontractor in the construction and fit-out execution of apartments within the project.',
     },
   },
   {
-    slug: 'private-residential-construction',
+    slug: 'kyiv-chop-highway-ukraine',
     featured: true,
-    year: 2023,
-    type: 'private',
+    type: 'infrastructure',
     cover: '/images/projects/project-04.svg',
-    gallery: ['/images/projects/project-04.svg', '/images/projects/project-01.svg'],
-    name: { az: 'Şəxsi Yaşayış Tikintisi', ru: 'Частное жилое строительство', en: 'Private Residential Construction' },
-    location: { az: 'Məxfi', ru: 'Конфиденциально', en: 'Confidential' },
-    client: { az: 'Sifarişçi (məxfi)', ru: 'Заказчик (конфиденциально)', en: 'Client Confidential' },
-    scopeTag: { az: 'Şəxsi rezidensiya', ru: 'Частная резиденция', en: 'Private residence' },
-    role: { az: 'Tikinti icrası', ru: 'Исполнение строительства', en: 'Construction execution' },
+    gallery: ['/images/projects/project-04.svg', '/images/projects/project-07.svg', '/images/projects/project-05.svg'],
+    period: PERIOD,
+    name: { az: 'Kiyev – Çop avtomobil yolu', ru: 'Автодорога Киев – Чоп', en: 'Kyiv – Chop Highway' },
+    location: { az: 'Ukrayna', ru: 'Украина', en: 'Ukraine' },
+    partner: { az: 'TODİNİ - Akkord', ru: 'TODİNİ - Akkord', en: 'TODİNİ - Akkord' },
+    role: SUBCONTRACTOR,
+    activity: { az: 'İnfrastruktur · mühəndislik dəstəyi', ru: 'Инфраструктура · инженерная поддержка', en: 'Infrastructure · engineering support' },
     short: {
-      az: 'Yüksək dəyərli şəxsi ev / villa tikintisi təcrübəsi (məxfi).',
-      ru: 'Опыт строительства частного дома / виллы высокого уровня (конфиденциально).',
-      en: 'High-value private house / villa construction experience (confidential).',
+      az: 'Tenderin udulması və yolun tikintisində mühəndislik xidməti ilə iştirak. Subpodratçı.',
+      ru: 'Участие инженерными услугами в выигранном тендере и строительстве дороги. Субподрядчик.',
+      en: 'Participation through engineering services in tender success and road construction. Subcontractor.',
     },
     description: {
-      az: 'Məxfi şəxsi rezidensiya layihəsi. Sifarişçinin razılığı olmadan təfərrüatlar açıqlanmır; nümunə kimi yalnız iş həcmi göstərilir.',
-      ru: 'Конфиденциальный проект частной резиденции. Детали не раскрываются без согласия заказчика; в качестве примера показан только объём работ.',
-      en: 'A confidential private residential project. Details are not disclosed without client permission; only the scope of work is shown as a reference.',
-    },
-    details: {
-      az: ['Növ: Şəxsi yaşayış', 'Sifarişçi: Məxfi', 'Rol: Tikinti icrası', 'Status: Məxfi nümunə'],
-      ru: ['Тип: Частное жильё', 'Заказчик: Конфиденциально', 'Роль: Исполнение строительства', 'Статус: Конфиденциальный пример'],
-      en: ['Type: Private residential', 'Client: Confidential', 'Role: Construction execution', 'Status: Confidential example'],
+      az: 'Kiyev – Çop avtomobil yolu üzrə tenderin udulmasında və yolun tikintisində mühəndislik dəstəyi ilə subpodratçı kimi iştirak.',
+      ru: 'Участие в роли субподрядчика с инженерной поддержкой в выигрыше тендера и строительстве автодороги Киев – Чоп.',
+      en: 'Participation as a subcontractor with engineering support in the tender success and construction of the Kyiv – Chop highway.',
     },
   },
   {
-    slug: 'earthworks-concrete-site-preparation',
+    slug: 'samtredia-grigoleti-highway-georgia',
     featured: false,
-    year: 2019,
-    type: 'siteworks',
+    type: 'infrastructure',
     cover: '/images/projects/project-05.svg',
-    gallery: ['/images/projects/project-05.svg', '/images/projects/project-02.svg'],
-    name: { az: 'Torpaq, Beton və Sahə Hazırlığı', ru: 'Земляные, бетонные работы и подготовка площадки', en: 'Earthworks, Concrete & Site Preparation' },
-    location: { az: 'Azərbaycan', ru: 'Азербайджан', en: 'Azerbaijan' },
-    client: { az: 'Sifarişçi (məxfi)', ru: 'Заказчик (конфиденциально)', en: 'Client Confidential' },
-    scopeTag: { az: 'Sahə icrası', ru: 'Площадочное исполнение', en: 'Site execution' },
-    role: { az: 'Sahə icrası dəstəyi', ru: 'Поддержка исполнения на площадке', en: 'Site execution support' },
+    gallery: ['/images/projects/project-05.svg', '/images/projects/project-08.svg', '/images/projects/project-04.svg'],
+    period: PERIOD,
+    name: { az: 'Samtredi – Qriqoleti avtomobil yolu', ru: 'Автодорога Самтредиа – Григолети', en: 'Samtredia – Grigoleti Highway' },
+    location: { az: 'Gürcüstan', ru: 'Грузия', en: 'Georgia' },
+    partner: { az: 'Sinohydro', ru: 'Sinohydro', en: 'Sinohydro' },
+    role: SUBCONTRACTOR,
+    activity: { az: 'İnfrastruktur', ru: 'Инфраструктура', en: 'Infrastructure' },
     short: {
-      az: 'Qazıntı, beton, bünövrə və əlaqəli sahə icrası dəstəyi.',
-      ru: 'Экскавация, бетон, основания и сопутствующая поддержка исполнения на площадке.',
-      en: 'Excavation, concrete, groundwork and related site execution support.',
+      az: 'Torpaq və kommunikasiya işləri. Subpodratçı.',
+      ru: 'Земляные работы и работы по коммуникациям. Субподрядчик.',
+      en: 'Earthworks and utility-line works. Subcontractor.',
     },
     description: {
-      az: 'Müxtəlif obyektlərdə qazıntı, beton tökülməsi, bünövrə hazırlığı və sahə icrasında dəstək rolunda iştirak.',
-      ru: 'Участие в роли поддержки в экскавации, бетонировании, подготовке оснований и исполнении на площадке для различных объектов.',
-      en: 'Participation in a support role across excavation, concreting, groundwork and on-site execution for various facilities.',
-    },
-    details: {
-      az: ['Növ: Sahə işləri', 'Status: Nümunə (placeholder)', 'Rol: İcra dəstəyi', 'Yer: Dəqiqləşdirilməli'],
-      ru: ['Тип: Площадочные работы', 'Статус: Пример (placeholder)', 'Роль: Поддержка исполнения', 'Локация: Уточняется'],
-      en: ['Type: Site works', 'Status: Example (placeholder)', 'Role: Execution support', 'Location: To be confirmed'],
+      az: 'Samtredi – Qriqoleti avtomobil yolu layihəsində torpaq və kommunikasiya xətləri işlərində subpodratçı kimi iştirak.',
+      ru: 'Участие в роли субподрядчика в земляных работах и прокладке коммуникаций на проекте автодороги Самтредиа – Григолети.',
+      en: 'Participation as a subcontractor in earthworks and utility-line works on the Samtredia – Grigoleti highway project.',
     },
   },
   {
-    slug: 'engineering-cost-evaluation-support',
+    slug: 'alat-port-project',
     featured: false,
-    year: 2024,
-    type: 'engineering',
+    type: 'infrastructure',
     cover: '/images/projects/project-06.svg',
-    gallery: ['/images/projects/project-06.svg', '/images/projects/project-03.svg'],
-    name: { az: 'Mühəndislik / Dəyər Qiymətləndirməsi Dəstəyi', ru: 'Инженерная / стоимостная поддержка', en: 'Engineering / Cost Evaluation Support' },
-    location: { az: 'Azərbaycan', ru: 'Азербайджан', en: 'Azerbaijan' },
-    client: { az: 'Sifarişçi (məxfi)', ru: 'Заказчик (конфиденциально)', en: 'Client Confidential' },
-    scopeTag: { az: 'Mühəndislik dəstəyi', ru: 'Инженерная поддержка', en: 'Engineering support' },
-    role: { az: 'Texniki müayinə / dəyər qiymətləndirməsi', ru: 'Техническое обследование / оценка стоимости', en: 'Technical inspection / cost evaluation' },
+    gallery: ['/images/projects/project-06.svg', '/images/projects/project-05.svg', '/images/projects/project-09.svg'],
+    period: PERIOD,
+    name: { az: 'Ələt Limanı Layihəsi', ru: 'Проект порта Алят', en: 'Alat Port Project' },
+    location: { az: 'Ələt, Bakı, Azərbaycan', ru: 'Алят, Баку, Азербайджан', en: 'Alat, Baku, Azerbaijan' },
+    partner: { az: 'EVRASCON', ru: 'EVRASCON', en: 'EVRASCON' },
+    role: SUBCONTRACTOR,
+    activity: { az: 'İnfrastruktur', ru: 'Инфраструктура', en: 'Infrastructure' },
     short: {
-      az: 'Texniki müayinə, dəyər qiymətləndirməsi, təchizat və ya layihə dəstəyi rolu.',
-      ru: 'Роль технического обследования, оценки стоимости, закупок или поддержки проекта.',
-      en: 'A technical inspection, cost evaluation, procurement or project-support role.',
+      az: 'Torpaq və beton işləri. Subpodratçı.',
+      ru: 'Земляные и бетонные работы. Субподрядчик.',
+      en: 'Earthworks and concrete works. Subcontractor.',
     },
     description: {
-      az: 'Tikinti ilə bağlı işdə fiziki icradan kənar — texniki müayinə, dəyər qiymətləndirməsi, təchizat və layihə koordinasiyası rolunda iştirak.',
-      ru: 'Участие в строительной работе вне физического исполнения — в роли технического обследования, оценки стоимости, закупок и координации проекта.',
-      en: 'Participation in construction-related work beyond physical execution — in a technical inspection, cost evaluation, procurement and project-coordination role.',
+      az: 'Ələt Limanı layihəsində torpaq və beton işləri üzrə subpodratçı kimi iştirak.',
+      ru: 'Участие в роли субподрядчика в земляных и бетонных работах на проекте порта Алят.',
+      en: 'Participation as a subcontractor in earthworks and concrete works on the Alat Port project.',
     },
-    details: {
-      az: ['Növ: Mühəndislik dəstəyi', 'Status: Nümunə (placeholder)', 'Rol: Müayinə / qiymətləndirmə', 'Yer: Dəqiqləşdirilməli'],
-      ru: ['Тип: Инженерная поддержка', 'Статус: Пример (placeholder)', 'Роль: Обследование / оценка', 'Локация: Уточняется'],
-      en: ['Type: Engineering support', 'Status: Example (placeholder)', 'Role: Inspection / evaluation', 'Location: To be confirmed'],
+  },
+  {
+    slug: 'baku-quba-highway',
+    featured: false,
+    type: 'infrastructure',
+    cover: '/images/projects/project-07.svg',
+    gallery: ['/images/projects/project-07.svg', '/images/projects/project-04.svg', '/images/projects/project-08.svg'],
+    period: PERIOD,
+    name: { az: 'Bakı – Quba avtomobil yolu', ru: 'Автодорога Баку – Губа', en: 'Baku – Quba Highway' },
+    location: { az: 'Azərbaycan', ru: 'Азербайджан', en: 'Azerbaijan' },
+    partner: { az: 'AKKORD', ru: 'AKKORD', en: 'AKKORD' },
+    role: SUBCONTRACTOR,
+    activity: { az: 'İnfrastruktur', ru: 'Инфраструктура', en: 'Infrastructure' },
+    short: {
+      az: 'Beton yolun təmir və rekonstruksiyası işləri. Subpodratçı.',
+      ru: 'Ремонт и реконструкция бетонной автодороги. Субподрядчик.',
+      en: 'Repair and reconstruction of the concrete road. Subcontractor.',
+    },
+    description: {
+      az: 'Bakı – Quba avtomobil yolunun beton hissəsinin təmir və rekonstruksiya işlərində subpodratçı kimi iştirak.',
+      ru: 'Участие в роли субподрядчика в ремонте и реконструкции бетонного участка автодороги Баку – Губа.',
+      en: 'Participation as a subcontractor in the repair and reconstruction of the concrete section of the Baku – Quba highway.',
+    },
+  },
+  {
+    slug: 'baku-astara-new-highway',
+    featured: false,
+    type: 'infrastructure',
+    cover: '/images/projects/project-08.svg',
+    gallery: ['/images/projects/project-08.svg', '/images/projects/project-07.svg', '/images/projects/project-05.svg'],
+    period: PERIOD,
+    name: { az: 'Bakı – Astara yeni avtomobil yolu', ru: 'Новая автодорога Баку – Астара', en: 'Baku – Astara New Highway' },
+    location: { az: 'Azərbaycan', ru: 'Азербайджан', en: 'Azerbaijan' },
+    partner: { az: 'POLAD YOL', ru: 'POLAD YOL', en: 'POLAD YOL' },
+    role: SUBCONTRACTOR,
+    activity: { az: 'İnfrastruktur', ru: 'Инфраструктура', en: 'Infrastructure' },
+    short: {
+      az: 'Körpülərin yanaşma yolları daxil olmaqla torpaq işlərinin icrası.',
+      ru: 'Земляные работы, включая подходные дороги к мостам.',
+      en: 'Earthworks including approach roads to bridges.',
+    },
+    description: {
+      az: 'Bakı – Astara yeni avtomobil yolu layihəsində körpülərin yanaşma yolları daxil olmaqla torpaq işlərinin icrasında iştirak.',
+      ru: 'Участие в выполнении земляных работ, включая подходные дороги к мостам, на проекте новой автодороги Баку – Астара.',
+      en: 'Participation in earthworks, including bridge approach roads, on the Baku – Astara new highway project.',
+    },
+  },
+  {
+    slug: 'sumgait-industrial-complex',
+    featured: true,
+    type: 'industrial',
+    cover: '/images/projects/project-09.svg',
+    gallery: ['/images/projects/project-09.svg', '/images/projects/project-02.svg', '/images/projects/project-06.svg'],
+    period: PERIOD,
+    name: { az: 'Sumqayıt inzibati və sənaye kompleksi', ru: 'Административно-промышленный комплекс «Сумгаит»', en: 'Sumgait Administrative & Industrial Complex' },
+    location: { az: 'Sumqayıt, Azərbaycan', ru: 'Сумгаит, Азербайджан', en: 'Sumgait, Azerbaijan' },
+    partner: { az: 'Fiziki şəxs (sifarişçi)', ru: 'Физическое лицо (заказчик)', en: 'Private individual (client)' },
+    role: CONTRACTOR,
+    activity: { az: 'Tikinti (sənaye)', ru: 'Строительство (промышленное)', en: 'Construction (industrial)' },
+    short: {
+      az: 'Ağır texnika təmir mərkəzi, TIR park və 4 mərtəbəli satış-servis binasının tikintisi. Podratçı.',
+      ru: 'Ремонтный центр тяжёлой техники, TIR-парк и 4-этажное здание сервис-центра. Подрядчик.',
+      en: 'Heavy-machinery repair centre, TIR park and a 4-storey sales-service building. Contractor.',
+    },
+    description: {
+      az: 'Ağır inşaat texnikaları və yük avtomobillərinin təmir mərkəzinin tikintisi, TIR park fəaliyyətinin təşkili, güc avadanlıqları və inşaat texnikalarının ehtiyat hissələrinin satış-servis mərkəzi üçün təməldən 4 mərtəbəli binanın tikintisi. Podratçı rolunda icra.',
+      ru: 'Строительство ремонтного центра для тяжёлой строительной техники и грузовых автомобилей, организация работы TIR-парка, строительство с фундамента 4-этажного здания для центра продажи и обслуживания силового оборудования и запчастей строительной техники. Исполнение в роли подрядчика.',
+      en: 'Construction of a heavy construction-machinery and truck repair centre, organization of TIR-park operations, and construction from foundation of a four-storey building for a power-equipment and construction-machinery spare-parts sales-service centre. Executed in a contractor role.',
+    },
+  },
+  {
+    slug: 'garachukhur-residential-complex',
+    featured: true,
+    type: 'residential',
+    confidential: true,
+    cover: '/images/projects/project-10.svg',
+    gallery: ['/images/projects/project-10.svg', '/images/projects/project-03.svg'],
+    period: PERIOD,
+    name: { az: 'Qaraçuxur Yaşayış Kompleksi', ru: 'Жилой комплекс «Гарачухур»', en: 'Garachukhur Residential Complex' },
+    location: { az: 'Qaraçuxur, Bakı, Azərbaycan', ru: 'Гарачухур, Баку, Азербайджан', en: 'Garachukhur, Baku, Azerbaijan' },
+    partner: { az: 'MTK (sifarişçi məxfidir)', ru: 'Девелопер (заказчик конфиденциален)', en: 'Developer (client confidential)' },
+    role: CONTRACTOR,
+    activity: { az: 'Tikinti (yaşayış)', ru: 'Строительство (жилое)', en: 'Construction (residential)' },
+    short: {
+      az: '12 mərtəbəli 2 yaşayış binasının tikintisi. Podratçı. Sifarişçi məxfidir.',
+      ru: 'Строительство двух 12-этажных жилых зданий. Подрядчик. Заказчик конфиденциален.',
+      en: 'Construction of two 12-storey residential buildings. Contractor. Client confidential.',
+    },
+    description: {
+      az: 'İki ədəd 12 mərtəbəli yaşayış binasının tikintisində podratçı kimi icra. Sifarişçi adının açıqlanmasını istəmir.',
+      ru: 'Исполнение в роли подрядчика при строительстве двух 12-этажных жилых зданий. Заказчик не желает раскрывать своё название.',
+      en: 'Executed as the contractor for the construction of two 12-storey residential buildings. The client prefers to remain confidential.',
+    },
+  },
+  {
+    slug: 'jabrayil-beverage-factory',
+    featured: false,
+    type: 'industrial',
+    cover: '/images/projects/project-11.svg',
+    gallery: ['/images/projects/project-11.svg', '/images/projects/project-09.svg', '/images/projects/project-02.svg'],
+    period: PERIOD,
+    name: { az: 'Cəbrayıl, Alkoqolsuz İçkilər Zavodu', ru: 'Джебраил, завод безалкогольных напитков', en: 'Jabrayil, Soft-Drinks Factory' },
+    location: { az: 'Cəbrayıl, Azərbaycan', ru: 'Джебраил, Азербайджан', en: 'Jabrayil, Azerbaijan' },
+    partner: { az: 'İNNOVA - ANTİK', ru: 'İNNOVA - ANTİK', en: 'İNNOVA - ANTİK' },
+    role: SUBCONTRACTOR,
+    activity: { az: 'Tikinti (sənaye)', ru: 'Строительство (промышленное)', en: 'Construction (industrial)' },
+    short: {
+      az: 'Subpodrat müqaviləsi əsasında zavodun tikintisi. Subpodratçı.',
+      ru: 'Строительство завода на основании субподрядного договора. Субподрядчик.',
+      en: 'Factory construction under a subcontract agreement. Subcontractor.',
+    },
+    description: {
+      az: 'Cəbrayılda alkoqolsuz içkilər zavodunun subpodrat müqaviləsi əsasında tikintisində iştirak.',
+      ru: 'Участие в строительстве завода безалкогольных напитков в Джебраиле на основании субподрядного договора.',
+      en: 'Participation in the construction of a soft-drinks factory in Jabrayil under a subcontract agreement.',
     },
   },
 ]
@@ -224,7 +316,6 @@ export const featuredProjects = () => projects.filter((p) => p.featured)
 export const relatedProjects = (slug: string, type: ProjectType, limit = 3) => {
   const sameType = projects.filter((p) => p.slug !== slug && p.type === type)
   if (sameType.length >= limit) return sameType.slice(0, limit)
-  // Top up with other projects so the section is never empty.
   const others = projects.filter((p) => p.slug !== slug && p.type !== type)
   return [...sameType, ...others].slice(0, limit)
 }

@@ -21,7 +21,10 @@ export function ProjectCard({ project }: { project: Project }) {
         <span className="absolute left-0 top-4 bg-orange-brand px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-white">
           {pick(projectTypeLabels[project.type], lang)}
         </span>
-        <span className="absolute right-4 top-4 font-mono text-xs text-base/80">{project.year}</span>
+        {/* Role tag (subcontractor / contractor) — meaningful per project */}
+        <span className="absolute right-4 top-4 border border-white/20 bg-slate-deep/70 px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest text-base/90">
+          {pick(project.role, lang)}
+        </span>
       </div>
 
       {/* Body */}
@@ -31,14 +34,14 @@ export function ProjectCard({ project }: { project: Project }) {
         </p>
         <h3 className="mt-2 font-display text-xl font-bold leading-tight text-base">{pick(project.name, lang)}</h3>
         <p className="mt-3 flex-1 text-sm leading-relaxed text-steel">{pick(project.short, lang)}</p>
-        {/* AZBUILDING role — important for an engineering/office company */}
+        {/* Partner / client */}
         <p className="mt-4 font-mono text-[10px] uppercase tracking-widest text-steel">
-          <span className="text-orange-brand">{t('misc.role')}: </span>
-          {pick(project.role, lang)}
+          <span className="text-orange-brand">{t('misc.partner')}: </span>
+          {pick(project.partner, lang)}
         </p>
-        <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-4">
-          <span className="font-mono text-[10px] uppercase tracking-widest text-steel">{pick(project.scopeTag, lang)}</span>
-          <span className="inline-flex items-center gap-1 font-mono text-xs uppercase tracking-widest text-orange-brand">
+        <div className="mt-4 flex items-center justify-between gap-3 border-t border-white/10 pt-4">
+          <span className="font-mono text-[10px] uppercase tracking-widest text-steel">{pick(project.activity, lang)}</span>
+          <span className="inline-flex shrink-0 items-center gap-1 font-mono text-xs uppercase tracking-widest text-orange-brand">
             {t('cta.viewProject')}
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </span>
