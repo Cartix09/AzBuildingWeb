@@ -3,7 +3,7 @@ import type { Lang } from './translations'
 type Loc = Record<Lang, string>
 
 export interface Milestone {
-  /** 2009 is the verified founding year. Other markers are placeholders — keep
+  /** 2009 is the verified founding year. Other markers are placeholders - keep
    *  them as period labels (no invented exact years) until the client confirms.
    *  Localized so labels like "Today" translate per language. */
   year: Loc
@@ -29,7 +29,7 @@ export const timeline: Milestone[] = [
     },
   },
   {
-    year: plain('—'),
+    year: plain('-'),
     title: { az: 'Mülki Tikinti Təcrübəsi', ru: 'Опыт гражданского строительства', en: 'Civil Construction Experience' },
     description: {
       az: 'Aparıcı tərəfdaşlarla birgə iri miqyaslı mülki tikinti və fit-out layihələrində iştirak (Flame Towers, Şahdağ, Xəyal Adaları).',
@@ -38,7 +38,7 @@ export const timeline: Milestone[] = [
     },
   },
   {
-    year: plain('—'),
+    year: plain('-'),
     title: { az: 'İnfrastruktur və Beynəlxalq İştirak', ru: 'Инфраструктура и международное участие', en: 'Infrastructure & International Participation' },
     description: {
       az: 'Azərbaycan, Gürcüstan və Ukraynada avtomobil yolu layihələrində subpodratçı və mühəndislik dəstəyi ilə iştirak.',

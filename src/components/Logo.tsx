@@ -8,12 +8,12 @@ interface LogoProps {
 }
 
 /**
- * Brand logo. The mark lives at /public/logos/azbuilding-mark.svg — replace
+ * Brand logo. The mark lives at /public/logos/azbuilding-mark.svg - replace
  * that file with the official brand SVG and this component updates everywhere.
  */
 export function Logo({ className, showWordmark = true }: LogoProps) {
   return (
-    <Link to="/" className={cn('group flex shrink-0 items-center gap-3', className)} aria-label="AZBUILDING MMC — home">
+    <Link to="/" className={cn('group flex shrink-0 items-center gap-3', className)} aria-label="AZBUILDING MMC - home">
       <img
         src="/logos/azbuilding-mark.svg"
         alt=""

@@ -113,7 +113,7 @@ function heroStructure() {
   // Scaffolding on the left
   s += scaffold(120, base, 3, 90, 470, 0.5)
 
-  // Multi-storey steel frame skeleton (center) — columns + floor beams + bracing
+  // Multi-storey steel frame skeleton (center) - columns + floor beams + bracing
   const cols = [470, 650, 830, 1010, 1190, 1370]
   const top = 250
   const floors = 5
@@ -243,11 +243,11 @@ function tile(seed = 0, w = 1200, h = 900) {
 }
 
 const files = {
-  // Home hero slides — premium, text-free industrial scenes
+  // Home hero slides - premium, text-free industrial scenes
   'images/hero/hero-1.svg': heroSkyline(),
   'images/hero/hero-2.svg': heroStructure(),
   'images/hero/hero-3.svg': heroSection(),
-  // Internal page heroes — themed, stronger scenes (reused across languages)
+  // Internal page heroes - themed, stronger scenes (reused across languages)
   'images/pagehero/services.svg': heroStructure(),
   'images/pagehero/projects.svg': heroRoad(),
   'images/pagehero/partners.svg': heroSection(),
@@ -266,7 +266,7 @@ const files = {
   'images/projects/project-09.svg': tile(1),
   'images/projects/project-10.svg': tile(2),
   'images/projects/project-11.svg': tile(0),
-  // Services — one per slug in src/data/services.ts
+  // Services - one per slug in src/data/services.ts
   'images/services/construction-works.svg': tile(0),
   'images/services/infrastructure-execution.svg': tile(2),
   'images/services/earthworks-planning.svg': tile(0),

@@ -3,7 +3,7 @@ import type { Lang } from './translations'
 type Loc = Record<Lang, string>
 
 /**
- * PARTNERS — real partners from the client file (AZB sayt info).
+ * PARTNERS - real partners from the client file (AZB sayt info).
  * No logos were provided yet, so cards render as clean typographic placeholders
  * (company name + specialty). Add real logos to /public/logos/ and set `logo`.
  */

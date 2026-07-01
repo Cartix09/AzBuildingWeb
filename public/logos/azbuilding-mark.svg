@@ -1,20 +1,25 @@
-<svg width="120" height="140" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AZBUILDING mark">
-  <!-- Stylized architectural "A": left ramp + right stepped tower.
-       Replace with the official brand SVG when available. -->
-  <g stroke="currentColor" stroke-width="1.4" fill="none" stroke-linejoin="round">
-    <!-- left diagonal ramp -->
-    <path d="M14 116 L70 24" />
-    <path d="M24 116 L74 34" />
-    <path d="M34 116 L78 44" />
-    <!-- crossbar -->
-    <path d="M16 78 L104 78" />
-    <path d="M16 84 L104 84" />
-    <!-- right stepped tower -->
-    <path d="M70 24 L96 24 L96 116 L78 116" />
-    <path d="M78 40 H96" />
-    <path d="M80 56 H96" />
-    <path d="M82 72 H96" />
-    <path d="M84 88 H96" />
-    <path d="M86 104 H96" />
+<svg width="50" height="52" viewBox="0 0 50 52" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AZBUILDING mark">
+  <!-- Architectural "A": left ramp/bridge + right stepped tower, joined by a
+       crossbar. Explicit colours (white + orange accent) so it stays visible
+       when loaded as an <img> on the dark header. Replace with the official
+       brand SVG when available. -->
+  <g fill="none" stroke="#F8FAFC" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="miter">
+    <!-- left ramp (two parallel beams) -->
+    <path d="M5 49 L25 5" />
+    <path d="M11 49 L27 9" />
+    <!-- right tower edge -->
+    <path d="M25 5 L44 49" />
+    <!-- stepped tower ticks on the right -->
+    <path d="M30 18 L35 18" />
+    <path d="M33 27 L39 27" />
+    <path d="M36 36 L42 36" />
+    <path d="M39 44 L45 44" />
+    <!-- crossbar (two parallel beams) -->
+    <path d="M13 33 L40 33" />
+    <path d="M14 37 L41 37" />
   </g>
+  <!-- dashed ramp centre line -->
+  <path d="M8 49 L26 7" stroke="#F8FAFC" stroke-width="1" stroke-dasharray="2 3" opacity="0.8" />
+  <!-- orange structural node where the crossbar meets the ramp -->
+  <rect x="11.5" y="31.5" width="4.2" height="4.2" fill="#EA580C" />
 </svg>

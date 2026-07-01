@@ -2,7 +2,7 @@ import type { Lang } from './translations'
 
 type Loc = Record<Lang, string>
 
-/** Project category — used for portfolio filtering. */
+/** Project category - used for portfolio filtering. */
 export type ProjectType = 'civil' | 'industrial' | 'infrastructure' | 'residential' | 'fitout'
 
 export interface Project {
@@ -17,7 +17,7 @@ export interface Project {
   role: Loc
   /** Activity type, e.g. Fit-out, Construction, Infrastructure. */
   activity: Loc
-  /** Period context. Most works span 2009–2025; no exact per-project years were
+  /** Period context. Most works span 2009-2025; no exact per-project years were
    *  provided, so we present a careful period rather than inventing dates. */
   period: Loc
   short: Loc
@@ -39,18 +39,18 @@ export const projectTypeLabels: Record<ProjectType, Loc> = {
 }
 
 // Most portfolio entries reflect works / participation carried out across this
-// window. No exact per-project years were provided — do not invent them.
-const PERIOD: Loc = { az: '2009–2025', ru: '2009–2025', en: '2009–2025' }
+// window. No exact per-project years were provided - do not invent them.
+const PERIOD: Loc = { az: '2009-2025', ru: '2009-2025', en: '2009-2025' }
 
 // Common role labels (careful, non-overstated wording).
 const SUBCONTRACTOR: Loc = { az: 'Subpodratçı', ru: 'Субподрядчик', en: 'Subcontractor' }
 const CONTRACTOR: Loc = { az: 'Podratçı', ru: 'Подрядчик', en: 'Contractor' }
 
 /**
- * PORTFOLIO — real projects from the client file (AZB sayt info).
- * Works and participation carried out during 2009–2025 and later. Some works
+ * PORTFOLIO - real projects from the client file (AZB sayt info).
+ * Works and participation carried out during 2009-2025 and later. Some works
  * were not accompanied by full formal documentation, so the portfolio is
- * presented in a careful "experience / participation" format — roles are shown
+ * presented in a careful "experience / participation" format - roles are shown
  * exactly as the client described (mostly subcontractor / contractor).
  * Replace cover/gallery with real photography in /public/images/projects/.
  */
@@ -131,7 +131,7 @@ export const projects: Project[] = [
     cover: '/images/projects/project-04.svg',
     gallery: ['/images/projects/project-04.svg', '/images/projects/project-07.svg', '/images/projects/project-05.svg'],
     period: PERIOD,
-    name: { az: 'Kiyev – Çop avtomobil yolu', ru: 'Автодорога Киев – Чоп', en: 'Kyiv – Chop Highway' },
+    name: { az: 'Kiyev - Çop avtomobil yolu', ru: 'Автодорога Киев - Чоп', en: 'Kyiv - Chop Highway' },
     location: { az: 'Ukrayna', ru: 'Украина', en: 'Ukraine' },
     partner: { az: 'TODİNİ - Akkord', ru: 'TODİNİ - Akkord', en: 'TODİNİ - Akkord' },
     role: SUBCONTRACTOR,
@@ -142,9 +142,9 @@ export const projects: Project[] = [
       en: 'Participation through engineering services in tender success and road construction. Subcontractor.',
     },
     description: {
-      az: 'Kiyev – Çop avtomobil yolu üzrə tenderin udulmasında və yolun tikintisində mühəndislik dəstəyi ilə subpodratçı kimi iştirak.',
-      ru: 'Участие в роли субподрядчика с инженерной поддержкой в выигрыше тендера и строительстве автодороги Киев – Чоп.',
-      en: 'Participation as a subcontractor with engineering support in the tender success and construction of the Kyiv – Chop highway.',
+      az: 'Kiyev - Çop avtomobil yolu üzrə tenderin udulmasında və yolun tikintisində mühəndislik dəstəyi ilə subpodratçı kimi iştirak.',
+      ru: 'Участие в роли субподрядчика с инженерной поддержкой в выигрыше тендера и строительстве автодороги Киев - Чоп.',
+      en: 'Participation as a subcontractor with engineering support in the tender success and construction of the Kyiv - Chop highway.',
     },
   },
   {
@@ -154,7 +154,7 @@ export const projects: Project[] = [
     cover: '/images/projects/project-05.svg',
     gallery: ['/images/projects/project-05.svg', '/images/projects/project-08.svg', '/images/projects/project-04.svg'],
     period: PERIOD,
-    name: { az: 'Samtredi – Qriqoleti avtomobil yolu', ru: 'Автодорога Самтредиа – Григолети', en: 'Samtredia – Grigoleti Highway' },
+    name: { az: 'Samtredi - Qriqoleti avtomobil yolu', ru: 'Автодорога Самтредиа - Григолети', en: 'Samtredia - Grigoleti Highway' },
     location: { az: 'Gürcüstan', ru: 'Грузия', en: 'Georgia' },
     partner: { az: 'Sinohydro', ru: 'Sinohydro', en: 'Sinohydro' },
     role: SUBCONTRACTOR,
@@ -165,9 +165,9 @@ export const projects: Project[] = [
       en: 'Earthworks and utility-line works. Subcontractor.',
     },
     description: {
-      az: 'Samtredi – Qriqoleti avtomobil yolu layihəsində torpaq və kommunikasiya xətləri işlərində subpodratçı kimi iştirak.',
-      ru: 'Участие в роли субподрядчика в земляных работах и прокладке коммуникаций на проекте автодороги Самтредиа – Григолети.',
-      en: 'Participation as a subcontractor in earthworks and utility-line works on the Samtredia – Grigoleti highway project.',
+      az: 'Samtredi - Qriqoleti avtomobil yolu layihəsində torpaq və kommunikasiya xətləri işlərində subpodratçı kimi iştirak.',
+      ru: 'Участие в роли субподрядчика в земляных работах и прокладке коммуникаций на проекте автодороги Самтредиа - Григолети.',
+      en: 'Participation as a subcontractor in earthworks and utility-line works on the Samtredia - Grigoleti highway project.',
     },
   },
   {
@@ -200,7 +200,7 @@ export const projects: Project[] = [
     cover: '/images/projects/project-07.svg',
     gallery: ['/images/projects/project-07.svg', '/images/projects/project-04.svg', '/images/projects/project-08.svg'],
     period: PERIOD,
-    name: { az: 'Bakı – Quba avtomobil yolu', ru: 'Автодорога Баку – Губа', en: 'Baku – Quba Highway' },
+    name: { az: 'Bakı - Quba avtomobil yolu', ru: 'Автодорога Баку - Губа', en: 'Baku - Quba Highway' },
     location: { az: 'Azərbaycan', ru: 'Азербайджан', en: 'Azerbaijan' },
     partner: { az: 'AKKORD', ru: 'AKKORD', en: 'AKKORD' },
     role: SUBCONTRACTOR,
@@ -211,9 +211,9 @@ export const projects: Project[] = [
       en: 'Repair and reconstruction of the concrete road. Subcontractor.',
     },
     description: {
-      az: 'Bakı – Quba avtomobil yolunun beton hissəsinin təmir və rekonstruksiya işlərində subpodratçı kimi iştirak.',
-      ru: 'Участие в роли субподрядчика в ремонте и реконструкции бетонного участка автодороги Баку – Губа.',
-      en: 'Participation as a subcontractor in the repair and reconstruction of the concrete section of the Baku – Quba highway.',
+      az: 'Bakı - Quba avtomobil yolunun beton hissəsinin təmir və rekonstruksiya işlərində subpodratçı kimi iştirak.',
+      ru: 'Участие в роли субподрядчика в ремонте и реконструкции бетонного участка автодороги Баку - Губа.',
+      en: 'Participation as a subcontractor in the repair and reconstruction of the concrete section of the Baku - Quba highway.',
     },
   },
   {
@@ -223,7 +223,7 @@ export const projects: Project[] = [
     cover: '/images/projects/project-08.svg',
     gallery: ['/images/projects/project-08.svg', '/images/projects/project-07.svg', '/images/projects/project-05.svg'],
     period: PERIOD,
-    name: { az: 'Bakı – Astara yeni avtomobil yolu', ru: 'Новая автодорога Баку – Астара', en: 'Baku – Astara New Highway' },
+    name: { az: 'Bakı - Astara yeni avtomobil yolu', ru: 'Новая автодорога Баку - Астара', en: 'Baku - Astara New Highway' },
     location: { az: 'Azərbaycan', ru: 'Азербайджан', en: 'Azerbaijan' },
     partner: { az: 'POLAD YOL', ru: 'POLAD YOL', en: 'POLAD YOL' },
     role: SUBCONTRACTOR,
@@ -234,9 +234,9 @@ export const projects: Project[] = [
       en: 'Earthworks including approach roads to bridges.',
     },
     description: {
-      az: 'Bakı – Astara yeni avtomobil yolu layihəsində körpülərin yanaşma yolları daxil olmaqla torpaq işlərinin icrasında iştirak.',
-      ru: 'Участие в выполнении земляных работ, включая подходные дороги к мостам, на проекте новой автодороги Баку – Астара.',
-      en: 'Participation in earthworks, including bridge approach roads, on the Baku – Astara new highway project.',
+      az: 'Bakı - Astara yeni avtomobil yolu layihəsində körpülərin yanaşma yolları daxil olmaqla torpaq işlərinin icrasında iştirak.',
+      ru: 'Участие в выполнении земляных работ, включая подходные дороги к мостам, на проекте новой автодороги Баку - Астара.',
+      en: 'Participation in earthworks, including bridge approach roads, on the Baku - Astara new highway project.',
     },
   },
   {

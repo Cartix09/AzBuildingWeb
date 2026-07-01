@@ -8,7 +8,7 @@ export interface ProcessStep {
   description: Loc
 }
 
-/** "How we execute your vision" — four-step execution process. */
+/** "How we execute your vision" - four-step execution process. */
 export const processSteps: ProcessStep[] = [
   {
     num: '01',

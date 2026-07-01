@@ -9,7 +9,7 @@ export interface Metric {
 }
 
 /**
- * COMPANY METRICS — honest, non-exaggerated. Founded 2009; experience spans
+ * COMPANY METRICS - honest, non-exaggerated. Founded 2009; experience spans
  * Azerbaijan, Georgia and Ukraine across civil, industrial and infrastructure
  * works. Do not inflate project counts. Confirm/refine with the client.
  */

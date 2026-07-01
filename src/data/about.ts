@@ -83,7 +83,7 @@ export const aboutContent = {
   certificates: {
     title: { az: 'Lisenziya və Sertifikatlar', ru: 'Лицензия и сертификаты', en: 'License & Certificates' } as Loc,
     // Official license document lives at /public/docs/license.pdf.
-    // Do NOT invent a license number or issue date — link the document instead.
+    // Do NOT invent a license number or issue date - link the document instead.
     file: '/docs/license.pdf',
     note: {
       az: 'Tikinti-quraşdırma işləri üzrə lisenziya sənədi əlavə olunmuşdur.',

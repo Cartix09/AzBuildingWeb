@@ -21,7 +21,7 @@ export function ProjectCard({ project }: { project: Project }) {
         <span className="absolute left-0 top-4 bg-orange-brand px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-white">
           {pick(projectTypeLabels[project.type], lang)}
         </span>
-        {/* Role tag (subcontractor / contractor) — meaningful per project */}
+        {/* Role tag (subcontractor / contractor) - meaningful per project */}
         <span className="absolute right-4 top-4 border border-white/20 bg-slate-deep/70 px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest text-base/90">
           {pick(project.role, lang)}
         </span>

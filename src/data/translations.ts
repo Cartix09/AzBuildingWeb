@@ -44,7 +44,7 @@ export const translations: Record<Lang, Tree> = {
       eyebrow: 'TİKİNTİ · MÜLKİ-SƏNAYE · İNFRASTRUKTUR',
       title: 'Tikinti və infrastrukturun icrası',
       subtitle:
-        '2009-cu ildən AZBUILDING — AZBİLDİNQ MMC mülki, sənaye və infrastruktur tikintisini Azərbaycan, Gürcüstan və Ukraynada təcrübəli, çoxprofilli icra tərəfdaşı kimi həyata keçirir.',
+        '2009-cu ildən AZBUILDING - AZBİLDİNQ MMC mülki, sənaye və infrastruktur tikintisini Azərbaycan, Gürcüstan və Ukraynada təcrübəli, çoxprofilli icra tərəfdaşı kimi həyata keçirir.',
     },
     sections: {
       metricsTag: 'ŞİRKƏT QISACA',
@@ -88,7 +88,7 @@ export const translations: Record<Lang, Tree> = {
     },
     footer: {
       summary:
-        'AZBUILDING LLC — AZBİLDİNQ MMC 2009-cu ildən mülki-sənaye və infrastruktur tikinti sektorunda fəaliyyət göstərən, təcrübəli çoxprofilli icra tərəfdaşıdır.',
+        'AZBUILDING LLC - AZBİLDİNQ MMC 2009-cu ildən mülki-sənaye və infrastruktur tikinti sektorunda fəaliyyət göstərən, təcrübəli çoxprofilli icra tərəfdaşıdır.',
       quickNav: 'Naviqasiya',
       company: 'Şirkət',
       contact: 'Əlaqə',
@@ -126,7 +126,7 @@ export const translations: Record<Lang, Tree> = {
     },
     projects: {
       participationNote:
-        'Portfolio 2009–2025 və sonrakı dövrlərdə görülmüş işləri və iştirakı əks etdirir. Bəzi işlər tam rəsmi sənədləşmə ilə müşayiət olunmadığından, layihələr təcrübə / iştirak formatında, şirkətin rolu olduğu kimi göstərilməklə təqdim olunur.',
+        'Portfolio 2009-2025 və sonrakı dövrlərdə görülmüş işləri və iştirakı əks etdirir. Bəzi işlər tam rəsmi sənədləşmə ilə müşayiət olunmadığından, layihələr təcrübə / iştirak formatında, şirkətin rolu olduğu kimi göstərilməklə təqdim olunur.',
       confidentialNote: 'Sifarişçinin istəyi ilə bəzi layihə təfərrüatları məxfi saxlanılır.',
     },
   },
@@ -161,7 +161,7 @@ export const translations: Record<Lang, Tree> = {
       eyebrow: 'СТРОИТЕЛЬСТВО · ГРАЖД.-ПРОМ. · ИНФРАСТРУКТУРА',
       title: 'Строительство и инфраструктура',
       subtitle:
-        'С 2009 года AZBUILDING — AZBİLDİNQ MMC реализует гражданское, промышленное и инфраструктурное строительство как опытный многопрофильный исполнительный партнёр в Азербайджане, Грузии и Украине.',
+        'С 2009 года AZBUILDING - AZBİLDİNQ MMC реализует гражданское, промышленное и инфраструктурное строительство как опытный многопрофильный исполнительный партнёр в Азербайджане, Грузии и Украине.',
     },
     sections: {
       metricsTag: 'КОМПАНИЯ КРАТКО',
@@ -205,7 +205,7 @@ export const translations: Record<Lang, Tree> = {
     },
     footer: {
       summary:
-        'AZBUILDING LLC — AZBİLDİNQ MMC работает в сфере гражданско-промышленного и инфраструктурного строительства с 2009 года как опытный многопрофильный исполнительный партнёр.',
+        'AZBUILDING LLC - AZBİLDİNQ MMC работает в сфере гражданско-промышленного и инфраструктурного строительства с 2009 года как опытный многопрофильный исполнительный партнёр.',
       quickNav: 'Навигация',
       company: 'Компания',
       contact: 'Контакты',
@@ -243,7 +243,7 @@ export const translations: Record<Lang, Tree> = {
     },
     projects: {
       participationNote:
-        'Портфолио отражает работы и участие, выполненные в период 2009–2025 и позже. Поскольку часть работ не сопровождалась полной формальной документацией, проекты представлены в формате опыта / участия, с указанием роли компании как есть.',
+        'Портфолио отражает работы и участие, выполненные в период 2009-2025 и позже. Поскольку часть работ не сопровождалась полной формальной документацией, проекты представлены в формате опыта / участия, с указанием роли компании как есть.',
       confidentialNote: 'По просьбе заказчика отдельные детали проектов сохраняются конфиденциальными.',
     },
   },
@@ -278,7 +278,7 @@ export const translations: Record<Lang, Tree> = {
       eyebrow: 'CONSTRUCTION · CIVIL-INDUSTRIAL · INFRASTRUCTURE',
       title: 'Construction & infrastructure execution',
       subtitle:
-        'Since 2009, AZBUILDING — AZBİLDİNQ MMC has delivered civil, industrial and infrastructure construction across Azerbaijan, Georgia and Ukraine as an experienced, multi-profile execution partner.',
+        'Since 2009, AZBUILDING - AZBİLDİNQ MMC has delivered civil, industrial and infrastructure construction across Azerbaijan, Georgia and Ukraine as an experienced, multi-profile execution partner.',
     },
     sections: {
       metricsTag: 'COMPANY AT A GLANCE',
@@ -322,7 +322,7 @@ export const translations: Record<Lang, Tree> = {
     },
     footer: {
       summary:
-        'AZBUILDING LLC — AZBİLDİNQ MMC has worked in civil-industrial and infrastructure construction since 2009 as an experienced, multi-profile execution partner.',
+        'AZBUILDING LLC - AZBİLDİNQ MMC has worked in civil-industrial and infrastructure construction since 2009 as an experienced, multi-profile execution partner.',
       quickNav: 'Navigation',
       company: 'Company',
       contact: 'Contact',
@@ -360,25 +360,25 @@ export const translations: Record<Lang, Tree> = {
     },
     projects: {
       participationNote:
-        'The portfolio reflects works and participation carried out during 2009–2025 and later. As some works were not accompanied by full formal documentation, projects are presented in an experience / participation format, with the company’s role shown as stated.',
+        'The portfolio reflects works and participation carried out during 2009-2025 and later. As some works were not accompanied by full formal documentation, projects are presented in an experience / participation format, with the company’s role shown as stated.',
       confidentialNote: 'At the client’s request, certain project details are kept confidential.',
     },
   },
 }
 
-/** Company contact info — single source of truth (AZB sayt info). */
+/** Company contact info - single source of truth (AZB sayt info). */
 export const company = {
   // Brand name for copyright/meta. Logo wordmark stays "AZBUILDING MMC".
-  name: 'AZBUILDING LLC — AZBİLDİNQ MMC',
+  name: 'AZBUILDING LLC - AZBİLDİNQ MMC',
   domain: 'azbuilding.az',
   website: 'https://www.azbuilding.az',
-  // Actual office address — used for the main visible location + Google Maps.
+  // Actual office address - used for the main visible location + Google Maps.
   address: {
     az: 'Bakı, Nizami rayonu, Şirin Mirzəyev küçəsi, ev 2535, mənzil A15',
     ru: 'Баку, Низаминский р-н, ул. Ширин Мирзоев, дом 2535, кв. A15',
     en: 'Baku, Nizami district, Shirin Mirzayev str. 2535, apt. A15',
   } as Record<Lang, string>,
-  // Legal (registered) address — shown alongside the actual address on Contact.
+  // Legal (registered) address - shown alongside the actual address on Contact.
   legalAddress: {
     az: 'Bakı, Xətai rayonu, 8 Noyabr (Nobel) prospekti, ev 23, mənzil 56',
     ru: 'Баку, Хатаинский р-н, проспект 8 Ноября (Нобель), дом 23, кв. 56',
@@ -386,7 +386,7 @@ export const company = {
   } as Record<Lang, string>,
   // Google Maps query points at the ACTUAL office address.
   mapsQuery: 'Şirin Mirzəyev küçəsi 2535, Nizami rayonu, Bakı, Azərbaycan',
-  phone: '+994 00 000 00 00', // TODO: client did not provide a phone — confirm.
+  phone: '+994 00 000 00 00', // TODO: client did not provide a phone - confirm.
   // NOTE: the client PDF wrote "ingo@azbuilding.az", which looks like a typo for
   // "info@azbuilding.az". Keeping the safer "info@" until the client confirms.
   // TODO: confirm whether the email is ingo@azbuilding.az or info@azbuilding.az.

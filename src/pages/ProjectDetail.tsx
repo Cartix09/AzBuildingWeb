@@ -93,7 +93,7 @@ export function ProjectDetail() {
                     onClick={() => setActiveImg(i)}
                     className={`group block aspect-[4/3] w-full overflow-hidden border ${i === activeImg ? 'border-orange-brand' : 'border-white/10'}`}
                   >
-                    <img src={img} alt={`${pick(project.name, lang)} — ${i + 1}`} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <img src={img} alt={`${pick(project.name, lang)} - ${i + 1}`} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   </button>
                 </Reveal>
               ))}

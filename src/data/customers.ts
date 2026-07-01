@@ -1,5 +1,5 @@
 /**
- * CUSTOMERS — placeholder logo slots.
+ * CUSTOMERS - placeholder logo slots.
  * Drop real SVG/PNG logos into /public/logos/ and set `logo` to the path.
  */
 export interface Customer {

@@ -22,7 +22,7 @@ export interface Service {
 }
 
 /**
- * SERVICES — the company's real core service categories (AZB sayt info).
+ * SERVICES - the company's real core service categories (AZB sayt info).
  * AZBUILDING is a construction, civil-industrial and infrastructure execution
  * company. Replace `image` with real photos in /public/images/services/.
  */
@@ -83,9 +83,9 @@ export const services: Service[] = [
       en: 'Excavation, grading and site preparation.',
     },
     description: {
-      az: 'Torpaq işləri və ərazinin planlaşdırılması — qazıntıdan sahə hazırlığına qədər.',
-      ru: 'Земляные работы и планировка территории — от экскавации до подготовки площадки.',
-      en: 'Earthworks and site planning — from excavation to site preparation.',
+      az: 'Torpaq işləri və ərazinin planlaşdırılması - qazıntıdan sahə hazırlığına qədər.',
+      ru: 'Земляные работы и планировка территории - от экскавации до подготовки площадки.',
+      en: 'Earthworks and site planning - from excavation to site preparation.',
     },
     scope: {
       az: ['Qazıntı işləri', 'Ərazinin planlaşdırılması', 'Sahə hazırlığı', 'Qruntun möhkəmləndirilməsi'],
@@ -127,7 +127,7 @@ export const services: Service[] = [
       en: 'Monolithic structures and interior fit-out.',
     },
     description: {
-      az: 'Monolit konstruksiya işləri və daxili fit-out — kommersiya və tibbi məkanlar daxil olmaqla.',
+      az: 'Monolit konstruksiya işləri və daxili fit-out - kommersiya və tibbi məkanlar daxil olmaqla.',
       ru: 'Монолитные конструкции и внутренний fit-out, в том числе коммерческие и медицинские помещения.',
       en: 'Monolithic construction works and interior fit-out, including commercial and medical spaces.',
     },
@@ -149,9 +149,9 @@ export const services: Service[] = [
       en: 'Project coordination and engineering support.',
     },
     description: {
-      az: 'Layihələrin idarə olunması və mühəndislik dəstəyi — qrafik, koordinasiya, texniki həllər və icra nəzarəti.',
-      ru: 'Управление проектами и инженерная поддержка — график, координация, технические решения и контроль исполнения.',
-      en: 'Project management and engineering support — scheduling, coordination, technical solutions and execution control.',
+      az: 'Layihələrin idarə olunması və mühəndislik dəstəyi - qrafik, koordinasiya, texniki həllər və icra nəzarəti.',
+      ru: 'Управление проектами и инженерная поддержка - график, координация, технические решения и контроль исполнения.',
+      en: 'Project management and engineering support - scheduling, coordination, technical solutions and execution control.',
     },
     scope: {
       az: ['Layihə qrafiki və koordinasiya', 'Mühəndislik dəstəyi', 'Subpodratçı koordinasiyası', 'İcra və keyfiyyət nəzarəti'],

@@ -38,7 +38,7 @@ export function HeroSlider() {
           transition={{ duration: 1.2, ease: 'easeOut' }}
         />
       </AnimatePresence>
-      {/* Dark overlays — lighter veil so the industrial art reads stronger,
+      {/* Dark overlays - lighter veil so the industrial art reads stronger,
           with a left-darker gradient that keeps the headline crisp. */}
       <div className="absolute inset-0 bg-slate-deep/45" />
       <div className="absolute inset-0 bg-gradient-to-r from-slate-deep/85 via-slate-deep/40 to-slate-deep/20" />

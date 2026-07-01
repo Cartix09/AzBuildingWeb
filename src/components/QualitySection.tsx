@@ -39,7 +39,7 @@ export function QualitySection() {
           ))}
         </div>
 
-        {/* Dossier download — placeholder link, replace href with real PDF */}
+        {/* Dossier download - placeholder link, replace href with real PDF */}
         <div className="mt-12 flex justify-center">
           <a
             href="#"

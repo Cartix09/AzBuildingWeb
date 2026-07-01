@@ -16,7 +16,7 @@ const variants: Variants = {
 
 interface RevealProps {
   children: ReactNode
-  /** Stagger index — multiplied by 100ms for sequential reveals. */
+  /** Stagger index - multiplied by 100ms for sequential reveals. */
   index?: number
   className?: string
   as?: 'div' | 'li' | 'section' | 'article'

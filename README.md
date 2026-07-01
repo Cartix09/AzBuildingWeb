@@ -1,4 +1,4 @@
-# AZBUILDING MMC — Website
+# AZBUILDING MMC - Website
 
 Industrial construction **portfolio / company-profile** website for AZBUILDING MMC
 (azbuilding.az). Multilingual (AZ / RU / EN), dark industrial design, with a
@@ -27,7 +27,7 @@ npm run lint       # eslint
 
 ```
 public/
-  images/          # placeholder photography (replace) — hero, projects, services, about
+  images/          # placeholder photography (replace) - hero, projects, services, about
   logos/           # brand mark + partner/customer logos
 src/
   components/      # Header, Footer, HeroSlider, Timeline, ContactForm, etc.
@@ -41,12 +41,12 @@ scripts/
 
 ## Where to edit content
 
-All content is data-driven in `src/data/` — you rarely need to touch components:
+All content is data-driven in `src/data/` - you rarely need to touch components:
 
 | File | Controls |
 |------|----------|
 | `services.ts` | Services list + detail pages (scope, descriptions, icons) |
-| `projects.ts` | **Portfolio** — projects, metadata, galleries, types/filters |
+| `projects.ts` | **Portfolio** - projects, metadata, galleries, types/filters |
 | `customers.ts` / `partners.ts` | Logo slots (set `logo` to a file in `/public/logos`) |
 | `timeline.ts` | Company milestones (years are placeholders) |
 | `metrics.ts` | Structural-metrics numbers (placeholders) |
@@ -63,7 +63,7 @@ The choice persists in `localStorage`. Add/adjust UI copy in `translations.ts`.
 
 ## Connecting the contact form to email
 
-This is a **static** site — there is no server, so never put SMTP/Gmail
+This is a **static** site - there is no server, so never put SMTP/Gmail
 passwords or secret API keys in the code (anything shipped to the browser is
 public). Instead, submit to a third-party form backend via an environment
 variable. Beginner-friendly steps:
@@ -83,7 +83,7 @@ variable. Beginner-friendly steps:
 # Formspree
 VITE_CONTACT_FORM_ENDPOINT=https://formspree.io/f/your-form-id
 
-# — or — Web3Forms (also set the PUBLIC access key)
+# - or - Web3Forms (also set the PUBLIC access key)
 VITE_CONTACT_FORM_ENDPOINT=https://api.web3forms.com/submit
 VITE_WEB3FORMS_KEY=your-public-access-key
 ```
@@ -94,7 +94,7 @@ VITE_WEB3FORMS_KEY=your-public-access-key
 `VITE_*` variables at **build time**, so set them in the hosting dashboard and
 re-deploy.
 
-If no endpoint is configured the form does **not** silently fail — it shows a
+If no endpoint is configured the form does **not** silently fail - it shows a
 clear "not configured" message. Values are trimmed before sending and React
 escapes all text (no HTML injection). Full instructions are also in the comment
 block at the top of `src/components/ContactForm.tsx`.
@@ -156,7 +156,7 @@ placeholders any time with `node scripts/gen-placeholders.mjs`.
 ## Security notes
 
 - No secrets are committed. `.env` is git-ignored; only `.env.example` (empty
-  values) is tracked. `VITE_*` vars are **public** by design — never store real
+  values) is tracked. `VITE_*` vars are **public** by design - never store real
   passwords or private API keys in them.
 - All `target="_blank"` links use `rel="noopener noreferrer"`.
 - Form input is trimmed before submit and rendered through React (auto-escaped),
@@ -186,4 +186,4 @@ placeholders any time with `node scripts/gen-placeholders.mjs`.
 - **Email**: confirm `info@` vs `ingo@` (see TODO above).
 - **Projects**: real photos for the 11 portfolio entries in `projects.ts`.
 - **License PDF**: already added at `public/docs/license.pdf` and shown on the
-  About page — replace with an updated scan if needed.
+  About page - replace with an updated scan if needed.

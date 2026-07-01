@@ -60,7 +60,7 @@
     @apply font-display font-extrabold tracking-tight;
   }
 
-  /* Primary orange CTA — square corners. Add the `group` class at call sites
+  /* Primary orange CTA - square corners. Add the `group` class at call sites
      for the icon hover animations. `whitespace-nowrap` keeps longer locales
      (e.g. AZ "Layihə sifariş et") on a single line. */
   .btn-primary {

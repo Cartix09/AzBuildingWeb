@@ -16,14 +16,14 @@ export function Home() {
   const { t } = useLanguage()
   useDocumentMeta(
     'Construction & Infrastructure',
-    'AZBUILDING LLC — AZBİLDİNQ MMC: civil-industrial and infrastructure construction since 2009. Selected projects across Azerbaijan, Georgia and Ukraine.',
+    'AZBUILDING LLC - AZBİLDİNQ MMC: civil-industrial and infrastructure construction since 2009. Selected projects across Azerbaijan, Georgia and Ukraine.',
   )
 
   return (
     <>
       <HeroSlider />
 
-      {/* Selected / featured portfolio projects — the focus of the home page */}
+      {/* Selected / featured portfolio projects - the focus of the home page */}
       <section className="border-b border-white/5 bg-slate-deep py-24 md:py-32">
         <div className="container-x">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">

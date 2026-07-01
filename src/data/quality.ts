@@ -53,7 +53,7 @@ export const qualityValues: QualityValue[] = [
   },
 ]
 
-/** Marquee strip under the quality cards — neutral, non-claiming wording. */
+/** Marquee strip under the quality cards - neutral, non-claiming wording. */
 export const qualityBadges: Loc[] = [
   { az: 'KEYFİYYƏTƏ YÖNƏLİK', ru: 'ОРИЕНТАЦИЯ НА КАЧЕСТВО', en: 'QUALITY-FOCUSED' },
   { az: 'SƏNƏDLƏŞMƏ HAZIR', ru: 'ДОКУМЕНТАЦИЯ ГОТОВА', en: 'DOCUMENTATION-READY' },
