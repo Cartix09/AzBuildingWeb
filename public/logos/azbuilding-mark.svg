@@ -1,25 +1,37 @@
-<svg width="50" height="52" viewBox="0 0 50 52" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AZBUILDING mark">
-  <!-- Architectural "A": left ramp/bridge + right stepped tower, joined by a
-       crossbar. Explicit colours (white + orange accent) so it stays visible
-       when loaded as an <img> on the dark header. Replace with the official
-       brand SVG when available. -->
-  <g fill="none" stroke="#F8FAFC" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="miter">
-    <!-- left ramp (two parallel beams) -->
-    <path d="M5 49 L25 5" />
-    <path d="M11 49 L27 9" />
-    <!-- right tower edge -->
-    <path d="M25 5 L44 49" />
-    <!-- stepped tower ticks on the right -->
-    <path d="M30 18 L35 18" />
-    <path d="M33 27 L39 27" />
-    <path d="M36 36 L42 36" />
-    <path d="M39 44 L45 44" />
-    <!-- crossbar (two parallel beams) -->
-    <path d="M13 33 L40 33" />
-    <path d="M14 37 L41 37" />
+<svg width="100" height="92" viewBox="0 0 100 92" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AZBUILDING mark">
+  <!-- Architectural line-art "A" reproduced from the brand reference:
+       a long diagonal ramp with a dashed centre line on the left, a stepped
+       tower on the right, and a cantilevered crossbar. Pure white line-art on a
+       transparent background (blue reference background removed). Replace with
+       the official vector when supplied. -->
+  <g stroke="#F8FAFC" stroke-width="1.5" fill="none" stroke-linecap="butt" stroke-linejoin="miter">
+    <!-- RIGHT STEPPED TOWER: left edge + top + stepped right silhouette -->
+    <path d="M70 16 L70 84" />
+    <path d="M70 16 L80 10" />
+    <path d="M80 10 L80 22 L83 22 L83 36 L86 36 L86 50 L88 50 L88 64 L90 64 L90 84" />
+    <!-- tower floor lines -->
+    <path d="M70 22 L83 22" />
+    <path d="M70 29 L83 29" />
+    <path d="M70 36 L86 36" />
+    <path d="M70 43 L86 43" />
+    <path d="M70 50 L88 50" />
+    <path d="M70 57 L88 57" />
+    <path d="M70 64 L90 64" />
+    <path d="M70 71 L90 71" />
+    <path d="M70 78 L90 78" />
+    <path d="M70 84 L90 84" />
+
+    <!-- LEFT RAMP: parallel beams fanning to the apex -->
+    <path d="M72 14 L10 80" />
+    <path d="M70 22 L15 84" />
+    <path d="M68 30 L20 87" />
+
+    <!-- CROSSBAR: cantilevered slab converging to a left point -->
+    <path d="M5 56 L70 50" />
+    <path d="M5 58 L70 54" />
+    <path d="M7 61 L70 58" />
+    <path d="M7 63 L70 62" />
   </g>
   <!-- dashed ramp centre line -->
-  <path d="M8 49 L26 7" stroke="#F8FAFC" stroke-width="1" stroke-dasharray="2 3" opacity="0.8" />
-  <!-- orange structural node where the crossbar meets the ramp -->
-  <rect x="11.5" y="31.5" width="4.2" height="4.2" fill="#EA580C" />
+  <path d="M71 18 L13 82" stroke="#F8FAFC" stroke-width="1" stroke-dasharray="3 3" opacity="0.85" />
 </svg>
