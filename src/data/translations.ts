@@ -34,6 +34,8 @@ export const translations: Record<Lang, Tree> = {
       backToPortfolio: 'Portfolioya qayıt',
       learnMore: 'Ətraflı',
       downloadDossier: 'Keyfiyyət sənədini yüklə (PDF)',
+      viewLicense: 'Lisenziyanı aç',
+      downloadPdf: 'PDF yüklə',
     },
     topbar: {
       tagline: 'Tikinti və Mühəndislik Mükəmməlliyi',
@@ -149,6 +151,8 @@ export const translations: Record<Lang, Tree> = {
       backToPortfolio: 'Назад к портфолио',
       learnMore: 'Подробнее',
       downloadDossier: 'Скачать досье качества (PDF)',
+      viewLicense: 'Открыть лицензию',
+      downloadPdf: 'Скачать PDF',
     },
     topbar: {
       tagline: 'Совершенство в строительстве и инжиниринге',
@@ -264,6 +268,8 @@ export const translations: Record<Lang, Tree> = {
       backToPortfolio: 'Back to Portfolio',
       learnMore: 'Learn More',
       downloadDossier: 'Download Quality Dossier (PDF)',
+      viewLicense: 'View License',
+      downloadPdf: 'Download PDF',
     },
     topbar: {
       tagline: 'Construction & Engineering Excellence',

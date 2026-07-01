@@ -41,7 +41,7 @@ export function LogoMarquee({ items, duration = 40, reverse = false }: LogoMarqu
           return (
             <li key={i} className="relative mx-2 shrink-0 hover:z-10" aria-hidden={i >= items.length}>
               {item.url ? (
-                <a href={item.url} target="_blank" rel="noreferrer">
+                <a href={item.url} target="_blank" rel="noopener noreferrer">
                   {box}
                 </a>
               ) : (

@@ -5,18 +5,38 @@ import { services } from '../data/services'
 import { cn } from '../lib/cn'
 
 /*
- * CONTACT FORM
- * ------------
- * Submission target is read from the Vite env var VITE_CONTACT_FORM_ENDPOINT.
- * It POSTs JSON, which works with:
- *   - Formspree:  VITE_CONTACT_FORM_ENDPOINT=https://formspree.io/f/<id>
- *   - Web3Forms:  VITE_CONTACT_FORM_ENDPOINT=https://api.web3forms.com/submit
- *                 (also set VITE_WEB3FORMS_KEY — it is a PUBLIC access key)
- *   - Custom API / serverless function that accepts a JSON POST.
+ * CONTACT FORM — how to connect it to a real email inbox
+ * ======================================================
+ * This is a STATIC frontend. Never put SMTP/Gmail passwords or secret API keys
+ * in this code — anything shipped to the browser is public. Instead, submit to a
+ * third-party form backend (or your own serverless function) via an env var.
  *
- * If the endpoint is not configured, the form does NOT silently fail — it shows
- * a clear "not configured" message so nobody assumes a submission was sent.
- * No private keys are hardcoded here.
+ * The submit target is read from VITE_CONTACT_FORM_ENDPOINT (see .env.example).
+ * Copy .env.example to .env, set the value, then restart `npm run dev`.
+ *
+ * 1) FORMSPREE (https://formspree.io) — easiest, no key in the frontend:
+ *      - Create a form, copy its endpoint.
+ *      - .env:  VITE_CONTACT_FORM_ENDPOINT=https://formspree.io/f/xxxxxx
+ *      - Emails arrive at the address you configured in Formspree.
+ *
+ * 2) WEB3FORMS (https://web3forms.com) — uses a PUBLIC access key (safe to ship):
+ *      - Get a free access key tied to your inbox.
+ *      - .env:  VITE_CONTACT_FORM_ENDPOINT=https://api.web3forms.com/submit
+ *               VITE_WEB3FORMS_KEY=your-public-access-key
+ *      - The key below is sent as `access_key` in the JSON body.
+ *
+ * 3) NETLIFY FORMS: prefer a native Netlify form (add `data-netlify="true"` to a
+ *      plain HTML form) OR point VITE_CONTACT_FORM_ENDPOINT at a Netlify Function
+ *      URL (e.g. /.netlify/functions/contact) that emails you server-side.
+ *
+ * 4) CUSTOM BACKEND / SERVERLESS: set VITE_CONTACT_FORM_ENDPOINT to any URL that
+ *      accepts a JSON POST { name, phone, email, company, serviceType, message }.
+ *      Keep all secrets (SMTP creds, API keys) on the SERVER, never here.
+ *
+ * If no endpoint is configured, the form does NOT silently fail — it shows a
+ * clear "not configured" message so nobody assumes a submission was sent.
+ * Values are trimmed before sending; React escapes all rendered text (no HTML
+ * injection).
  */
 
 const ENDPOINT = import.meta.env.VITE_CONTACT_FORM_ENDPOINT as string | undefined
@@ -75,7 +95,11 @@ export function ContactForm() {
 
     setStatus('loading')
     try {
-      const payload: Record<string, string> = { ...form, source: 'azbuilding.az contact form' }
+      // Trim every value before sending (basic sanitisation).
+      const trimmed = Object.fromEntries(
+        Object.entries(form).map(([k, v]) => [k, v.trim()]),
+      ) as Record<string, string>
+      const payload: Record<string, string> = { ...trimmed, source: 'azbuilding.az contact form' }
       if (WEB3FORMS_KEY) payload.access_key = WEB3FORMS_KEY
 
       const res = await fetch(ENDPOINT, {

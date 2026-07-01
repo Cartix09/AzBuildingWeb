@@ -17,7 +17,7 @@ export function Services() {
         eyebrow={t('sections.servicesTag')}
         title={t('sections.servicesTitle')}
         description={t('hero.subtitle')}
-        image="/images/services/construction-works.svg"
+        image="/images/pagehero/services.svg"
       />
       <section className="bg-slate-deep py-20 md:py-28">
         <div className="container-x">

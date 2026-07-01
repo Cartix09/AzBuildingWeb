@@ -188,6 +188,37 @@ function heroSection() {
   return s + foot(w, h, id)
 }
 
+// ---- Hero scene 4: road / infrastructure (for the Projects page) ----
+function heroRoad() {
+  const w = 1600, h = 1000, id = 'd'
+  const vx = 820, vy = 430 // vanishing point
+  let s = frame(w, h, id, 0.09)
+  // distant skyline near the horizon
+  for (let i = 0; i < 10; i++) s += building(120 + i * 150, vy + 30, 90, 40 + Math.random() * 90, 0.4, 0.85)
+  // road surface (trapezoid converging to the vanishing point)
+  s += `<path d="M300 ${h} L${vx - 26} ${vy} L${vx + 26} ${vy} L1300 ${h} Z" fill="${NIGHT}" stroke="${STEEL}" stroke-opacity="0.35"/>`
+  // side lane lines
+  s += `<g stroke="${STEEL}" stroke-opacity="0.4" stroke-width="2"><line x1="470" y1="${h}" x2="${vx - 14}" y2="${vy}"/><line x1="1130" y1="${h}" x2="${vx + 14}" y2="${vy}"/></g>`
+  // dashed orange centre line
+  s += `<g stroke="${ORANGE}" stroke-width="6" stroke-opacity="0.8">`
+  for (let t = 0; t < 1; t += 0.14) {
+    const y1 = h + t * (vy - h), y2 = h + Math.min(1, t + 0.07) * (vy - h)
+    const x1 = 800 + t * (vx - 800), x2 = 800 + Math.min(1, t + 0.07) * (vx - 800)
+    const scale = 1 - t
+    s += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke-width="${Math.max(1.5, 7 * scale)}"/>`
+  }
+  s += '</g>'
+  // roadside light poles receding on both sides
+  const pole = (bx, by, hh) => `<g stroke="${STEEL}" stroke-width="${Math.max(1, hh / 60)}" stroke-opacity="0.5"><line x1="${bx}" y1="${by}" x2="${bx}" y2="${by - hh}"/><line x1="${bx}" y1="${by - hh}" x2="${bx + (bx < vx ? 22 : -22) * (hh / 130)}" y2="${by - hh}"/></g>`
+  for (let t = 0; t < 1; t += 0.2) {
+    const scale = 1 - t
+    const ly = h - t * (h - vy) - 40
+    s += pole(360 - t * (360 - (vx - 40)) * 0.0 + (vx - 40 - 360) * t, ly, 150 * scale + 20)
+    s += pole(1240 - (1240 - (vx + 40)) * t, ly, 150 * scale + 20)
+  }
+  return s + foot(w, h, id)
+}
+
 // ---- Clean industrial tile for projects / services / about (no text) ----
 function tile(seed = 0, w = 1200, h = 900) {
   const id = 't' + seed
@@ -212,10 +243,17 @@ function tile(seed = 0, w = 1200, h = 900) {
 }
 
 const files = {
-  // Hero slides — premium, text-free industrial scenes
+  // Home hero slides — premium, text-free industrial scenes
   'images/hero/hero-1.svg': heroSkyline(),
   'images/hero/hero-2.svg': heroStructure(),
   'images/hero/hero-3.svg': heroSection(),
+  // Internal page heroes — themed, stronger scenes (reused across languages)
+  'images/pagehero/services.svg': heroStructure(),
+  'images/pagehero/projects.svg': heroRoad(),
+  'images/pagehero/partners.svg': heroSection(),
+  'images/pagehero/customers.svg': heroSkyline(),
+  'images/pagehero/contact.svg': heroSection(),
+  'images/pagehero/about.svg': heroSkyline(),
   // Projects (project-01..11 map to entries in src/data/projects.ts)
   'images/projects/project-01.svg': tile(0),
   'images/projects/project-02.svg': tile(2),

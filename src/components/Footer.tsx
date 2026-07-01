@@ -27,13 +27,13 @@ export function Footer() {
             <Logo />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-steel">{t('footer.summary')}</p>
             <div className="mt-6 flex items-center gap-4">
-              <a href={company.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="border border-white/10 p-2.5 text-steel transition-colors hover:border-orange-brand hover:text-orange-brand">
+              <a href={company.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="border border-white/10 p-2.5 text-steel transition-colors hover:border-orange-brand hover:text-orange-brand">
                 <Instagram className="h-4 w-4" />
               </a>
-              <a href={company.social.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="border border-white/10 p-2.5 text-steel transition-colors hover:border-orange-brand hover:text-orange-brand">
+              <a href={company.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="border border-white/10 p-2.5 text-steel transition-colors hover:border-orange-brand hover:text-orange-brand">
                 <Facebook className="h-4 w-4" />
               </a>
-              <a href={company.social.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="border border-white/10 p-2.5 text-steel transition-colors hover:border-orange-brand hover:text-orange-brand">
+              <a href={company.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="border border-white/10 p-2.5 text-steel transition-colors hover:border-orange-brand hover:text-orange-brand">
                 <Linkedin className="h-4 w-4" />
               </a>
             </div>
@@ -72,7 +72,7 @@ export function Footer() {
             <h3 className="eyebrow">{t('footer.contact')}</h3>
             <ul className="mt-5 space-y-4 text-sm text-steel">
               <li>
-                <a href={mapsUrl} target="_blank" rel="noreferrer" className="flex items-start gap-3 transition-colors hover:text-orange-brand">
+                <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 transition-colors hover:text-orange-brand">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-orange-brand" />
                   <span>{pick(company.address, lang)}</span>
                 </a>

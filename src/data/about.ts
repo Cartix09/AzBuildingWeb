@@ -82,12 +82,13 @@ export const aboutContent = {
   ],
   certificates: {
     title: { az: 'Lisenziya və Sertifikatlar', ru: 'Лицензия и сертификаты', en: 'License & Certificates' } as Loc,
-    // License exists per the client; the document image is to be added later.
-    // Do NOT invent a license number or issue date.
+    // Official license document lives at /public/docs/license.pdf.
+    // Do NOT invent a license number or issue date — link the document instead.
+    file: '/docs/license.pdf',
     note: {
-      az: 'Tikinti işləri üçün lisenziya var. Şəkil / sənəd təqdim olunacaq.',
-      ru: 'Имеется лицензия на строительные работы. Изображение / документ будет добавлено.',
-      en: 'Construction works license available. Image / document to be added.',
+      az: 'Tikinti-quraşdırma işləri üzrə lisenziya sənədi əlavə olunmuşdur.',
+      ru: 'Документ лицензии на строительно-монтажные работы доступен.',
+      en: 'Construction-installation works license document is available.',
     } as Loc,
   },
 }

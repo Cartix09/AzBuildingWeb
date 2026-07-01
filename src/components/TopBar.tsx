@@ -13,7 +13,7 @@ export function TopBar() {
           <a
             href={mapsUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 transition-colors hover:text-orange-brand"
           >
             <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
@@ -28,13 +28,13 @@ export function TopBar() {
           </a>
         </div>
         <div className="flex items-center gap-4">
-          <a href={company.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="transition-colors hover:text-orange-brand">
+          <a href={company.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-colors hover:text-orange-brand">
             <Instagram className="h-4 w-4" />
           </a>
-          <a href={company.social.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="transition-colors hover:text-orange-brand">
+          <a href={company.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="transition-colors hover:text-orange-brand">
             <Facebook className="h-4 w-4" />
           </a>
-          <a href={company.social.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="transition-colors hover:text-orange-brand">
+          <a href={company.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition-colors hover:text-orange-brand">
             <Linkedin className="h-4 w-4" />
           </a>
         </div>

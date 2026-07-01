@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom'
-import { ArrowUpRight, Target, Eye, FileBadge } from 'lucide-react'
+import { Target, Eye, FileText, ExternalLink, Download } from 'lucide-react'
 import { PageHero } from '../components/PageHero'
 import { SectionHeading } from '../components/SectionHeading'
 import { Timeline } from '../components/Timeline'
@@ -20,7 +19,7 @@ export function About() {
         eyebrow={pick(a.eyebrow, lang)}
         title={pick(a.title, lang)}
         description={pick(a.intro, lang)}
-        image="/images/about/about-1.svg"
+        image="/images/pagehero/about.svg"
       />
 
       {/* Mission / Vision */}
@@ -65,17 +64,50 @@ export function About() {
         </div>
       </section>
 
-      {/* Certificates placeholder */}
+      {/* Official license document */}
       <section className="bg-slate-deep py-24 md:py-32">
         <div className="container-x">
-          <SectionHeading index="[03]" eyebrow="DOCUMENTATION" title={pick(a.certificates.title, lang)} className="mb-10" />
-          <Reveal className="flex flex-col items-start gap-6 border border-dashed border-white/15 bg-slate-surface/30 p-10 md:flex-row md:items-center">
-            <FileBadge className="h-10 w-10 shrink-0 text-steel" strokeWidth={1.5} />
-            <p className="max-w-2xl text-steel">{pick(a.certificates.note, lang)}</p>
-            <Link to="/contact" className="group btn-ghost shrink-0 md:ml-auto">
-              {t('cta.sendInquiry')}
-              <ArrowUpRight className="h-4 w-4" />
-            </Link>
+          <SectionHeading index="[03]" eyebrow="LICENSE" title={pick(a.certificates.title, lang)} className="mb-10" />
+          <Reveal className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 lg:grid-cols-2">
+            {/* Info + actions */}
+            <div className="flex flex-col justify-between gap-8 bg-slate-deep p-8 md:p-10">
+              <div>
+                <span className="inline-flex border border-orange-brand/40 p-3 text-orange-brand">
+                  <FileText className="h-7 w-7" strokeWidth={1.5} />
+                </span>
+                <h3 className="mt-6 font-display text-2xl font-bold text-base">{pick(a.certificates.title, lang)}</h3>
+                <p className="mt-3 max-w-md text-steel">{pick(a.certificates.note, lang)}</p>
+                <p className="mt-2 font-mono text-[10px] uppercase tracking-widest text-steel/70">PDF · license.pdf</p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={a.certificates.file}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group btn-primary"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  {t('cta.viewLicense')}
+                </a>
+                <a href={a.certificates.file} download className="group btn-ghost">
+                  <Download className="h-4 w-4" />
+                  {t('cta.downloadPdf')}
+                </a>
+              </div>
+            </div>
+            {/* Embedded preview (desktop) */}
+            <div className="hidden bg-slate-deep p-3 lg:block">
+              <object
+                data={`${a.certificates.file}#view=FitH&toolbar=0&navpanes=0`}
+                type="application/pdf"
+                aria-label={pick(a.certificates.title, lang)}
+                className="h-[420px] w-full border border-white/10 bg-white/5"
+              >
+                <div className="flex h-full items-center justify-center p-6 text-center text-sm text-steel">
+                  {pick(a.certificates.note, lang)}
+                </div>
+              </object>
+            </div>
           </Reveal>
         </div>
       </section>

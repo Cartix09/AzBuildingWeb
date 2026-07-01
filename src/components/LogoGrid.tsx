@@ -19,7 +19,7 @@ export function LogoGrid({ items }: { items: LogoItem[] }) {
         return (
           <Reveal key={i} index={i % 4} className="group flex h-32 items-center justify-center bg-slate-deep transition-colors hover:bg-slate-surface/40">
             {item.url ? (
-              <a href={item.url} target="_blank" rel="noreferrer" className="flex h-full w-full items-center justify-center">
+              <a href={item.url} target="_blank" rel="noopener noreferrer" className="flex h-full w-full items-center justify-center">
                 {inner}
               </a>
             ) : (

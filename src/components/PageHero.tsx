@@ -14,11 +14,15 @@ export function PageHero({ eyebrow, title, description, image, children }: PageH
     <section className="relative overflow-hidden border-b border-white/10 bg-slate-deep">
       {image && (
         <>
-          <img src={image} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-deep via-slate-deep/80 to-slate-deep/60" />
+          {/* Stronger, more visible industrial artwork; left-darker gradient
+              keeps the headline crisp (matches the home hero treatment). */}
+          <img src={image} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-[0.6]" />
+          <div className="absolute inset-0 bg-slate-deep/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-deep/90 via-slate-deep/55 to-slate-deep/25" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-deep via-slate-deep/40 to-transparent" />
         </>
       )}
-      <div aria-hidden="true" className="absolute inset-0 bg-blueprint-grid bg-[size:40px_40px] opacity-30" />
+      <div aria-hidden="true" className="absolute inset-0 bg-blueprint-grid bg-[size:40px_40px] opacity-20" />
       <div className="container-x relative z-10 py-20 md:py-28">
         <p className="eyebrow">
           <span className="text-orange-brand">+ </span>

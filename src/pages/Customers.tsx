@@ -22,7 +22,7 @@ export function Customers() {
           },
           lang,
         )}
-        image="/images/about/about-2.svg"
+        image="/images/pagehero/customers.svg"
       />
       <section className="bg-slate-deep py-20 md:py-28">
         <div className="container-x">

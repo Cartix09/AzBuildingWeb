@@ -24,7 +24,7 @@ export function Partners() {
           },
           lang,
         )}
-        image="/images/services/project-management-engineering.svg"
+        image="/images/pagehero/partners.svg"
       />
 
       <section className="border-b border-white/5 bg-slate-deep py-20 md:py-28">

@@ -33,7 +33,7 @@ export function Projects() {
           },
           lang,
         )}
-        image="/images/projects/project-02.svg"
+        image="/images/pagehero/projects.svg"
       />
 
       <section className="bg-slate-deep py-16 md:py-20">

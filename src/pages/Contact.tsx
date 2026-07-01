@@ -17,6 +17,7 @@ export function Contact() {
         eyebrow={t('sections.contactTag')}
         title={t('sections.contactTitle')}
         description={t('hero.subtitle')}
+        image="/images/pagehero/contact.svg"
       />
 
       <section className="border-b border-white/5 bg-slate-deep py-20 md:py-28">
@@ -30,7 +31,7 @@ export function Contact() {
             <ul className="space-y-6">
               {/* Actual office address (also used for the map) */}
               <li>
-                <a href={mapsUrl} target="_blank" rel="noreferrer" className="group flex items-start gap-4">
+                <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="group flex items-start gap-4">
                   <span className="border border-white/10 p-3 text-orange-brand"><MapPin className="h-5 w-5" /></span>
                   <span>
                     <span className="block font-mono text-xs uppercase tracking-widest text-steel">{t('misc.actualAddress')}</span>
@@ -65,7 +66,7 @@ export function Contact() {
                 </a>
               </li>
               <li>
-                <a href={company.website} target="_blank" rel="noreferrer" className="group flex items-start gap-4">
+                <a href={company.website} target="_blank" rel="noopener noreferrer" className="group flex items-start gap-4">
                   <span className="border border-white/10 p-3 text-orange-brand"><Globe className="h-5 w-5" /></span>
                   <span>
                     <span className="block font-mono text-xs uppercase tracking-widest text-steel">{t('misc.website')}</span>
@@ -76,9 +77,9 @@ export function Contact() {
             </ul>
 
             <div className="mt-10 flex items-center gap-4">
-              <a href={company.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="border border-white/10 p-3 text-steel transition-colors hover:border-orange-brand hover:text-orange-brand"><Instagram className="h-5 w-5" /></a>
-              <a href={company.social.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="border border-white/10 p-3 text-steel transition-colors hover:border-orange-brand hover:text-orange-brand"><Facebook className="h-5 w-5" /></a>
-              <a href={company.social.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="border border-white/10 p-3 text-steel transition-colors hover:border-orange-brand hover:text-orange-brand"><Linkedin className="h-5 w-5" /></a>
+              <a href={company.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="border border-white/10 p-3 text-steel transition-colors hover:border-orange-brand hover:text-orange-brand"><Instagram className="h-5 w-5" /></a>
+              <a href={company.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="border border-white/10 p-3 text-steel transition-colors hover:border-orange-brand hover:text-orange-brand"><Facebook className="h-5 w-5" /></a>
+              <a href={company.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="border border-white/10 p-3 text-steel transition-colors hover:border-orange-brand hover:text-orange-brand"><Linkedin className="h-5 w-5" /></a>
             </div>
           </div>
 
