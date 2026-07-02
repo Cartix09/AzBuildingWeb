@@ -10,7 +10,7 @@ import {
 import { translations, type Lang } from '../data/translations'
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const LANGS: Lang[] = ['az', 'ru', 'en']
+export const LANGS: Lang[] = ['az', 'en', 'ru']
 const STORAGE_KEY = 'azbuilding-lang'
 
 interface LanguageContextValue {
