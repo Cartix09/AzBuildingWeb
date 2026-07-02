@@ -40,6 +40,10 @@ export const translations: Record<Lang, Tree> = {
     topbar: {
       tagline: 'Tikinti və Mühəndislik Mükəmməlliyi',
     },
+    header: {
+      since: '2009-cu ildən',
+      license: 'Tikinti-quraşdırma lisenziyası',
+    },
     hero: {
       eyebrow: 'TİKİNTİ · MÜLKİ-SƏNAYE · İNFRASTRUKTUR',
       title: 'Tikinti və infrastrukturun icrası',
@@ -97,6 +101,7 @@ export const translations: Record<Lang, Tree> = {
     },
     search: {
       placeholder: 'Xidmətlər, layihələr, səhifələr axtarın...',
+      short: 'Axtar',
       hint: 'Axtarmaq üçün yazın',
       noResults: 'Nəticə tapılmadı',
       services: 'Xidmətlər',
@@ -157,6 +162,10 @@ export const translations: Record<Lang, Tree> = {
     topbar: {
       tagline: 'Совершенство в строительстве и инжиниринге',
     },
+    header: {
+      since: 'С 2009 года',
+      license: 'Строительная лицензия',
+    },
     hero: {
       eyebrow: 'СТРОИТЕЛЬСТВО · ГРАЖД.-ПРОМ. · ИНФРАСТРУКТУРА',
       title: 'Строительство и инфраструктура',
@@ -214,6 +223,7 @@ export const translations: Record<Lang, Tree> = {
     },
     search: {
       placeholder: 'Поиск услуг, проектов, страниц...',
+      short: 'Поиск',
       hint: 'Начните вводить',
       noResults: 'Ничего не найдено',
       services: 'Услуги',
@@ -274,6 +284,10 @@ export const translations: Record<Lang, Tree> = {
     topbar: {
       tagline: 'Construction & Engineering Excellence',
     },
+    header: {
+      since: 'Since 2009',
+      license: 'Construction license',
+    },
     hero: {
       eyebrow: 'CONSTRUCTION · CIVIL-INDUSTRIAL · INFRASTRUCTURE',
       title: 'Construction & infrastructure execution',
@@ -331,6 +345,7 @@ export const translations: Record<Lang, Tree> = {
     },
     search: {
       placeholder: 'Search services, projects, pages...',
+      short: 'Search',
       hint: 'Start typing to search',
       noResults: 'No results found',
       services: 'Services',

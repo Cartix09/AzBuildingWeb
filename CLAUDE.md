@@ -13,14 +13,16 @@ Durable rules for this project. Keep this file small.
 ## Pages
 Home, About, Services (+ detail), Projects (+ detail), Customers, Partners, Contact. Routes in `src/App.tsx`.
 
-## Design system (exact palette)
-- `#0F172A` slate (dark bg / header / footer) → `slate-deep`
-- `#EA580C` orange (CTA, hover, timeline nodes, accents, arrows) → `orange-brand`
-- `#64748B` steel (secondary text, borders, technical labels) → `steel`
-- `#F8FAFC` clean base → `base`
-- Fonts: Inter / Inter Tight (display), JetBrains Mono (eyebrow/technical labels).
-- Style: dark, industrial, sharp, **rectangular, 0px radius, no soft shadows**, thin borders, strong grid, large type, monospace eyebrows like `[01] STRUCTURAL METRICS`. Orange used sparingly.
-- AVOID: rounded SaaS cards, playful/bouncy animation, fake claims, salesy discount language, smiling-stock-photo style.
+## Design system (warm premium navy + gold — BCC-inspired)
+- `#0F2140` warm navy (main bg) → `slate-deep` / `navy`; `#0A182F` darkest strips → `navy-deep`; `#1B3A63` cards → `slate-surface` / `navy-surface`.
+- `#F5A524` gold — primary warm accent (nav bar, highlights, active language, logo "MMC") → `gold`.
+- `#EA580C` orange — CTAs/timeline nodes; pairs with gold in the `gold-bar` gradient → `orange-brand`.
+- `#8AA0BF` steel (secondary text/borders on navy) → `steel`; `#F8FAFC` clean base → `base`.
+- Header: BCC-style — top info strip, large logo band (logo must be prominent), warm gold gradient sticky nav bar (`bg-gold-bar`), dark CTA chip. Language order AZ | EN | RU.
+- Logo: official architectural "A" PNG at `public/logos/azbuilding-mark.png` — do NOT redesign its shape; keep it large and proud.
+- Fonts: Inter / Inter Tight (display), JetBrains Mono (technical eyebrows).
+- Style: premium, warm, confident construction-group feel; navy + gold, sharp rectangular blocks, thin borders. Not flat-black, not depressing.
+- AVOID: rounded SaaS cards, playful/bouncy animation, fake claims, salesy discount language, smiling-stock-photo style, reintroducing "AZBİLDİNQ".
 
 ## Content is data-driven (edit these, not components)
 `src/data/`: `services.ts`, `projects.ts`, `customers.ts`, `partners.ts`, `timeline.ts`, `metrics.ts`, `process.ts`, `quality.ts`, `about.ts`, `nav.ts`, `translations.ts` (also holds `company` contact info).

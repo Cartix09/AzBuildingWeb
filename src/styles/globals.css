@@ -35,12 +35,12 @@
   }
 
   ::selection {
-    @apply bg-orange-brand text-white;
+    @apply bg-gold text-navy-deep;
   }
 
   /* Focus ring for keyboard navigation */
   :focus-visible {
-    outline: 2px solid #ea580c;
+    outline: 2px solid #f5a524;
     outline-offset: 2px;
   }
 }
@@ -60,25 +60,27 @@
     @apply font-display font-extrabold tracking-tight;
   }
 
-  /* Primary orange CTA - square corners. Add the `group` class at call sites
-     for the icon hover animations. `whitespace-nowrap` keeps longer locales
-     (e.g. AZ "Layihə sifariş et") on a single line. */
+  /* Primary CTA - warm gold→orange gradient for a premium construction feel.
+     Add the `group` class at call sites for the icon hover animations.
+     `whitespace-nowrap` keeps longer locales on a single line. */
   .btn-primary {
-    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden whitespace-nowrap border border-orange-brand bg-orange-brand px-7 py-3.5 font-mono text-xs font-medium uppercase tracking-[0.2em] text-white transition-colors;
-  }
-  .btn-primary:hover {
-    @apply bg-orange-brand/90;
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden whitespace-nowrap bg-gold-bar px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-navy-deep shadow-gold transition-all hover:bg-gold-bar-hover hover:brightness-105;
   }
 
-  /* Ghost / outline button */
+  /* Ghost / outline button - gold outline that warms on hover */
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap border border-steel/50 bg-transparent px-7 py-3.5 font-mono text-xs font-medium uppercase tracking-[0.2em] text-white transition-colors hover:border-orange-brand hover:bg-orange-brand;
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap border border-gold/60 bg-transparent px-7 py-3.5 font-mono text-xs font-medium uppercase tracking-[0.2em] text-base transition-colors hover:border-gold hover:bg-gold hover:text-navy-deep;
   }
 
-  /* The "Orange Beam" vertical accent that precedes H2 headlines */
+  /* Vertical gold accent that precedes H2 headlines */
   .orange-beam::before {
     content: '';
-    @apply mb-5 block h-12 w-0.5 bg-orange-brand;
+    @apply mb-5 block h-12 w-0.5 bg-gold;
+  }
+
+  /* Warm gold gradient text for select emphasis */
+  .text-gold-gradient {
+    @apply bg-gold-bar bg-clip-text text-transparent;
   }
 }
 

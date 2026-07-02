@@ -4,15 +4,28 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Brand palette — keep these exact (see CLAUDE.md)
+        // Warm premium navy + gold palette (BCC-inspired direction).
+        // slate.* keep their names so existing classes reskin site-wide.
         slate: {
-          deep: '#0F172A', // primary dark background, header, footer
-          surface: '#1B2436', // raised cards inside dark sections
+          deep: '#0F2140', // primary navy background, header, footer
+          surface: '#1B3A63', // raised cards inside dark sections
+        },
+        navy: {
+          DEFAULT: '#0F2140',
+          deep: '#0A182F', // darkest strips (top bar), footer base
+          surface: '#1B3A63',
+          light: '#274C82', // lighter navy accents / borders
+        },
+        gold: {
+          DEFAULT: '#F5A524', // primary warm accent (nav bar, highlights)
+          soft: '#FBBF24',
+          deep: '#C77D0A',
         },
         orange: {
-          brand: '#EA580C', // CTAs, hover, timeline nodes, accents
+          brand: '#EA580C', // CTAs, hover, timeline nodes
+          warm: '#F97316',
         },
-        steel: '#64748B', // secondary text, borders, technical labels
+        steel: '#8AA0BF', // secondary text on navy (warmer, higher-contrast)
         base: '#F8FAFC', // light sections / clean backgrounds
       },
       fontFamily: {
@@ -39,7 +52,17 @@ export default {
       },
       backgroundImage: {
         'blueprint-grid':
-          'linear-gradient(to right, rgba(100,116,139,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(100,116,139,0.08) 1px, transparent 1px)',
+          'linear-gradient(to right, rgba(138,160,191,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(138,160,191,0.08) 1px, transparent 1px)',
+        // Warm gold→orange bar used for the primary navigation + buttons.
+        'gold-bar': 'linear-gradient(90deg, #FBBF24 0%, #F5A524 42%, #EA580C 100%)',
+        'gold-bar-hover': 'linear-gradient(90deg, #F5A524 0%, #EA580C 100%)',
+        // Subtle warm glow for hero / section backgrounds.
+        'warm-glow': 'radial-gradient(60% 55% at 70% 0%, rgba(245,165,36,0.16) 0%, rgba(245,165,36,0) 60%)',
+        'navy-fade': 'linear-gradient(180deg, #0F2140 0%, #0A182F 100%)',
+      },
+      boxShadow: {
+        gold: '0 10px 30px -12px rgba(245,165,36,0.45)',
+        navy: '0 20px 45px -20px rgba(5,15,35,0.7)',
       },
     },
   },

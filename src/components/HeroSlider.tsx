@@ -43,11 +43,13 @@ export function HeroSlider() {
       <div className="absolute inset-0 bg-slate-deep/45" />
       <div className="absolute inset-0 bg-gradient-to-r from-slate-deep/85 via-slate-deep/40 to-slate-deep/20" />
       <div className="absolute inset-0 bg-gradient-to-t from-slate-deep/80 via-transparent to-slate-deep/40" />
+      {/* Warm gold glow for a more premium, alive feel */}
+      <div className="absolute inset-0 bg-warm-glow" />
 
       {/* Coordinate marker eyebrow */}
       <div className="container-x relative z-10 flex h-full flex-col justify-center pt-10">
         <motion.p
-          className="font-mono text-xs uppercase tracking-[0.3em] text-orange-brand"
+          className="font-mono text-xs uppercase tracking-[0.3em] text-gold"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -109,7 +111,7 @@ export function HeroSlider() {
                 type="button"
                 onClick={() => setActive(i)}
                 aria-label={`Go to slide ${i + 1}`}
-                className={`h-0.5 transition-all ${i === active ? 'w-10 bg-orange-brand' : 'w-5 bg-white/30'}`}
+                className={`h-0.5 transition-all ${i === active ? 'w-10 bg-gold' : 'w-5 bg-white/30'}`}
               />
             ))}
           </div>

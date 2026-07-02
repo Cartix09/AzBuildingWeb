@@ -11,11 +11,11 @@ export function Footer() {
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(company.mapsQuery)}`
 
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-slate-deep">
-      {/* Giant faded background wordmark */}
+    <footer className="relative overflow-hidden border-t border-gold/20 bg-navy-fade">
+      {/* Giant faded background wordmark (warm gold tint) */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-6 left-0 w-full select-none text-center font-display text-[18vw] font-extrabold leading-none tracking-tighter text-white/[0.03]"
+        className="pointer-events-none absolute -bottom-6 left-0 w-full select-none text-center font-display text-[18vw] font-extrabold leading-none tracking-tighter text-gold/[0.05]"
       >
         AZBUILDING
       </div>
@@ -24,7 +24,7 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-10 md:grid-cols-12">
           {/* Brand + summary */}
           <div className="col-span-2 md:col-span-5">
-            <Logo />
+            <Logo size="lg" />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-steel">{t('footer.summary')}</p>
             <div className="mt-6 flex items-center gap-4">
               <a href={company.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="border border-white/10 p-2.5 text-steel transition-colors hover:border-orange-brand hover:text-orange-brand">
