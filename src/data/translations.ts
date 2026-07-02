@@ -44,7 +44,7 @@ export const translations: Record<Lang, Tree> = {
       eyebrow: 'TİKİNTİ · MÜLKİ-SƏNAYE · İNFRASTRUKTUR',
       title: 'Tikinti və infrastrukturun icrası',
       subtitle:
-        '2009-cu ildən AZBUILDING - AZBİLDİNQ MMC mülki, sənaye və infrastruktur tikintisini Azərbaycan, Gürcüstan və Ukraynada təcrübəli, çoxprofilli icra tərəfdaşı kimi həyata keçirir.',
+        '2009-cu ildən AZBUILDING MMC mülki, sənaye və infrastruktur tikintisini Azərbaycan, Gürcüstan və Ukraynada təcrübəli, çoxprofilli icra tərəfdaşı kimi həyata keçirir.',
     },
     sections: {
       metricsTag: 'ŞİRKƏT QISACA',
@@ -88,7 +88,7 @@ export const translations: Record<Lang, Tree> = {
     },
     footer: {
       summary:
-        'AZBUILDING LLC - AZBİLDİNQ MMC 2009-cu ildən mülki-sənaye və infrastruktur tikinti sektorunda fəaliyyət göstərən, təcrübəli çoxprofilli icra tərəfdaşıdır.',
+        'AZBUILDING MMC 2009-cu ildən mülki-sənaye və infrastruktur tikinti sektorunda fəaliyyət göstərən, təcrübəli çoxprofilli icra tərəfdaşıdır.',
       quickNav: 'Naviqasiya',
       company: 'Şirkət',
       contact: 'Əlaqə',
@@ -161,7 +161,7 @@ export const translations: Record<Lang, Tree> = {
       eyebrow: 'СТРОИТЕЛЬСТВО · ГРАЖД.-ПРОМ. · ИНФРАСТРУКТУРА',
       title: 'Строительство и инфраструктура',
       subtitle:
-        'С 2009 года AZBUILDING - AZBİLDİNQ MMC реализует гражданское, промышленное и инфраструктурное строительство как опытный многопрофильный исполнительный партнёр в Азербайджане, Грузии и Украине.',
+        'С 2009 года AZBUILDING MMC реализует гражданское, промышленное и инфраструктурное строительство как опытный многопрофильный исполнительный партнёр в Азербайджане, Грузии и Украине.',
     },
     sections: {
       metricsTag: 'КОМПАНИЯ КРАТКО',
@@ -205,7 +205,7 @@ export const translations: Record<Lang, Tree> = {
     },
     footer: {
       summary:
-        'AZBUILDING LLC - AZBİLDİNQ MMC работает в сфере гражданско-промышленного и инфраструктурного строительства с 2009 года как опытный многопрофильный исполнительный партнёр.',
+        'AZBUILDING MMC работает в сфере гражданско-промышленного и инфраструктурного строительства с 2009 года как опытный многопрофильный исполнительный партнёр.',
       quickNav: 'Навигация',
       company: 'Компания',
       contact: 'Контакты',
@@ -278,7 +278,7 @@ export const translations: Record<Lang, Tree> = {
       eyebrow: 'CONSTRUCTION · CIVIL-INDUSTRIAL · INFRASTRUCTURE',
       title: 'Construction & infrastructure execution',
       subtitle:
-        'Since 2009, AZBUILDING - AZBİLDİNQ MMC has delivered civil, industrial and infrastructure construction across Azerbaijan, Georgia and Ukraine as an experienced, multi-profile execution partner.',
+        'Since 2009, AZBUILDING MMC has delivered civil, industrial and infrastructure construction across Azerbaijan, Georgia and Ukraine as an experienced, multi-profile execution partner.',
     },
     sections: {
       metricsTag: 'COMPANY AT A GLANCE',
@@ -322,7 +322,7 @@ export const translations: Record<Lang, Tree> = {
     },
     footer: {
       summary:
-        'AZBUILDING LLC - AZBİLDİNQ MMC has worked in civil-industrial and infrastructure construction since 2009 as an experienced, multi-profile execution partner.',
+        'AZBUILDING MMC has worked in civil-industrial and infrastructure construction since 2009 as an experienced, multi-profile execution partner.',
       quickNav: 'Navigation',
       company: 'Company',
       contact: 'Contact',
@@ -369,7 +369,7 @@ export const translations: Record<Lang, Tree> = {
 /** Company contact info - single source of truth (AZB sayt info). */
 export const company = {
   // Brand name for copyright/meta. Logo wordmark stays "AZBUILDING MMC".
-  name: 'AZBUILDING LLC - AZBİLDİNQ MMC',
+  name: 'AZBUILDING MMC',
   domain: 'azbuilding.az',
   website: 'https://www.azbuilding.az',
   // Actual office address - used for the main visible location + Google Maps.

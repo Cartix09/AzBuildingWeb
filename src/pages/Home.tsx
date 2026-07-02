@@ -16,7 +16,7 @@ export function Home() {
   const { t } = useLanguage()
   useDocumentMeta(
     'Construction & Infrastructure',
-    'AZBUILDING LLC - AZBİLDİNQ MMC: civil-industrial and infrastructure construction since 2009. Selected projects across Azerbaijan, Georgia and Ukraine.',
+    'AZBUILDING MMC: civil-industrial and infrastructure construction since 2009. Selected projects across Azerbaijan, Georgia and Ukraine.',
   )
 
   return (

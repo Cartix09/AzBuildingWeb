@@ -23,9 +23,9 @@ export const timeline: Milestone[] = [
     year: plain('2009'),
     title: { az: 'Təməl qoyuldu', ru: 'Основание компании', en: 'Foundation Established' },
     description: {
-      az: 'AZBİLDİNQ MMC mülki-sənaye tikinti və layihə icrası istiqamətində fəaliyyətə başladı.',
-      ru: 'AZBİLDİNQ MMC начала работу в сфере гражданско-промышленного строительства и реализации проектов.',
-      en: 'AZBİLDİNQ MMC began operating in civil-industrial construction and project execution.',
+      az: 'AZBUILDING MMC mülki-sənaye tikinti və layihə icrası istiqamətində fəaliyyətə başladı.',
+      ru: 'AZBUILDING MMC начала работу в сфере гражданско-промышленного строительства и реализации проектов.',
+      en: 'AZBUILDING MMC began operating in civil-industrial construction and project execution.',
     },
   },
   {
