@@ -43,6 +43,7 @@ export const translations: Record<Lang, Tree> = {
     header: {
       since: '2009-cu ildən',
       license: 'Tikinti-quraşdırma lisenziyası',
+      tagline: 'Azərbaycanın Tikinti Şirkəti',
     },
     hero: {
       eyebrow: 'TİKİNTİ · MÜLKİ-SƏNAYE · İNFRASTRUKTUR',
@@ -165,6 +166,7 @@ export const translations: Record<Lang, Tree> = {
     header: {
       since: 'С 2009 года',
       license: 'Строительная лицензия',
+      tagline: 'Строительная компания Азербайджана',
     },
     hero: {
       eyebrow: 'СТРОИТЕЛЬСТВО · ГРАЖД.-ПРОМ. · ИНФРАСТРУКТУРА',
@@ -287,6 +289,7 @@ export const translations: Record<Lang, Tree> = {
     header: {
       since: 'Since 2009',
       license: 'Construction license',
+      tagline: "Azerbaijan's Construction Company",
     },
     hero: {
       eyebrow: 'CONSTRUCTION · CIVIL-INDUSTRIAL · INFRASTRUCTURE',

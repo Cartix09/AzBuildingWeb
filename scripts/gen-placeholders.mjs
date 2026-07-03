@@ -219,6 +219,131 @@ function heroRoad() {
   return s + foot(w, h, id)
 }
 
+// =====================================================================
+//  BRIGHT daytime hero scenes (Home slider "FOTO SLAYD").
+//  Light, open sky + warm gold sun; navy building & crane silhouettes.
+//  The client asked for this area to feel brighter and more open, so
+//  these deliberately avoid the dark night palette used everywhere else.
+// =====================================================================
+const DAY_TOP = '#DCE7F2' // pale cool sky at the very top
+const DAY_MID = '#F2E4CB' // warm haze toward the horizon
+const DAY_LOW = '#F8EFDD' // bright warm band at the horizon
+const NAVY = '#0F2140' // silhouette navy (matches site background)
+const NAVY_SOFT = '#274C82' // lighter navy for distant silhouettes
+const GOLD = '#F5A524'
+
+const dayHead = (w, h, id) => `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="dsky${id}" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="${DAY_TOP}"/>
+      <stop offset="0.6" stop-color="${DAY_MID}"/>
+      <stop offset="1" stop-color="${DAY_LOW}"/>
+    </linearGradient>
+    <radialGradient id="dsun${id}" cx="0.74" cy="0.28" r="0.6">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="0.28" stop-color="${GOLD}" stop-opacity="0.42"/>
+      <stop offset="0.7" stop-color="${GOLD}" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="${GOLD}" stop-opacity="0"/>
+    </radialGradient>
+  </defs>`
+
+const dayFrame = (w, h, id) => `${dayHead(w, h, id)}
+  <rect width="${w}" height="${h}" fill="url(#dsky${id})"/>
+  <circle cx="${w * 0.74}" cy="${h * 0.28}" r="${Math.min(w, h) * 0.11}" fill="#FFF7E6" opacity="0.9"/>
+  <rect width="${w}" height="${h}" fill="url(#dsun${id})"/>`
+
+// A solid navy building silhouette (no lit windows - reads clean against sky).
+const dayBuilding = (x, base, w, h, color = NAVY, op = 1) =>
+  `<rect x="${x}" y="${base - h}" width="${w}" height="${h}" fill="${color}" opacity="${op}"/>`
+
+// Navy tower-crane silhouette.
+const dayCrane = (x, base, mastH, jib, dir = 1, color = NAVY, op = 0.92) => {
+  const top = base - mastH
+  return `<g stroke="${color}" stroke-width="3" fill="none" stroke-opacity="${op}">
+    <line x1="${x}" y1="${base}" x2="${x}" y2="${top}"/>
+    <line x1="${x - 9}" y1="${base}" x2="${x + 9}" y2="${base}"/>
+    <line x1="${x}" y1="${top + 14}" x2="${x + dir * jib}" y2="${top + 14}"/>
+    <line x1="${x}" y1="${top + 14}" x2="${x - dir * jib * 0.32}" y2="${top + 14}"/>
+    <line x1="${x}" y1="${top}" x2="${x + dir * jib}" y2="${top + 14}"/>
+    <line x1="${x}" y1="${top}" x2="${x - dir * jib * 0.32}" y2="${top + 14}"/>
+    <line x1="${x + dir * jib * 0.68}" y1="${top + 14}" x2="${x + dir * jib * 0.68}" y2="${top + 14 + 56}"/>
+    <line x1="${x + dir * jib * 0.68}" y1="${top + 14 + 56}" x2="${x + dir * jib * 0.68 + dir * 18}" y2="${top + 14 + 56}"/>
+    ${Array.from({ length: 6 }, (_, i) => `<line x1="${x}" y1="${top + 18 + i * ((mastH - 24) / 6)}" x2="${x + (i % 2 ? 9 : -9)}" y2="${top + 18 + (i + 0.5) * ((mastH - 24) / 6)}"/>`).join('')}
+  </g>`
+}
+
+const dayFoot = (w, h) => `<line x1="0" y1="${h - 4}" x2="${w}" y2="${h - 4}" stroke="${GOLD}" stroke-width="4" stroke-opacity="0.9"/>
+</svg>`
+
+// ---- Bright hero 1: open construction skyline with cranes ----
+function dayHeroSkyline() {
+  const w = 1600, h = 1000, b = 840, id = 'da'
+  let s = dayFrame(w, h, id)
+  // distant soft silhouettes
+  for (let i = 0; i < 12; i++) s += dayBuilding(30 + i * 138, b, 108, 120 + ((i * 53) % 190), NAVY_SOFT, 0.28)
+  // foreground navy towers of varied height
+  s += dayBuilding(120, b, 190, 340, NAVY, 0.96) + dayBuilding(360, b, 150, 470, NAVY, 0.96)
+  s += dayBuilding(560, b, 230, 290, NAVY, 0.94) + dayBuilding(980, b, 210, 400, NAVY, 0.96)
+  s += dayBuilding(1230, b, 185, 330, NAVY, 0.96) + dayBuilding(1440, b, 150, 260, NAVY, 0.94)
+  s += dayCrane(520, 560, 340, 400, 1) + dayCrane(1190, 470, 400, 360, -1) + dayCrane(860, 620, 260, 260, 1)
+  // warm ground band
+  s += `<rect x="0" y="${b}" width="${w}" height="${h - b}" fill="${NAVY}"/>`
+  return s + dayFoot(w, h)
+}
+
+// ---- Bright hero 2: steel frame skeleton + crane against open sky ----
+function dayHeroStructure() {
+  const w = 1600, h = 1000, id = 'db', base = 862
+  let s = dayFrame(w, h, id)
+  const cols = [470, 650, 830, 1010, 1190, 1370]
+  const top = 250, floors = 5
+  s += `<g stroke="${NAVY}" stroke-width="3.2" stroke-opacity="0.9" fill="none">`
+  cols.forEach((x) => { s += `<line x1="${x}" y1="${top}" x2="${x}" y2="${base}"/>` })
+  for (let f = 0; f <= floors; f++) {
+    const y = top + f * ((base - top) / floors)
+    s += `<line x1="${cols[0]}" y1="${y}" x2="${cols[cols.length - 1]}" y2="${y}"/>`
+  }
+  s += '</g>'
+  s += `<g stroke="${NAVY_SOFT}" stroke-width="2" stroke-opacity="0.55" fill="none">`
+  for (let f = 0; f < floors; f++) {
+    const y1 = top + f * ((base - top) / floors)
+    const y2 = top + (f + 1) * ((base - top) / floors)
+    for (let c = 0; c < cols.length - 1; c++) {
+      if ((c + f) % 2 === 0) s += `<line x1="${cols[c]}" y1="${y1}" x2="${cols[c + 1]}" y2="${y2}"/>`
+      else s += `<line x1="${cols[c + 1]}" y1="${y1}" x2="${cols[c]}" y2="${y2}"/>`
+    }
+  }
+  s += '</g>'
+  const lvl = top + 2 * ((base - top) / floors)
+  s += `<line x1="${cols[0]}" y1="${lvl}" x2="${cols[cols.length - 1]}" y2="${lvl}" stroke="${GOLD}" stroke-width="4" opacity="0.95"/>`
+  s += dayCrane(1410, 250, 480, 540, -1)
+  s += `<rect x="0" y="${base}" width="${w}" height="${h - base}" fill="${NAVY}"/>`
+  return s + dayFoot(w, h)
+}
+
+// ---- Bright hero 3: stacked slabs + gold accent beam against open sky ----
+function dayHeroSection() {
+  const w = 1600, h = 1000, id = 'dc', base = 860
+  let s = dayFrame(w, h, id)
+  // faint tall tower massing behind
+  s += `<g opacity="0.5">${dayBuilding(980, base, 360, 690, NAVY_SOFT, 0.5)}`
+  for (let x = 1030; x < 1340; x += 52) s += `<line x1="${x}" y1="180" x2="${x}" y2="${base}" stroke="${DAY_LOW}" stroke-opacity="0.5"/>`
+  s += '</g>'
+  const slabs = [[150, 760, 640], [210, 680, 600], [270, 600, 560], [330, 520, 520], [390, 440, 480]]
+  slabs.forEach(([x, y, sw], i) => {
+    s += `<rect x="${x}" y="${y}" width="${sw}" height="30" fill="${NAVY}" opacity="${0.94 - i * 0.08}"/>`
+  })
+  s += `<g stroke="${NAVY}" stroke-width="3" stroke-opacity="0.8">`
+  for (const cx of [210, 470, 760]) s += `<line x1="${cx}" y1="440" x2="${cx}" y2="${base}"/>`
+  s += '</g>'
+  // signature gold vertical accent beam
+  s += `<rect x="900" y="150" width="8" height="710" fill="${GOLD}" opacity="0.9"/>`
+  s += `<rect x="760" y="468" width="147" height="5" fill="${GOLD}" opacity="0.65"/>`
+  s += dayCrane(1500, 250, 240, 190, -1, NAVY, 0.7)
+  s += `<rect x="0" y="${base}" width="${w}" height="${h - base}" fill="${NAVY}"/>`
+  return s + dayFoot(w, h)
+}
+
 // ---- Clean industrial tile for projects / services / about (no text) ----
 function tile(seed = 0, w = 1200, h = 900) {
   const id = 't' + seed
@@ -243,10 +368,10 @@ function tile(seed = 0, w = 1200, h = 900) {
 }
 
 const files = {
-  // Home hero slides - premium, text-free industrial scenes
-  'images/hero/hero-1.svg': heroSkyline(),
-  'images/hero/hero-2.svg': heroStructure(),
-  'images/hero/hero-3.svg': heroSection(),
+  // Home hero slides - bright, open daytime scenes (FOTO SLAYD area)
+  'images/hero/hero-1.svg': dayHeroSkyline(),
+  'images/hero/hero-2.svg': dayHeroStructure(),
+  'images/hero/hero-3.svg': dayHeroSection(),
   // Internal page heroes - themed, stronger scenes (reused across languages)
   'images/pagehero/services.svg': heroStructure(),
   'images/pagehero/projects.svg': heroRoad(),

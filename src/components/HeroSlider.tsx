@@ -38,13 +38,11 @@ export function HeroSlider() {
           transition={{ duration: 1.2, ease: 'easeOut' }}
         />
       </AnimatePresence>
-      {/* Dark overlays - lighter veil so the industrial art reads stronger,
-          with a left-darker gradient that keeps the headline crisp. */}
-      <div className="absolute inset-0 bg-slate-deep/45" />
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-deep/85 via-slate-deep/40 to-slate-deep/20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-deep/80 via-transparent to-slate-deep/40" />
-      {/* Warm gold glow for a more premium, alive feel */}
-      <div className="absolute inset-0 bg-warm-glow" />
+      {/* Open, bright FOTO SLAYD: no flat full-frame veil. A soft navy scrim on
+          the left keeps the headline crisp, and a light bottom fade grounds the
+          slide indicators - the daytime image stays open and luminous. */}
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-deep/75 via-slate-deep/25 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-deep/55 via-transparent to-transparent" />
 
       {/* Coordinate marker eyebrow */}
       <div className="container-x relative z-10 flex h-full flex-col justify-center pt-10">
