@@ -53,15 +53,17 @@ export default {
       backgroundImage: {
         'blueprint-grid':
           'linear-gradient(to right, rgba(138,160,191,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(138,160,191,0.08) 1px, transparent 1px)',
-        // Warm gold→orange bar used for the primary navigation + buttons.
-        'gold-bar': 'linear-gradient(90deg, #FBBF24 0%, #F5A524 42%, #EA580C 100%)',
-        'gold-bar-hover': 'linear-gradient(90deg, #F5A524 0%, #EA580C 100%)',
+        // Warm, controlled gold→amber bar for the primary nav + buttons.
+        // Calmer than a full gold→red gradient: less bright start, warm amber
+        // end (not aggressive red-orange), so it reads premium, not glossy.
+        'gold-bar': 'linear-gradient(95deg, #F1A62B 0%, #E48C24 100%)',
+        'gold-bar-hover': 'linear-gradient(95deg, #E99B24 0%, #D97E1C 100%)',
         // Subtle warm glow for hero / section backgrounds.
         'warm-glow': 'radial-gradient(60% 55% at 70% 0%, rgba(245,165,36,0.16) 0%, rgba(245,165,36,0) 60%)',
         'navy-fade': 'linear-gradient(180deg, #0F2140 0%, #0A182F 100%)',
       },
       boxShadow: {
-        gold: '0 10px 30px -12px rgba(245,165,36,0.45)',
+        gold: '0 6px 16px -12px rgba(228,140,36,0.35)', // subtle, not glossy
         navy: '0 20px 45px -20px rgba(5,15,35,0.7)',
       },
     },

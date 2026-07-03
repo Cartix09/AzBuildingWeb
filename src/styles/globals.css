@@ -60,16 +60,21 @@
     @apply font-display font-extrabold tracking-tight;
   }
 
-  /* Primary CTA - warm gold→orange gradient for a premium construction feel.
-     Add the `group` class at call sites for the icon hover animations.
-     `whitespace-nowrap` keeps longer locales on a single line. */
+  /* Primary CTA - calm warm gold→amber gradient (premium, not glossy).
+     The transparent 1px border matches .btn-ghost's box exactly so a primary
+     and a ghost button render at the same physical size. Add the `group` class
+     at call sites for the icon hover animations. `whitespace-nowrap` keeps
+     longer locales on a single line. */
   .btn-primary {
-    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden whitespace-nowrap bg-gold-bar px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-navy-deep shadow-gold transition-all hover:bg-gold-bar-hover hover:brightness-105;
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden whitespace-nowrap border border-transparent bg-gold-bar px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-navy-deep transition-colors hover:bg-gold-bar-hover;
   }
 
-  /* Ghost / outline button - gold outline that warms on hover */
+  /* Ghost / outline button - gold outline that warms on hover.
+     Uses an explicit near-white colour (not `text-base`, which collides with
+     Tailwind's text-base font-size utility) so `text-xs` is respected and this
+     matches .btn-primary's box exactly → a balanced button pair. */
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap border border-gold/60 bg-transparent px-7 py-3.5 font-mono text-xs font-medium uppercase tracking-[0.2em] text-base transition-colors hover:border-gold hover:bg-gold hover:text-navy-deep;
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap border border-gold/55 bg-transparent px-7 py-3.5 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[#F8FAFC] transition-colors hover:border-gold hover:bg-gold hover:text-navy-deep;
   }
 
   /* Vertical gold accent that precedes H2 headlines */
