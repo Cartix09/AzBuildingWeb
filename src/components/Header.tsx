@@ -49,19 +49,18 @@ export function Header() {
         {/* ---- Navy logo band ---- */}
         <div className="relative bg-navy-deep">
           <div className="container-x flex items-stretch gap-4 md:gap-6">
-            {/* Prominent left gold block holding the official A mark as a big
-                navy silhouette. One solid gold colour, no nested square.
-                Overlaps down onto the gold nav bar on desktop (sketch). */}
+            {/* Prominent left navy block holding the official A mark as a big
+                WHITE silhouette. Solid deep-navy background; the mark is sized
+                to fill the block and dip down into the gold nav for a proud,
+                lively presence (overflow intentionally visible). */}
             <Link
               to="/"
               aria-label="AZBUILDING - home"
-              className="relative z-30 flex w-24 shrink-0 items-center justify-center bg-gold shadow-navy sm:w-28 md:w-32 lg:-mb-16 lg:w-44"
+              className="relative z-30 flex w-24 shrink-0 items-center justify-center overflow-visible bg-navy shadow-navy sm:w-28 md:w-32 lg:-mb-16 lg:w-44"
             >
-              {/* The A mark fills most of the gold block for a proud, dominant
-                  presence, with just enough padding to stay premium. */}
               <span
                 aria-hidden="true"
-                className="block aspect-[357/380] h-16 bg-navy sm:h-20 md:h-24 lg:h-32"
+                className="block aspect-[357/380] h-20 bg-[#F8FAFC] drop-shadow-[0_6px_14px_rgba(5,15,35,0.55)] sm:h-24 md:h-28 lg:h-40"
                 style={maskStyle}
               />
             </Link>
