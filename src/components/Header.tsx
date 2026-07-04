@@ -55,17 +55,19 @@ export function Header() {
             <Link
               to="/"
               aria-label="AZBUILDING - home"
-              className="relative z-30 flex w-24 shrink-0 items-center justify-center bg-gold shadow-navy sm:w-28 md:w-36 lg:-mb-16 lg:w-48"
+              className="relative z-30 flex w-24 shrink-0 items-center justify-center bg-gold shadow-navy sm:w-28 md:w-32 lg:-mb-16 lg:w-44"
             >
+              {/* The A mark fills most of the gold block for a proud, dominant
+                  presence, with just enough padding to stay premium. */}
               <span
                 aria-hidden="true"
-                className="block aspect-[357/380] h-12 bg-navy sm:h-14 md:h-16 lg:h-24"
+                className="block aspect-[357/380] h-16 bg-navy sm:h-20 md:h-24 lg:h-32"
                 style={maskStyle}
               />
             </Link>
 
             {/* Wordmark + tagline (header shows AZBUILDING only, no MMC) */}
-            <Link to="/" className="flex min-w-0 flex-1 flex-col justify-center py-4 md:py-6">
+            <Link to="/" className="flex min-w-0 flex-1 flex-col justify-center py-5 md:py-7 lg:py-9">
               <span className="whitespace-nowrap font-display text-2xl font-extrabold leading-none tracking-tight text-[#F8FAFC] sm:text-3xl md:text-4xl lg:text-5xl">
                 AZBUILDING
               </span>
@@ -74,8 +76,17 @@ export function Header() {
               </span>
             </Link>
 
-            {/* Desktop right: search box + language */}
+            {/* Desktop right: real trust block + search box + language, grouped
+                with thin dividers so the navy side reads intentional, not empty. */}
             <div className="hidden items-center gap-5 lg:flex">
+              <div className="hidden flex-col items-end border-r border-white/10 pr-5 text-right xl:flex">
+                <span className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-gold">
+                  {t('header.since')}
+                </span>
+                <span className="mt-1 whitespace-nowrap text-[11px] text-steel">
+                  {t('header.license')}
+                </span>
+              </div>
               <button
                 type="button"
                 onClick={() => setSearchOpen(true)}
