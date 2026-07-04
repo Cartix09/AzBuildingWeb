@@ -68,8 +68,10 @@ export function Header() {
 
             {/* Wordmark + tagline (header shows AZBUILDING only, no MMC) */}
             <Link to="/" className="flex min-w-0 flex-1 flex-col justify-center py-5 md:py-7 lg:py-9">
-              <span className="whitespace-nowrap font-display text-2xl font-extrabold leading-none tracking-tight text-[#F8FAFC] sm:text-3xl md:text-4xl lg:text-5xl">
-                AZBUILDING
+              {/* Lowercase wordmark test - heavy weight + slightly opened
+                  tracking keeps it premium and solid, not startup-thin. */}
+              <span className="whitespace-nowrap font-display text-2xl font-extrabold lowercase leading-none tracking-[0.02em] text-[#F8FAFC] sm:text-3xl md:text-4xl lg:text-5xl">
+                azbuilding
               </span>
               <span className="mt-2 truncate font-mono text-[10px] uppercase tracking-[0.2em] text-steel md:text-xs">
                 {t('header.tagline')}
