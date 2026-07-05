@@ -56,17 +56,17 @@ export function Header() {
             <Link
               to="/"
               aria-label="AZBUILDING - home"
-              className="relative z-30 flex w-24 shrink-0 items-center justify-center overflow-visible bg-navy shadow-navy sm:w-28 md:w-32 lg:-mb-16 lg:w-44"
+              className="relative z-30 flex w-28 shrink-0 items-center justify-center overflow-visible bg-navy shadow-navy sm:w-32 md:w-40 lg:-mb-16 lg:w-52"
             >
               <span
                 aria-hidden="true"
-                className="block aspect-[357/380] h-20 bg-[#F8FAFC] drop-shadow-[0_6px_14px_rgba(5,15,35,0.55)] sm:h-24 md:h-28 lg:h-40"
+                className="block aspect-[357/380] h-24 bg-[#F8FAFC] drop-shadow-[0_8px_18px_rgba(5,15,35,0.6)] sm:h-28 md:h-36 lg:h-44"
                 style={maskStyle}
               />
             </Link>
 
             {/* Wordmark + tagline (header shows AZBUILDING only, no MMC) */}
-            <Link to="/" className="flex min-w-0 flex-1 flex-col justify-center py-5 md:py-7 lg:py-9">
+            <Link to="/" className="flex min-w-0 flex-1 flex-col justify-center py-6 md:py-8 lg:py-11">
               {/* Lowercase wordmark test - heavy weight + slightly opened
                   tracking keeps it premium and solid, not startup-thin. */}
               <span className="whitespace-nowrap font-display text-2xl font-extrabold lowercase leading-none tracking-[0.02em] text-[#F8FAFC] sm:text-3xl md:text-4xl lg:text-5xl">
@@ -118,8 +118,8 @@ export function Header() {
         <div className="relative hidden bg-navy-deep lg:block">
           <div className="container-x">
             <div className="flex h-14 items-stretch bg-gold shadow-navy">
-              {/* Spacer under the overlapping gold logo block */}
-              <div className="w-48 shrink-0" aria-hidden="true" />
+              {/* Spacer under the overlapping navy logo block */}
+              <div className="w-52 shrink-0" aria-hidden="true" />
               <nav className="flex flex-1 items-center gap-6 pl-6 xl:gap-8" aria-label="Primary">
                 {mainNav.map((item) =>
                   item.labelKey === 'nav.services' ? (
