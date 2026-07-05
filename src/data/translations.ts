@@ -26,6 +26,7 @@ export const translations: Record<Lang, Tree> = {
     },
     cta: {
       requestProject: 'Layihə sifariş et',
+      order: 'Sifariş et',
       sendInquiry: 'Müraciət göndər',
       viewPortfolio: 'Portfolioya bax',
       viewProject: 'Layihəyə bax',
@@ -43,7 +44,8 @@ export const translations: Record<Lang, Tree> = {
     header: {
       since: '2009-cu ildən',
       license: 'Tikinti-quraşdırma lisenziyası',
-      tagline: 'Azərbaycanın Tikinti Şirkəti',
+      tagline: 'Düşüncədən konstruksiyaya',
+      descriptor: 'mühəndislik, podratçılıq, tikinti',
     },
     hero: {
       eyebrow: 'TİKİNTİ · MÜLKİ-SƏNAYE · İNFRASTRUKTUR',
@@ -149,6 +151,7 @@ export const translations: Record<Lang, Tree> = {
     },
     cta: {
       requestProject: 'Заказать проект',
+      order: 'Заказать',
       sendInquiry: 'Отправить запрос',
       viewPortfolio: 'Смотреть портфолио',
       viewProject: 'Смотреть проект',
@@ -166,7 +169,8 @@ export const translations: Record<Lang, Tree> = {
     header: {
       since: 'С 2009 года',
       license: 'Строительная лицензия',
-      tagline: 'Строительная компания Азербайджана',
+      tagline: 'От идеи до конструкции',
+      descriptor: 'инжиниринг, подряд, строительство',
     },
     hero: {
       eyebrow: 'СТРОИТЕЛЬСТВО · ГРАЖД.-ПРОМ. · ИНФРАСТРУКТУРА',
@@ -272,6 +276,7 @@ export const translations: Record<Lang, Tree> = {
     },
     cta: {
       requestProject: 'Request Project',
+      order: 'Order',
       sendInquiry: 'Send Inquiry',
       viewPortfolio: 'View Portfolio',
       viewProject: 'View Project',
@@ -289,7 +294,8 @@ export const translations: Record<Lang, Tree> = {
     header: {
       since: 'Since 2009',
       license: 'Construction license',
-      tagline: "Azerbaijan's Construction Company",
+      tagline: 'From concept to construction',
+      descriptor: 'engineering, contracting, construction',
     },
     hero: {
       eyebrow: 'CONSTRUCTION · CIVIL-INDUSTRIAL · INFRASTRUCTURE',

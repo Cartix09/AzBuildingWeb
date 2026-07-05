@@ -13,8 +13,9 @@ import { cn } from '../lib/cn'
 const MARK = '/logos/azbuilding-mark.png'
 
 // The official mark is a light architectural "A". We render it as a solid
-// navy silhouette on the gold block by using the PNG's alpha as a mask and
-// filling with the brand navy — exact palette colour, official shape intact.
+// WHITE silhouette using the PNG's alpha as a mask and filling with near-white,
+// so it behaves like the huge brand "A" in the client reference. The official
+// shape is untouched.
 const maskStyle = {
   WebkitMaskImage: `url(${MARK})`,
   maskImage: `url(${MARK})`,
@@ -46,61 +47,55 @@ export function Header() {
   return (
     <>
       <header className="relative z-40">
-        {/* ---- Navy logo band ---- */}
+        {/* ---- Main navy header ---- */}
         <div className="relative bg-navy-deep">
-          <div className="container-x flex items-stretch gap-4 md:gap-6">
-            {/* Prominent left navy block holding the official A mark as a big
-                WHITE silhouette. Solid deep-navy background; the mark is sized
-                to fill the block and dip down into the gold nav for a proud,
-                lively presence (overflow intentionally visible). */}
+          <div className="container-x flex items-stretch gap-4 md:gap-8">
+            {/* Huge white official mark, anchored at the top of the header and
+                extending down over the gold nav into the cream hero - the
+                dominant brand symbol on the left (reference direction). */}
             <Link
               to="/"
               aria-label="AZBUILDING - home"
-              className="relative z-30 flex w-28 shrink-0 items-center justify-center overflow-visible bg-navy shadow-navy sm:w-32 md:w-40 lg:-mb-16 lg:w-52"
+              className="relative z-30 flex w-24 shrink-0 items-start justify-center overflow-visible pt-2 sm:w-28 md:w-36 lg:w-44"
             >
               <span
                 aria-hidden="true"
-                className="block aspect-[357/380] h-24 bg-[#F8FAFC] drop-shadow-[0_8px_18px_rgba(5,15,35,0.6)] sm:h-28 md:h-36 lg:h-44"
+                className="block aspect-[357/380] h-24 bg-[#F8FAFC] drop-shadow-[0_10px_22px_rgba(5,15,35,0.55)] sm:h-28 md:h-40 lg:h-48"
                 style={maskStyle}
               />
             </Link>
 
-            {/* Wordmark + tagline (header shows AZBUILDING only, no MMC) */}
-            <Link to="/" className="flex min-w-0 flex-1 flex-col justify-center py-6 md:py-8 lg:py-11">
-              {/* Lowercase wordmark test - heavy weight + slightly opened
-                  tracking keeps it premium and solid, not startup-thin. */}
-              <span className="whitespace-nowrap font-display text-2xl font-extrabold lowercase leading-none tracking-[0.02em] text-[#F8FAFC] sm:text-3xl md:text-4xl lg:text-5xl">
-                azbuilding
+            {/* Company name + tagline (uppercase, classic serif, no MMC) */}
+            <Link to="/" className="flex min-w-0 flex-col justify-center py-5 md:py-7 lg:py-8">
+              <span className="whitespace-nowrap font-serif text-2xl font-bold uppercase leading-none tracking-wide text-[#F8FAFC] sm:text-3xl md:text-4xl lg:text-5xl">
+                AZBUILDING
               </span>
-              <span className="mt-2 truncate font-mono text-[10px] uppercase tracking-[0.2em] text-steel md:text-xs">
+              <span className="mt-2 truncate font-serif text-xs italic text-steel md:text-sm lg:text-base">
                 {t('header.tagline')}
               </span>
             </Link>
 
-            {/* Desktop right: real trust block + search box + language, grouped
-                with thin dividers so the navy side reads intentional, not empty. */}
-            <div className="hidden items-center gap-5 lg:flex">
-              <div className="hidden flex-col items-end border-r border-white/10 pr-5 text-right xl:flex">
-                <span className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-gold">
-                  {t('header.since')}
-                </span>
-                <span className="mt-1 whitespace-nowrap text-[11px] text-steel">
-                  {t('header.license')}
-                </span>
-              </div>
+            {/* Centered short descriptor (reference: engineering, contracting…) */}
+            <div className="hidden flex-1 items-center justify-center px-4 lg:flex">
+              <span className="font-serif text-base italic text-steel/90 xl:text-lg">
+                {t('header.descriptor')}
+              </span>
+            </div>
+
+            {/* Right: silver AXTAR search box */}
+            <div className="ml-auto hidden items-center lg:flex">
               <button
                 type="button"
                 onClick={() => setSearchOpen(true)}
-                className="flex items-center gap-2 border border-gold/40 bg-base/95 px-4 py-2.5 text-sm text-navy-deep transition-colors hover:border-gold"
+                className="flex items-center gap-2 border border-white/25 bg-[#DCDEE2] px-7 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-navy-deep shadow-sm transition-colors hover:bg-white"
               >
-                <Search className="h-4 w-4 text-gold" />
-                <span className="font-medium">{t('search.short')}</span>
+                <Search className="h-3.5 w-3.5" />
+                {t('search.short')}
               </button>
-              <LanguageSwitcher />
             </div>
 
             {/* Mobile controls */}
-            <div className="flex items-center gap-3 lg:hidden">
+            <div className="ml-auto flex items-center gap-3 lg:hidden">
               <button type="button" onClick={() => setSearchOpen(true)} aria-label="Search" className="text-[#F8FAFC] hover:text-gold">
                 <Search className="h-5 w-5" />
               </button>
@@ -112,15 +107,14 @@ export function Header() {
         </div>
 
         {/* ---- Gold navigation bar (desktop) ----
-            Contained: the gold bar spans the centred container (not the full
-            browser width), emerging from under the logo block on the left and
-            ending at the dark CTA on the right. */}
+            Flat, contained gold strip: starts after the logo area, ends at the
+            white "Sifariş et" CTA on the right; navy shows on both sides. */}
         <div className="relative hidden bg-navy-deep lg:block">
           <div className="container-x">
-            <div className="flex h-14 items-stretch bg-gold shadow-navy">
-              {/* Spacer under the overlapping navy logo block */}
-              <div className="w-52 shrink-0" aria-hidden="true" />
-              <nav className="flex flex-1 items-center gap-6 pl-6 xl:gap-8" aria-label="Primary">
+            <div className="flex h-14 items-stretch bg-gold">
+              {/* Spacer under the overlapping logo mark */}
+              <div className="w-44 shrink-0" aria-hidden="true" />
+              <nav className="flex flex-1 items-center justify-center gap-7 px-4 xl:gap-9" aria-label="Primary">
                 {mainNav.map((item) =>
                   item.labelKey === 'nav.services' ? (
                     <div key={item.to} className="group relative flex h-14 items-center">
@@ -128,8 +122,8 @@ export function Header() {
                         to={item.to}
                         className={({ isActive }) =>
                           cn(
-                            'flex items-center gap-1 whitespace-nowrap text-sm font-semibold tracking-wide transition-colors',
-                            isActive ? 'text-navy-deep' : 'text-navy-deep/80 hover:text-navy-deep',
+                            'flex items-center gap-1 whitespace-nowrap text-sm font-bold tracking-wide transition-colors',
+                            isActive ? 'text-navy-deep' : 'text-navy-deep/85 hover:text-navy-deep',
                           )
                         }
                       >
@@ -155,8 +149,8 @@ export function Header() {
                       end={item.to === '/'}
                       className={({ isActive }) =>
                         cn(
-                          'whitespace-nowrap text-sm font-semibold tracking-wide transition-colors',
-                          isActive ? 'text-navy-deep underline decoration-2 underline-offset-8' : 'text-navy-deep/80 hover:text-navy-deep',
+                          'whitespace-nowrap text-sm font-bold tracking-wide transition-colors',
+                          isActive ? 'text-navy-deep underline decoration-2 underline-offset-8' : 'text-navy-deep/85 hover:text-navy-deep',
                         )
                       }
                     >
@@ -166,13 +160,13 @@ export function Header() {
                 )}
               </nav>
 
-              {/* CTA chip (dark navy at the right end of the contained bar) */}
+              {/* CTA: white "Sifariş et" at the right end of the gold bar */}
               <Link
                 to="/contact"
-                className="group flex h-14 items-center gap-2 border-l border-navy-deep/15 bg-navy-deep px-7 text-sm font-semibold uppercase tracking-wide text-[#F8FAFC] transition-colors hover:bg-navy hover:text-gold"
+                className="group flex h-14 items-center gap-2 border-l border-navy-deep/15 px-7 text-sm font-bold uppercase tracking-wide text-[#F8FAFC] transition-colors hover:text-navy-deep"
               >
-                {t('cta.requestProject')}
-                <ArrowUpRight className="h-4 w-4 text-gold transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                {t('cta.order')}
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </div>
           </div>
@@ -215,7 +209,7 @@ export function Header() {
             <div className="container-x mt-8 flex items-center justify-between">
               <LanguageSwitcher />
               <Link to="/contact" className="group btn-primary">
-                {t('cta.requestProject')}
+                {t('cta.order')}
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>

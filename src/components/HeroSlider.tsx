@@ -1,9 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowUpRight, ArrowRight } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useLanguage, pick } from '../i18n/LanguageContext'
-import { company } from '../data/translations'
 
 const slides = [
   '/images/hero/hero-1.svg',
@@ -11,10 +7,14 @@ const slides = [
   '/images/hero/hero-3.svg',
 ]
 
-const ROTATE_MS = 8000
+const ROTATE_MS = 7000
 
+/**
+ * Foto Slayd hero (reference direction): a clean, light/cream area whose main
+ * element is one large auto-changing image. No heavy dark overlay and no big
+ * text stacked over it - the photo slider itself is the hero.
+ */
 export function HeroSlider() {
-  const { t, lang } = useLanguage()
   const [active, setActive] = useState(0)
 
   useEffect(() => {
@@ -23,8 +23,8 @@ export function HeroSlider() {
   }, [])
 
   return (
-    <section className="relative h-[88vh] min-h-[600px] w-full overflow-hidden bg-slate-deep">
-      {/* Background slides */}
+    <section className="relative h-[72vh] min-h-[460px] w-full overflow-hidden bg-[#FBF3DD]">
+      {/* One large changing image, filling the cream Foto Slayd area */}
       <AnimatePresence>
         <motion.img
           key={active}
@@ -32,76 +32,20 @@ export function HeroSlider() {
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
-          initial={{ opacity: 0, scale: 1.05 }}
+          initial={{ opacity: 0, scale: 1.04 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.2, ease: 'easeOut' }}
         />
       </AnimatePresence>
-      {/* Open, bright FOTO SLAYD: no flat full-frame veil. A soft navy scrim on
-          the left keeps the headline crisp, and a light bottom fade grounds the
-          slide indicators - the daytime image stays open and luminous. */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-deep/75 via-slate-deep/25 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-deep/55 via-transparent to-transparent" />
 
-      {/* Coordinate marker eyebrow */}
-      <div className="container-x relative z-10 flex h-full flex-col justify-center pt-10">
-        <motion.p
-          className="font-mono text-xs uppercase tracking-[0.3em] text-gold"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          + {pick(company.address, lang)}
-        </motion.p>
+      {/* Very light bottom fade only - keeps the area open and luminous while
+          grounding the slide indicators. */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#FBF3DD]/70 to-transparent" />
 
-        <motion.p
-          className="mt-6 font-mono text-xs uppercase tracking-[0.25em] text-base/80"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-        >
-          {t('hero.eyebrow')}
-        </motion.p>
-
-        <motion.h1
-          className="display mt-4 max-w-5xl text-5xl leading-[0.95] text-base sm:text-6xl md:text-7xl lg:text-8xl"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-        >
-          {t('hero.title')}
-        </motion.h1>
-
-        <motion.p
-          className="mt-6 max-w-xl text-lg text-base/80"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
-        >
-          {t('hero.subtitle')}
-        </motion.p>
-
-        <motion.div
-          className="mt-10 flex flex-wrap items-center gap-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
-        >
-          <Link to="/projects" className="group btn-primary">
-            {t('cta.viewPortfolio')}
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-          <Link to="/contact" className="group btn-ghost">
-            {t('cta.requestProject')}
-            <ArrowUpRight className="h-4 w-4" />
-          </Link>
-        </motion.div>
-      </div>
-
-      {/* Slide indicators */}
-      <div className="absolute bottom-8 left-0 right-0 z-10">
-        <div className="container-x flex items-end justify-between">
+      {/* Slide indicators (navy on light) */}
+      <div className="absolute bottom-7 left-0 right-0 z-10">
+        <div className="container-x flex items-center justify-between">
           <div className="flex gap-2">
             {slides.map((_, i) => (
               <button
@@ -109,14 +53,13 @@ export function HeroSlider() {
                 type="button"
                 onClick={() => setActive(i)}
                 aria-label={`Go to slide ${i + 1}`}
-                className={`h-0.5 transition-all ${i === active ? 'w-10 bg-gold' : 'w-5 bg-white/30'}`}
+                className={`h-1 transition-all ${i === active ? 'w-10 bg-navy-deep' : 'w-5 bg-navy-deep/30'}`}
               />
             ))}
           </div>
-          {/* Scroll indicator */}
-          <div className="hidden items-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-steel sm:flex">
+          <div className="hidden items-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-navy-deep/60 sm:flex">
             <span>SCROLL</span>
-            <span className="block h-8 w-px animate-pulse bg-steel" />
+            <span className="block h-8 w-px animate-pulse bg-navy-deep/40" />
           </div>
         </div>
       </div>

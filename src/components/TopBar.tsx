@@ -1,6 +1,7 @@
-import { Mail, MapPin, Instagram, Facebook, Linkedin } from 'lucide-react'
+import { Mail, MapPin } from 'lucide-react'
 import { useLanguage, pick } from '../i18n/LanguageContext'
 import { company } from '../data/translations'
+import { LanguageSwitcher } from './LanguageSwitcher'
 
 export function TopBar() {
   const { lang } = useLanguage()
@@ -8,8 +9,9 @@ export function TopBar() {
 
   return (
     <div className="hidden border-b border-white/5 bg-navy-deep text-steel md:block">
-      <div className="container-x flex h-10 items-center justify-between text-xs">
-        <div className="flex items-center gap-6">
+      <div className="container-x relative flex h-10 items-center justify-center text-xs">
+        {/* Centered address + email (reference top strip) */}
+        <div className="flex items-center gap-8">
           <a
             href={mapsUrl}
             target="_blank"
@@ -27,16 +29,9 @@ export function TopBar() {
             <span>{company.email}</span>
           </a>
         </div>
-        <div className="flex items-center gap-3">
-          <a href={company.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="border border-white/10 p-1.5 transition-colors hover:border-gold hover:text-gold">
-            <Instagram className="h-3.5 w-3.5" />
-          </a>
-          <a href={company.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="border border-white/10 p-1.5 transition-colors hover:border-gold hover:text-gold">
-            <Facebook className="h-3.5 w-3.5" />
-          </a>
-          <a href={company.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="border border-white/10 p-1.5 transition-colors hover:border-gold hover:text-gold">
-            <Linkedin className="h-3.5 w-3.5" />
-          </a>
+        {/* Language switcher pinned to the right */}
+        <div className="absolute right-6 md:right-12">
+          <LanguageSwitcher />
         </div>
       </div>
     </div>
