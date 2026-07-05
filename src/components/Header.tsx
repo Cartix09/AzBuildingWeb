@@ -110,8 +110,10 @@ export function Header() {
 
         {/* ---- Gold navigation bar (desktop) ----
             Flat, contained gold strip: starts after the logo area, ends at the
-            white "Sifariş et" CTA on the right; navy shows on both sides. */}
-        <div className="relative hidden bg-navy-deep lg:block">
+            white "Sifariş et" CTA on the right; navy shows on both sides.
+            Pulled up so the A mark's legs dip into the gold bar (client note);
+            the mark keeps z-30 so it sits over the bar without covering links. */}
+        <div className="relative z-20 hidden bg-navy-deep lg:-mt-7 lg:block">
           <div className="container-x">
             <div className="flex h-14 items-stretch bg-gold">
               {/* Spacer under the overlapping logo mark */}
