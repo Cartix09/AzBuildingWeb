@@ -45,7 +45,7 @@ export const translations: Record<Lang, Tree> = {
       since: '2009-cu ildən',
       license: 'Tikinti-quraşdırma lisenziyası',
       tagline: 'Düşüncədən konstruksiyaya',
-      descriptor: 'mühəndislik, podratçılıq, tikinti',
+      descriptor: 'Engineering, contracting, constructing & industry',
     },
     hero: {
       eyebrow: 'TİKİNTİ · MÜLKİ-SƏNAYE · İNFRASTRUKTUR',
@@ -170,7 +170,7 @@ export const translations: Record<Lang, Tree> = {
       since: 'С 2009 года',
       license: 'Строительная лицензия',
       tagline: 'От идеи до конструкции',
-      descriptor: 'инжиниринг, подряд, строительство',
+      descriptor: 'Engineering, contracting, constructing & industry',
     },
     hero: {
       eyebrow: 'СТРОИТЕЛЬСТВО · ГРАЖД.-ПРОМ. · ИНФРАСТРУКТУРА',
@@ -295,7 +295,7 @@ export const translations: Record<Lang, Tree> = {
       since: 'Since 2009',
       license: 'Construction license',
       tagline: 'From concept to construction',
-      descriptor: 'engineering, contracting, construction',
+      descriptor: 'Engineering, contracting, constructing & industry',
     },
     hero: {
       eyebrow: 'CONSTRUCTION · CIVIL-INDUSTRIAL · INFRASTRUCTURE',

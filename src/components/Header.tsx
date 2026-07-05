@@ -65,8 +65,10 @@ export function Header() {
               />
             </Link>
 
-            {/* Company name + tagline (uppercase, classic serif, no MMC) */}
-            <Link to="/" className="flex min-w-0 flex-col justify-center py-5 md:py-7 lg:py-8">
+            {/* Company name + tagline (uppercase, classic serif, no MMC).
+                Nudged down so the AZBUILDING baseline lines up with the A mark's
+                middle cross-line (client alignment note). */}
+            <Link to="/" className="flex min-w-0 flex-col justify-center py-5 md:py-7 md:translate-y-[9px] lg:py-8 lg:translate-y-[12px]">
               <span className="whitespace-nowrap font-serif text-2xl font-bold uppercase leading-none tracking-wide text-[#F8FAFC] sm:text-3xl md:text-4xl lg:text-5xl">
                 AZBUILDING
               </span>
