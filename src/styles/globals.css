@@ -87,6 +87,21 @@
   .text-gold-gradient {
     @apply bg-gold-bar bg-clip-text text-transparent;
   }
+
+  /* Line-art brand wordmark: outlined white letters (open interior) that echo
+     the thin architectural lines of the official A mark, so the mark + wordmark
+     read as one technical lockup. A faint interior tint + soft shadow keep it
+     readable and premium - deliberately not a thin, cheap outline. */
+  .azb-wordmark {
+    color: rgba(248, 250, 252, 0.06);
+    -webkit-text-stroke: 1.4px #f8fafc;
+    text-shadow: 0 1px 2px rgba(5, 15, 35, 0.4);
+  }
+  @media (min-width: 768px) {
+    .azb-wordmark {
+      -webkit-text-stroke-width: 1.7px;
+    }
+  }
 }
 
 /* Hide scrollbars on horizontal scroll regions while keeping scroll */

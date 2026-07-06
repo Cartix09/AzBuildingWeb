@@ -65,21 +65,27 @@ export function Header() {
               />
             </Link>
 
-            {/* Company name + tagline (uppercase, classic serif, no MMC).
-                Nudged down so the AZBUILDING baseline lines up with the A mark's
-                middle cross-line (client alignment note). */}
+            {/* Company name + tagline. The wordmark is drawn as a line-art
+                outline (white stroke, open interior) so it reads as the same
+                technical/architectural language as the A mark - one unified
+                lockup, not a heavy block beside a thin drawing. Nudged so the
+                AZBUILDING baseline lines up with the A mark's cross-line. */}
             <Link to="/" className="flex min-w-0 flex-col justify-center py-5 md:py-7 md:translate-y-[9px] lg:py-8 lg:translate-y-[12px]">
-              <span className="whitespace-nowrap font-serif text-2xl font-bold uppercase leading-none tracking-wide text-[#F8FAFC] sm:text-3xl md:text-4xl lg:text-5xl">
+              <span
+                className="azb-wordmark whitespace-nowrap font-display text-2xl font-extrabold uppercase leading-none tracking-[0.06em] sm:text-3xl md:text-4xl lg:text-5xl"
+              >
                 AZBUILDING
               </span>
-              <span className="mt-2 truncate font-serif text-xs italic text-steel md:text-sm lg:text-base">
+              <span className="mt-3 truncate font-mono text-[10px] uppercase tracking-[0.3em] text-steel md:text-xs">
                 {t('header.tagline')}
               </span>
             </Link>
 
-            {/* Centered short descriptor (reference: engineering, contracting…) */}
+            {/* Short descriptor, anchored to the lockup with a hairline divider
+                so it reads as part of the same grid instead of floating. */}
             <div className="hidden flex-1 items-center justify-center px-4 lg:flex">
-              <span className="font-serif text-base italic text-steel/90 xl:text-lg">
+              <span className="mr-6 h-9 w-px shrink-0 bg-white/15" aria-hidden="true" />
+              <span className="max-w-[26ch] font-serif text-base italic leading-snug text-steel/90 xl:text-lg">
                 {t('header.descriptor')}
               </span>
             </div>
