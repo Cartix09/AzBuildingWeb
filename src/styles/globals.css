@@ -87,6 +87,20 @@
   .text-gold-gradient {
     @apply bg-gold-bar bg-clip-text text-transparent;
   }
+
+  /* Bold outlined AZBUILDING wordmark - white line-art letters that echo the
+     architectural A mark. NOTE: no text-shadow: on hollow (outlined) letters a
+     shadow bleeds through the open counters and adds a fake bar inside D (Ð)
+     and a mark inside A - dropping it keeps A and D clean. */
+  .azb-wordmark {
+    color: rgba(248, 250, 252, 0.06);
+    -webkit-text-stroke: 1.4px #f8fafc;
+  }
+  @media (min-width: 768px) {
+    .azb-wordmark {
+      -webkit-text-stroke-width: 1.7px;
+    }
+  }
 }
 
 /* Hide scrollbars on horizontal scroll regions while keeping scroll */

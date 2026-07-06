@@ -3,7 +3,6 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Search, Menu, X, ChevronDown, ArrowUpRight } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Logo } from './Logo'
-import { Wordmark } from './Wordmark'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { SearchOverlay } from './SearchOverlay'
 import { useLanguage, pick } from '../i18n/LanguageContext'
@@ -59,7 +58,7 @@ export function Header() {
             <Link
               to="/"
               aria-label="AZBUILDING - home"
-              className="relative z-30 flex w-24 shrink-0 items-start justify-center overflow-visible bg-navy-deep pt-2 sm:w-28 md:w-36 lg:w-44"
+              className="relative z-30 flex w-24 shrink-0 -translate-x-[3px] items-start justify-center overflow-visible bg-navy-deep pt-2 sm:w-28 md:w-36 lg:w-44"
             >
               <span
                 aria-hidden="true"
@@ -68,13 +67,13 @@ export function Header() {
               />
             </Link>
 
-            {/* Company name + tagline. The wordmark is drawn as a line-art
-                outline (white stroke, open interior) so it reads as the same
-                technical/architectural language as the A mark - one unified
-                lockup, not a heavy block beside a thin drawing. Nudged so the
-                AZBUILDING baseline lines up with the A mark's cross-line. */}
-            <Link to="/" className="flex min-w-0 flex-col justify-center py-5 md:py-7 md:translate-y-[3px] lg:py-8 lg:translate-y-[4px]">
-              <Wordmark className="h-8 w-auto text-[#F8FAFC] sm:h-9 md:h-11 lg:h-14" />
+            {/* Company name + tagline. The wordmark is a bold outlined (line-art)
+                treatment that echoes the A mark - one unified lockup. Nudged so
+                the AZBUILDING baseline lines up with the A mark's cross-line. */}
+            <Link to="/" className="flex min-w-0 flex-col justify-center py-5 md:py-7 md:translate-y-[9px] lg:py-8 lg:translate-y-[12px]">
+              <span className="azb-wordmark whitespace-nowrap font-display text-2xl font-extrabold uppercase leading-none tracking-[0.06em] sm:text-3xl md:text-4xl lg:text-5xl">
+                AZBUILDING
+              </span>
               <span className="mt-3 truncate font-mono text-[10px] uppercase tracking-[0.3em] text-steel md:text-xs">
                 {t('header.tagline')}
               </span>
