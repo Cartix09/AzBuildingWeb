@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Search, Menu, X, ChevronDown, ArrowUpRight } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Logo } from './Logo'
+import { Wordmark } from './Wordmark'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { SearchOverlay } from './SearchOverlay'
 import { useLanguage, pick } from '../i18n/LanguageContext'
@@ -70,12 +71,8 @@ export function Header() {
                 technical/architectural language as the A mark - one unified
                 lockup, not a heavy block beside a thin drawing. Nudged so the
                 AZBUILDING baseline lines up with the A mark's cross-line. */}
-            <Link to="/" className="flex min-w-0 flex-col justify-center py-5 md:py-7 md:translate-y-[9px] lg:py-8 lg:translate-y-[12px]">
-              <span
-                className="azb-wordmark whitespace-nowrap font-display text-2xl font-extrabold uppercase leading-none tracking-[0.06em] sm:text-3xl md:text-4xl lg:text-5xl"
-              >
-                AZBUILDING
-              </span>
+            <Link to="/" className="flex min-w-0 flex-col justify-center py-5 md:py-7 md:translate-y-[3px] lg:py-8 lg:translate-y-[4px]">
+              <Wordmark className="h-8 w-auto text-[#F8FAFC] sm:h-9 md:h-11 lg:h-14" />
               <span className="mt-3 truncate font-mono text-[10px] uppercase tracking-[0.3em] text-steel md:text-xs">
                 {t('header.tagline')}
               </span>
@@ -119,7 +116,7 @@ export function Header() {
             white "Sifariş et" CTA on the right; navy shows on both sides.
             Pulled up so the A mark's legs dip into the gold bar (client note);
             the mark keeps z-30 so it sits over the bar without covering links. */}
-        <div className="relative z-20 hidden bg-navy-deep lg:-mt-7 lg:block">
+        <div className="relative z-20 hidden bg-navy-deep lg:-mt-10 lg:block">
           <div className="container-x">
             <div className="flex h-14 items-stretch bg-gold">
               {/* Spacer under the overlapping logo mark */}
