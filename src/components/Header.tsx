@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Search, Menu, X, ChevronDown, ArrowUpRight } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Logo } from './Logo'
+import { Wordmark } from './Wordmark'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { SearchOverlay } from './SearchOverlay'
 import { useLanguage, pick } from '../i18n/LanguageContext'
@@ -46,7 +47,7 @@ export function Header() {
 
   return (
     <>
-      <header className="relative z-40">
+      <header className="relative isolate z-40">
         {/* ---- Main navy header ---- */}
         <div className="relative bg-navy-deep">
           <div className="container-x flex items-stretch gap-4 md:gap-8">
@@ -58,7 +59,7 @@ export function Header() {
             <Link
               to="/"
               aria-label="AZBUILDING - home"
-              className="relative z-30 flex w-24 shrink-0 -translate-x-[3px] items-start justify-center overflow-visible bg-navy-deep pt-2 sm:w-28 md:w-36 lg:w-44"
+              className="relative z-30 -ml-[3px] flex w-24 shrink-0 items-start justify-center overflow-visible bg-navy-deep pt-2 sm:w-28 md:w-36 lg:w-44"
             >
               <span
                 aria-hidden="true"
@@ -70,10 +71,8 @@ export function Header() {
             {/* Company name + tagline. The wordmark is a bold outlined (line-art)
                 treatment that echoes the A mark - one unified lockup. Nudged so
                 the AZBUILDING baseline lines up with the A mark's cross-line. */}
-            <Link to="/" className="flex min-w-0 flex-col justify-center py-5 md:py-7 md:translate-y-[9px] lg:py-8 lg:translate-y-[12px]">
-              <span className="azb-wordmark whitespace-nowrap font-display text-2xl font-extrabold uppercase leading-none tracking-[0.06em] sm:text-3xl md:text-4xl lg:text-5xl">
-                AZBUILDING
-              </span>
+            <Link to="/" className="flex min-w-0 flex-col justify-center py-5 md:py-7 md:translate-y-[7px] lg:py-8 lg:translate-y-[9px]">
+              <Wordmark className="h-7 w-auto text-[#F8FAFC] sm:h-8 md:h-9 lg:h-11" />
               <span className="mt-3 truncate font-mono text-[10px] uppercase tracking-[0.3em] text-steel md:text-xs">
                 {t('header.tagline')}
               </span>
