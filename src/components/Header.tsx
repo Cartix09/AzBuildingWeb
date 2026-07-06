@@ -51,13 +51,15 @@ export function Header() {
         {/* ---- Main navy header ---- */}
         <div className="relative bg-navy-deep">
           <div className="container-x flex items-stretch gap-4 md:gap-8">
-            {/* Huge white official mark, anchored at the top of the header and
-                extending down over the gold nav into the cream hero - the
-                dominant brand symbol on the left (reference direction). */}
+            {/* Huge white official mark on a SOLID navy block. The navy
+                background (same as the header) sits behind the mark so that
+                where the block dips into the gold nav, the yellow does not
+                show through the open parts of the A - it reads as a navy-backed
+                logo block (client Image 2). */}
             <Link
               to="/"
               aria-label="AZBUILDING - home"
-              className="relative z-30 flex w-24 shrink-0 items-start justify-center overflow-visible pt-2 sm:w-28 md:w-36 lg:w-44"
+              className="relative z-30 flex w-24 shrink-0 items-start justify-center overflow-visible bg-navy-deep pt-2 sm:w-28 md:w-36 lg:w-44"
             >
               <span
                 aria-hidden="true"

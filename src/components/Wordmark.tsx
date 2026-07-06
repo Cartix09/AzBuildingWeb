@@ -1,10 +1,14 @@
-// Custom line-art "AZBUILDING" wordmark, drawn as outlined geometric capitals.
-// Rationale: it echoes the thin architectural strokes of the official A mark,
-// renders identically regardless of web-font loading, and gives us full control
-// of every letterform (notably clean A and D) instead of relying on a browser
-// text-outline that mangles those glyphs.
+// Custom "AZBUILDING" wordmark, drawn as BOLD OUTLINED (hollow) capitals to
+// match the style the client approved: a thick white outline with an open
+// navy interior, technical and readable, echoing the architectural A mark.
 //
-// Grid: cap top y=10, baseline y=130 (cap height 120), stroke 12, round joins.
+// It is rendered as two stroke layers over shared letter paths - a thick white
+// stroke, then a thinner navy stroke on top - which carves an open channel down
+// each letter so it reads as an outline. Doing it ourselves (rather than a
+// browser text-outline over a web font) keeps every letterform clean - notably
+// A and D - and renders identically regardless of font loading.
+//
+// Grid: cap top y=10, baseline y=130 (cap height 120), round joins.
 const GLYPHS: Record<string, { adv: number; d: string }> = {
   A: { adv: 78, d: 'M6,130 L39,10 L72,130 M16.5,92 H61.5' },
   Z: { adv: 66, d: 'M8,10 H60 L8,130 H60' },
@@ -18,18 +22,22 @@ const GLYPHS: Record<string, { adv: number; d: string }> = {
 }
 
 const WORD = 'AZBUILDING'
-const SPACING = 18
+const SPACING = 20
+const OUTER = 26 // white outline thickness
+const INNER = 11 // navy channel that opens the letters
+const NAVY = '#0A182F' // header background - keeps the interior "hollow"
 
 const parts: { x: number; d: string }[] = []
-let cursor = 10
+let cursor = 12
 for (const ch of WORD) {
   const g = GLYPHS[ch]
   parts.push({ x: cursor, d: g.d })
   cursor += g.adv + SPACING
 }
-const VIEW_W = cursor + 4
+const VIEW_W = cursor + 6
+const paths = parts.map((p, i) => <path key={i} d={p.d} transform={`translate(${p.x},0)`} />)
 
-/** Outlined AZBUILDING wordmark. Colour follows `currentColor`. */
+/** Bold outlined AZBUILDING wordmark. Outline colour follows `currentColor`. */
 export function Wordmark({ className }: { className?: string }) {
   return (
     <svg
@@ -38,14 +46,15 @@ export function Wordmark({ className }: { className?: string }) {
       role="img"
       aria-label="AZBUILDING"
       fill="none"
-      stroke="currentColor"
-      strokeWidth={12}
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      {parts.map((p, i) => (
-        <path key={i} d={p.d} transform={`translate(${p.x},0)`} />
-      ))}
+      <g stroke="currentColor" strokeWidth={OUTER}>
+        {paths}
+      </g>
+      <g stroke={NAVY} strokeWidth={INNER}>
+        {paths}
+      </g>
     </svg>
   )
 }
