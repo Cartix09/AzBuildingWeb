@@ -32,6 +32,8 @@ export default {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         display: ['"Inter Tight"', 'Inter', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        // One consistent clean font for header UI text (address, nav, tagline…)
+        ui: ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
       },
       maxWidth: {
         container: '1440px',

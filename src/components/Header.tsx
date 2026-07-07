@@ -47,10 +47,10 @@ export function Header() {
 
   return (
     <>
-      <header className="relative isolate z-40">
+      <header className="relative isolate z-40 font-ui">
         {/* ---- Main navy header ---- */}
         <div className="relative bg-navy-deep">
-          <div className="container-x flex items-stretch gap-4 md:gap-8">
+          <div className="container-x flex items-stretch gap-2 md:gap-3">
             {/* Huge white official mark on a SOLID navy block. The navy
                 background (same as the header) sits behind the mark so that
                 where the block dips into the gold nav, the yellow does not
@@ -68,34 +68,32 @@ export function Header() {
               />
             </Link>
 
-            {/* Company name + tagline. The wordmark is a bold outlined (line-art)
-                treatment that echoes the A mark - one unified lockup. Nudged so
-                the AZBUILDING baseline lines up with the A mark's cross-line. */}
-            <Link to="/" className="flex min-w-0 flex-col justify-center py-5 md:py-7 md:translate-y-[7px] lg:py-8 lg:translate-y-[9px]">
-              <Wordmark className="h-7 w-auto text-[#F8FAFC] sm:h-8 md:h-9 lg:h-11" />
-              <span className="mt-3 truncate font-mono text-[10px] uppercase tracking-[0.3em] text-steel md:text-xs">
+            {/* Company name + tagline - compact lockup tight to the A mark. */}
+            <Link to="/" className="flex min-w-0 flex-col justify-center py-5 md:py-7 md:translate-y-[10px] lg:py-8 lg:translate-y-[13px]">
+              <Wordmark className="h-6 w-auto text-[#F8FAFC] sm:h-7 md:h-9 lg:h-10" />
+              <span className="mt-1 truncate text-[11px] font-medium tracking-wide text-steel md:text-xs">
                 {t('header.tagline')}
               </span>
             </Link>
 
             {/* Short descriptor, anchored to the lockup with a hairline divider
                 so it reads as part of the same grid instead of floating. */}
-            <div className="hidden flex-1 items-center justify-center px-4 lg:flex">
-              <span className="mr-6 h-9 w-px shrink-0 bg-white/15" aria-hidden="true" />
-              <span className="max-w-[26ch] font-serif text-base italic leading-snug text-steel/90 xl:text-lg">
+            <div className="ml-3 hidden flex-1 items-center justify-center px-4 lg:flex xl:ml-6">
+              <span className="mr-6 h-8 w-px shrink-0 bg-white/15" aria-hidden="true" />
+              <span className="max-w-[26ch] text-sm font-medium leading-snug text-steel/80">
                 {t('header.descriptor')}
               </span>
             </div>
 
-            {/* Right: silver AXTAR search box */}
+            {/* Right: silver search button (icon only) */}
             <div className="ml-auto hidden items-center lg:flex">
               <button
                 type="button"
                 onClick={() => setSearchOpen(true)}
-                className="flex items-center gap-2 border border-white/25 bg-[#DCDEE2] px-7 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-navy-deep shadow-sm transition-colors hover:bg-white"
+                aria-label={t('search.short')}
+                className="flex h-11 w-11 items-center justify-center border border-white/25 bg-[#DCDEE2] text-navy-deep shadow-sm transition-colors hover:bg-white"
               >
-                <Search className="h-3.5 w-3.5" />
-                {t('search.short')}
+                <Search className="h-[18px] w-[18px]" />
               </button>
             </div>
 
@@ -116,15 +114,15 @@ export function Header() {
             white "Sifariş et" CTA on the right; navy shows on both sides.
             Pulled up so the A mark's legs dip into the gold bar (client note);
             the mark keeps z-30 so it sits over the bar without covering links. */}
-        <div className="relative z-20 hidden bg-navy-deep lg:-mt-10 lg:block">
+        <div className="relative z-20 hidden bg-navy-deep lg:-mt-8 lg:block">
           <div className="container-x">
-            <div className="flex h-14 items-stretch bg-gold">
+            <div className="flex h-11 items-stretch bg-gold">
               {/* Spacer under the overlapping logo mark */}
               <div className="w-44 shrink-0" aria-hidden="true" />
               <nav className="flex flex-1 items-center justify-center gap-7 px-4 xl:gap-9" aria-label="Primary">
                 {mainNav.map((item) =>
                   item.labelKey === 'nav.services' ? (
-                    <div key={item.to} className="group relative flex h-14 items-center">
+                    <div key={item.to} className="group relative flex h-11 items-center">
                       <NavLink
                         to={item.to}
                         className={({ isActive }) =>
@@ -167,10 +165,10 @@ export function Header() {
                 )}
               </nav>
 
-              {/* CTA: white "Sifariş et" at the right end of the gold bar */}
+              {/* CTA: muted slate "Təklif al" button - distinct from the gold */}
               <Link
                 to="/contact"
-                className="group flex h-14 items-center gap-2 border-l border-navy-deep/15 px-7 text-sm font-bold uppercase tracking-wide text-[#F8FAFC] transition-colors hover:text-navy-deep"
+                className="group flex h-11 items-center gap-1.5 bg-steel px-6 text-sm font-semibold tracking-wide text-navy-deep transition-colors hover:bg-[#9CB0CC]"
               >
                 {t('cta.order')}
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

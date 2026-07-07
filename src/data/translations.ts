@@ -26,7 +26,7 @@ export const translations: Record<Lang, Tree> = {
     },
     cta: {
       requestProject: 'Layihə sifariş et',
-      order: 'Sifariş et',
+      order: 'Təklif al',
       sendInquiry: 'Müraciət göndər',
       viewPortfolio: 'Portfolioya bax',
       viewProject: 'Layihəyə bax',
@@ -151,7 +151,7 @@ export const translations: Record<Lang, Tree> = {
     },
     cta: {
       requestProject: 'Заказать проект',
-      order: 'Заказать',
+      order: 'Получить предложение',
       sendInquiry: 'Отправить запрос',
       viewPortfolio: 'Смотреть портфолио',
       viewProject: 'Смотреть проект',
@@ -276,7 +276,7 @@ export const translations: Record<Lang, Tree> = {
     },
     cta: {
       requestProject: 'Request Project',
-      order: 'Order',
+      order: 'Get a quote',
       sendInquiry: 'Send Inquiry',
       viewPortfolio: 'View Portfolio',
       viewProject: 'View Project',
