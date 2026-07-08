@@ -28,6 +28,10 @@ const maskStyle = {
   maskPosition: 'center',
 } as const
 
+// Header/nav menu: drop "Müştərilər" per client (Tərəfdaşlar covers it). The
+// /customers route, page and footer link are intentionally left intact.
+const headerNav = mainNav.filter((item) => item.labelKey !== 'nav.customers')
+
 export function Header() {
   const { t, lang } = useLanguage()
   const location = useLocation()
@@ -70,7 +74,7 @@ export function Header() {
 
             {/* Company name + tagline - compact lockup tight to the A mark. */}
             <Link to="/" className="flex min-w-0 flex-col justify-center py-5 md:py-7 md:translate-y-[10px] lg:py-8 lg:translate-y-[13px]">
-              <Wordmark className="h-6 w-auto text-[#F8FAFC] sm:h-7 md:h-9 lg:h-10" />
+              <Wordmark className="h-7 w-auto text-[#F8FAFC] sm:h-8 md:h-10 lg:h-12" />
               <span className="mt-1 truncate text-[11px] font-medium tracking-wide text-steel md:text-xs">
                 {t('header.tagline')}
               </span>
@@ -80,18 +84,18 @@ export function Header() {
                 so it reads as part of the same grid instead of floating. */}
             <div className="ml-3 hidden flex-1 items-center justify-center px-4 lg:flex xl:ml-6">
               <span className="mr-6 h-8 w-px shrink-0 bg-white/15" aria-hidden="true" />
-              <span className="max-w-[26ch] text-sm font-medium leading-snug text-steel/80">
+              <span className="max-w-[30ch] text-sm font-medium leading-snug text-steel/80">
                 {t('header.descriptor')}
               </span>
             </div>
 
-            {/* Right: silver search button (icon only) */}
+            {/* Right: silver search button (icon only, wider) */}
             <div className="ml-auto hidden items-center lg:flex">
               <button
                 type="button"
                 onClick={() => setSearchOpen(true)}
                 aria-label={t('search.short')}
-                className="flex h-11 w-11 items-center justify-center border border-white/25 bg-[#DCDEE2] text-navy-deep shadow-sm transition-colors hover:bg-white"
+                className="flex h-11 w-20 items-center justify-center border border-white/25 bg-[#DCDEE2] text-navy-deep shadow-sm transition-colors hover:bg-white"
               >
                 <Search className="h-[18px] w-[18px]" />
               </button>
@@ -120,7 +124,7 @@ export function Header() {
               {/* Spacer under the overlapping logo mark */}
               <div className="w-44 shrink-0" aria-hidden="true" />
               <nav className="flex flex-1 items-center justify-center gap-7 px-4 xl:gap-9" aria-label="Primary">
-                {mainNav.map((item) =>
+                {headerNav.map((item) =>
                   item.labelKey === 'nav.services' ? (
                     <div key={item.to} className="group relative flex h-11 items-center">
                       <NavLink
@@ -168,7 +172,7 @@ export function Header() {
               {/* CTA: muted slate "Təklif al" button - distinct from the gold */}
               <Link
                 to="/contact"
-                className="group flex h-11 items-center gap-1.5 bg-steel px-6 text-sm font-semibold tracking-wide text-navy-deep transition-colors hover:bg-[#9CB0CC]"
+                className="group flex h-11 items-center gap-1.5 bg-[#3F4D6B] px-6 text-sm font-semibold tracking-wide text-[#F8FAFC] transition-colors hover:bg-[#4C5C80]"
               >
                 {t('cta.order')}
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -195,7 +199,7 @@ export function Header() {
               </button>
             </div>
             <nav className="container-x mt-4 flex flex-col" aria-label="Mobile">
-              {mainNav.map((item) => (
+              {headerNav.map((item) => (
                 <NavLink
                   key={item.to}
                   to={item.to}
