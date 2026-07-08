@@ -169,11 +169,11 @@ export function Header() {
                 )}
               </nav>
 
-              {/* CTA: compact muted-slate "Təklif al" button that sits INSIDE the
-                  gold bar with yellow showing above/below and to its right. */}
+              {/* CTA: compact "Təklif al" button in the header navy, sitting
+                  INSIDE the gold bar with yellow showing above/below and right. */}
               <Link
                 to="/contact"
-                className="group mr-3 flex h-8 items-center gap-1.5 self-center bg-[#3F4D6B] px-5 text-sm font-semibold tracking-wide text-[#F8FAFC] transition-colors hover:bg-[#4C5C80]"
+                className="group mr-3 flex h-8 items-center gap-1.5 self-center bg-navy-deep px-5 text-sm font-semibold tracking-wide text-[#F8FAFC] transition-colors hover:bg-navy"
               >
                 {t('cta.order')}
                 <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
