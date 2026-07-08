@@ -25,7 +25,7 @@ export const translations: Record<Lang, Tree> = {
       contact: 'Əlaqə',
     },
     cta: {
-      requestProject: 'Layihə sifariş et',
+      requestProject: 'Təklif al',
       order: 'Təklif al',
       sendInquiry: 'Müraciət göndər',
       viewPortfolio: 'Portfolioya bax',
@@ -410,7 +410,7 @@ export const company = {
   } as Record<Lang, string>,
   // Google Maps query points at the ACTUAL office address.
   mapsQuery: 'Şirin Mirzəyev küçəsi 2535, Nizami rayonu, Bakı, Azərbaycan',
-  phone: '+994 00 000 00 00', // TODO: client did not provide a phone - confirm.
+  phone: '+994 50 235 92 02',
   // NOTE: the client PDF wrote "ingo@azbuilding.az", which looks like a typo for
   // "info@azbuilding.az". Keeping the safer "info@" until the client confirms.
   // TODO: confirm whether the email is ingo@azbuilding.az or info@azbuilding.az.

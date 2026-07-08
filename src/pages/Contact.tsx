@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Globe, Building2, Instagram, Facebook, Linkedin } from 'lucide-react'
+import { Mail, MapPin, Phone, Building2, Instagram, Facebook, Linkedin } from 'lucide-react'
 import { PageHero } from '../components/PageHero'
 import { ContactForm } from '../components/ContactForm'
 import { MapEmbed } from '../components/MapEmbed'
@@ -62,15 +62,6 @@ export function Contact() {
                   <span>
                     <span className="block font-mono text-xs uppercase tracking-widest text-steel">{t('form.email')}</span>
                     <span className="mt-1 block text-base transition-colors group-hover:text-orange-brand">{company.email}</span>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href={company.website} target="_blank" rel="noopener noreferrer" className="group flex items-start gap-4">
-                  <span className="border border-white/10 p-3 text-orange-brand"><Globe className="h-5 w-5" /></span>
-                  <span>
-                    <span className="block font-mono text-xs uppercase tracking-widest text-steel">{t('misc.website')}</span>
-                    <span className="mt-1 block text-base transition-colors group-hover:text-orange-brand">www.azbuilding.az</span>
                   </span>
                 </a>
               </li>
