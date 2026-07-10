@@ -22,141 +22,97 @@ export interface Service {
 }
 
 /**
- * SERVICES - the company's real core service categories (AZB sayt info).
- * AZBUILDING is a construction, civil-industrial and infrastructure execution
- * company. Replace `image` with real photos in /public/images/services/.
+ * SERVICES - the four client-approved service groups (SAYT HERO.docx):
+ * Engineering, Project management, Construction & installation, Industry.
+ * Brand naming is normalised to AZBUILDING.
  */
 export const services: Service[] = [
   {
-    slug: 'construction-works',
-    icon: 'Building2',
-    featured: true,
-    image: '/images/services/construction-works.svg',
-    title: { az: 'Tikinti işləri', ru: 'Строительные работы', en: 'Construction works' },
-    summary: {
-      az: 'Yaşayış və qeyri-yaşayış binaları, sənaye obyektləri.',
-      ru: 'Жилые и нежилые здания, промышленные объекты.',
-      en: 'Residential and non-residential buildings, industrial facilities.',
-    },
-    description: {
-      az: 'Yaşayış və qeyri-yaşayış binaları, eləcə də sənaye obyektləri üzrə tikinti işlərini icra edirik.',
-      ru: 'Выполняем строительные работы по жилым и нежилым зданиям, а также промышленным объектам.',
-      en: 'We carry out construction works for residential and non-residential buildings, as well as industrial facilities.',
-    },
-    scope: {
-      az: ['Yaşayış binaları', 'Qeyri-yaşayış binaları', 'Sənaye obyektləri', 'Sahə icrası'],
-      ru: ['Жилые здания', 'Нежилые здания', 'Промышленные объекты', 'Исполнение на площадке'],
-      en: ['Residential buildings', 'Non-residential buildings', 'Industrial facilities', 'On-site execution'],
-    },
-  },
-  {
-    slug: 'infrastructure-execution',
-    icon: 'Route',
-    featured: true,
-    image: '/images/services/infrastructure-execution.svg',
-    title: { az: 'İnfrastruktur layihələrinin icrası', ru: 'Реализация инфраструктурных проектов', en: 'Infrastructure project execution' },
-    summary: {
-      az: 'Avtomobil yolları və əlaqəli işlər.',
-      ru: 'Автомобильные дороги и сопутствующие работы.',
-      en: 'Road construction and related works.',
-    },
-    description: {
-      az: 'Avtomobil yollarının tikintisi və əlaqəli infrastruktur işlərinin icrasında iştirak edirik.',
-      ru: 'Участвуем в строительстве автомобильных дорог и реализации сопутствующих инфраструктурных работ.',
-      en: 'We participate in road construction and the execution of related infrastructure works.',
-    },
-    scope: {
-      az: ['Avtomobil yolları', 'Yol təmiri və rekonstruksiya', 'Körpü yanaşma yolları', 'Əlaqəli infrastruktur'],
-      ru: ['Автомобильные дороги', 'Ремонт и реконструкция дорог', 'Подходные дороги к мостам', 'Сопутствующая инфраструктура'],
-      en: ['Roads & highways', 'Road repair & reconstruction', 'Bridge approach roads', 'Related infrastructure'],
-    },
-  },
-  {
-    slug: 'earthworks-planning',
-    icon: 'LandPlot',
-    featured: true,
-    image: '/images/services/earthworks-planning.svg',
-    title: { az: 'Torpaq işləri və planlaşdırma', ru: 'Земляные работы и планировка', en: 'Earthworks and site planning' },
-    summary: {
-      az: 'Qazıntı, planlaşdırma və sahə hazırlığı.',
-      ru: 'Экскавация, планировка и подготовка площадки.',
-      en: 'Excavation, grading and site preparation.',
-    },
-    description: {
-      az: 'Torpaq işləri və ərazinin planlaşdırılması - qazıntıdan sahə hazırlığına qədər.',
-      ru: 'Земляные работы и планировка территории - от экскавации до подготовки площадки.',
-      en: 'Earthworks and site planning - from excavation to site preparation.',
-    },
-    scope: {
-      az: ['Qazıntı işləri', 'Ərazinin planlaşdırılması', 'Sahə hazırlığı', 'Qruntun möhkəmləndirilməsi'],
-      ru: ['Экскавационные работы', 'Планировка территории', 'Подготовка площадки', 'Уплотнение грунта'],
-      en: ['Excavation', 'Site grading', 'Site preparation', 'Ground compaction'],
-    },
-  },
-  {
-    slug: 'utility-lines',
-    icon: 'Cable',
-    featured: true,
-    image: '/images/services/utility-lines.svg',
-    title: { az: 'Kommunikasiya xətlərinin çəkilişi', ru: 'Прокладка коммуникационных линий', en: 'Utility & communication lines' },
-    summary: {
-      az: 'Mühəndis-kommunikasiya xətlərinin çəkilişi.',
-      ru: 'Прокладка инженерно-коммуникационных линий.',
-      en: 'Installation and laying of utility lines.',
-    },
-    description: {
-      az: 'Mühəndis-kommunikasiya və kommunal xətlərin çəkilişi və quraşdırılması işlərini icra edirik.',
-      ru: 'Выполняем прокладку и монтаж инженерно-коммуникационных и коммунальных линий.',
-      en: 'We carry out the installation and laying of utility and communication lines.',
-    },
-    scope: {
-      az: ['Su və kanalizasiya xətləri', 'Elektrik kommunikasiyaları', 'Kommunal xətlər', 'Bağlantı və quraşdırma'],
-      ru: ['Линии воды и канализации', 'Электрокоммуникации', 'Коммунальные линии', 'Подключение и монтаж'],
-      en: ['Water & sewage lines', 'Electrical communications', 'Utility lines', 'Connection & installation'],
-    },
-  },
-  {
-    slug: 'monolithic-fitout',
-    icon: 'Layers',
-    featured: true,
-    image: '/images/services/monolithic-fitout.svg',
-    title: { az: 'Monolit və fit-out işləri', ru: 'Монолитные и fit-out работы', en: 'Monolithic & fit-out works' },
-    summary: {
-      az: 'Monolit konstruksiyalar və daxili fit-out.',
-      ru: 'Монолитные конструкции и внутренний fit-out.',
-      en: 'Monolithic structures and interior fit-out.',
-    },
-    description: {
-      az: 'Monolit konstruksiya işləri və daxili fit-out - kommersiya və tibbi məkanlar daxil olmaqla.',
-      ru: 'Монолитные конструкции и внутренний fit-out, в том числе коммерческие и медицинские помещения.',
-      en: 'Monolithic construction works and interior fit-out, including commercial and medical spaces.',
-    },
-    scope: {
-      az: ['Monolit karkas', 'Beton işləri', 'Daxili fit-out', 'Tamamlama işləri'],
-      ru: ['Монолитный каркас', 'Бетонные работы', 'Внутренний fit-out', 'Отделочные работы'],
-      en: ['Monolithic frame', 'Concrete works', 'Interior fit-out', 'Finishing works'],
-    },
-  },
-  {
-    slug: 'project-management-engineering',
+    slug: 'engineering',
     icon: 'PencilRuler',
     featured: true,
     image: '/images/services/project-management-engineering.svg',
-    title: { az: 'Layihə idarəetmə və mühəndislik dəstəyi', ru: 'Управление проектами и инженерная поддержка', en: 'Project management & engineering support' },
+    title: { az: 'Mühəndislik', ru: 'Инжиниринг', en: 'Engineering' },
     summary: {
-      az: 'Layihə koordinasiyası və mühəndislik dəstəyi.',
-      ru: 'Координация проекта и инженерная поддержка.',
-      en: 'Project coordination and engineering support.',
+      az: 'Texniki dizayn, hesablamalar və mühəndis həlləri.',
+      ru: 'Технический дизайн, расчёты и инженерные решения.',
+      en: 'Technical design, calculations and engineering solutions.',
     },
     description: {
-      az: 'Layihələrin idarə olunması və mühəndislik dəstəyi - qrafik, koordinasiya, texniki həllər və icra nəzarəti.',
-      ru: 'Управление проектами и инженерная поддержка - график, координация, технические решения и контроль исполнения.',
-      en: 'Project management and engineering support - scheduling, coordination, technical solutions and execution control.',
+      az: 'Sənaye, inzibati və yaşayış binaları layihələrində texniki dizayn, hesablamalar və mühəndis həllərinin hazırlanması.',
+      ru: 'Технический дизайн, расчёты и подготовка инженерных решений для промышленных, административных и жилых зданий.',
+      en: 'Technical design, calculations and the preparation of engineering solutions for industrial, administrative and residential building projects.',
     },
     scope: {
-      az: ['Layihə qrafiki və koordinasiya', 'Mühəndislik dəstəyi', 'Subpodratçı koordinasiyası', 'İcra və keyfiyyət nəzarəti'],
-      ru: ['График и координация проекта', 'Инженерная поддержка', 'Координация субподрядчиков', 'Контроль исполнения и качества'],
-      en: ['Schedule & coordination', 'Engineering support', 'Subcontractor coordination', 'Execution & quality control'],
+      az: ['Texniki dizayn', 'Mühəndis hesablamaları', 'Konstruktiv həllər', 'Layihə sənədləşməsi'],
+      ru: ['Технический дизайн', 'Инженерные расчёты', 'Конструктивные решения', 'Проектная документация'],
+      en: ['Technical design', 'Engineering calculations', 'Structural solutions', 'Project documentation'],
+    },
+  },
+  {
+    slug: 'project-management',
+    icon: 'ClipboardCheck',
+    featured: true,
+    image: '/images/services/monolithic-fitout.svg',
+    title: { az: 'Layihə idarəetməsi', ru: 'Управление проектами', en: 'Project management' },
+    summary: {
+      az: 'Planlamadan təhvilədək müddət və büdcə nəzarəti.',
+      ru: 'Контроль сроков и бюджета от планирования до сдачи.',
+      en: 'Schedule and budget control from planning to handover.',
+    },
+    description: {
+      az: 'Planlamadan təhvilədək bütün mərhələlərin idarə olunması, müddət və büdcə nəzarəti.',
+      ru: 'Управление всеми этапами от планирования до сдачи, контроль сроков и бюджета.',
+      en: 'Management of every stage from planning to handover, with schedule and budget control.',
+    },
+    scope: {
+      az: ['Planlama və cədvəl', 'Müddət nəzarəti', 'Büdcə nəzarəti', 'Təhvil-təslim'],
+      ru: ['Планирование и график', 'Контроль сроков', 'Контроль бюджета', 'Сдача-приёмка'],
+      en: ['Planning & scheduling', 'Schedule control', 'Budget control', 'Handover'],
+    },
+  },
+  {
+    slug: 'construction-installation',
+    icon: 'HardHat',
+    featured: true,
+    image: '/images/services/construction-works.svg',
+    title: { az: 'Tikinti-quraşdırma işləri', ru: 'Строительно-монтажные работы', en: 'Construction & installation works' },
+    summary: {
+      az: 'Nəqliyyat infrastrukturu və bina tikintisi.',
+      ru: 'Транспортная инфраструктура и строительство зданий.',
+      en: 'Transport infrastructure and building construction.',
+    },
+    description: {
+      az: 'Baş podratçı və subpodratçı kimi nəqliyyat infrastrukturu və bina tikintisi layihələrinin tikinti-quraşdırma işləri.',
+      ru: 'Строительно-монтажные работы по проектам транспортной инфраструктуры и строительства зданий в качестве генподрядчика и субподрядчика.',
+      en: 'Construction and installation works for transport-infrastructure and building projects, as main contractor and subcontractor.',
+    },
+    scope: {
+      az: ['Nəqliyyat infrastrukturu', 'Bina tikintisi', 'Monolit işlər', 'Quraşdırma işləri'],
+      ru: ['Транспортная инфраструктура', 'Строительство зданий', 'Монолитные работы', 'Монтажные работы'],
+      en: ['Transport infrastructure', 'Building construction', 'Monolithic works', 'Installation works'],
+    },
+  },
+  {
+    slug: 'industry',
+    icon: 'Boxes',
+    featured: true,
+    image: '/images/services/infrastructure-execution.svg',
+    title: { az: 'Sənaye', ru: 'Промышленность', en: 'Industry' },
+    summary: {
+      az: 'İnşaat materialları istehsalı.',
+      ru: 'Производство строительных материалов.',
+      en: 'Construction materials production.',
+    },
+    description: {
+      az: 'İnşaat materialları istehsalı.',
+      ru: 'Производство строительных материалов.',
+      en: 'Production of construction materials.',
+    },
+    scope: {
+      az: ['İnşaat materialları istehsalı'],
+      ru: ['Производство строительных материалов'],
+      en: ['Construction materials production'],
     },
   },
 ]

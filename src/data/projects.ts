@@ -17,8 +17,7 @@ export interface Project {
   role: Loc
   /** Activity type, e.g. Fit-out, Construction, Infrastructure. */
   activity: Loc
-  /** Period context. Most works span 2009-2025; no exact per-project years were
-   *  provided, so we present a careful period rather than inventing dates. */
+  /** Period / years. */
   period: Loc
   short: Loc
   description: Loc
@@ -38,275 +37,123 @@ export const projectTypeLabels: Record<ProjectType, Loc> = {
   fitout: { az: 'Fit-out', ru: 'Fit-out', en: 'Fit-out' },
 }
 
-// Most portfolio entries reflect works / participation carried out across this
-// window. No exact per-project years were provided - do not invent them.
-const PERIOD: Loc = { az: '2009-2025', ru: '2009-2025', en: '2009-2025' }
-
-// Common role labels (careful, non-overstated wording).
+// Careful, non-overstated role labels.
 const SUBCONTRACTOR: Loc = { az: 'Subpodratçı', ru: 'Субподрядчик', en: 'Subcontractor' }
 const CONTRACTOR: Loc = { az: 'Podratçı', ru: 'Подрядчик', en: 'Contractor' }
 
 /**
- * PORTFOLIO - real projects from the client file (AZB sayt info).
- * Works and participation carried out during 2009-2025 and later. Some works
- * were not accompanied by full formal documentation, so the portfolio is
- * presented in a careful "experience / participation" format - roles are shown
- * exactly as the client described (mostly subcontractor / contractor).
+ * PORTFOLIO - the four client-provided projects (Sayt mətni files). Three more
+ * (1 Ukraine, 2 Azerbaijan) will be added later for a total of 7 - they are NOT
+ * invented here. Brand naming is normalised to AZBUILDING / AZBUILDING Qrup MMC.
  * Replace cover/gallery with real photography in /public/images/projects/.
  */
 export const projects: Project[] = [
   {
-    slug: 'flame-towers-baku',
-    featured: true,
-    type: 'fitout',
-    cover: '/images/projects/project-01.svg',
-    gallery: ['/images/projects/project-01.svg', '/images/projects/project-03.svg', '/images/projects/project-02.svg'],
-    period: PERIOD,
-    name: { az: 'Bakı, Flame Towers', ru: 'Баку, Flame Towers', en: 'Baku, Flame Towers' },
-    location: { az: 'Bakı, Azərbaycan', ru: 'Баку, Азербайджан', en: 'Baku, Azerbaijan' },
-    partner: { az: 'DİA HOLDİNQ', ru: 'DİA HOLDİNQ', en: 'DİA HOLDİNQ' },
-    role: SUBCONTRACTOR,
-    activity: { az: 'Fit-out', ru: 'Fit-out', en: 'Fit-out' },
-    short: {
-      az: 'Logistika, beton işləri və fit-out. Subpodratçı rolunda iştirak.',
-      ru: 'Логистика, бетонные работы и fit-out. Участие в роли субподрядчика.',
-      en: 'Logistics, concrete works and fit-out. Participation in a subcontractor role.',
-    },
-    description: {
-      az: 'Flame Towers layihəsində logistika, beton işləri və fit-out işlərində subpodratçı kimi iştirak. İş təcrübə / iştirak formatında təqdim olunur.',
-      ru: 'Участие в роли субподрядчика в логистике, бетонных работах и fit-out в рамках проекта Flame Towers. Работа представлена в формате опыта / участия.',
-      en: 'Participation as a subcontractor in logistics, concrete works and fit-out within the Flame Towers project. Presented in an experience / participation format.',
-    },
-  },
-  {
-    slug: 'shahdag-tourism-center',
+    slug: 'sumqayit-technical-service-complex',
     featured: true,
     type: 'civil',
-    cover: '/images/projects/project-02.svg',
-    gallery: ['/images/projects/project-02.svg', '/images/projects/project-05.svg', '/images/projects/project-01.svg'],
-    period: PERIOD,
-    name: { az: 'Şahdağ Turizm Mərkəzi', ru: 'Туристический центр «Шахдаг»', en: 'Shahdag Tourism Center' },
-    location: { az: 'Şahdağ, Azərbaycan', ru: 'Шахдаг, Азербайджан', en: 'Shahdag, Azerbaijan' },
-    partner: { az: 'DİA HOLDİNQ', ru: 'DİA HOLDİNQ', en: 'DİA HOLDİNQ' },
-    role: SUBCONTRACTOR,
-    activity: { az: 'Tikinti', ru: 'Строительство', en: 'Construction' },
-    short: {
-      az: 'Torpaq, beton işləri və fit-out. Subpodratçı rolunda iştirak.',
-      ru: 'Земляные, бетонные работы и fit-out. Участие в роли субподрядчика.',
-      en: 'Earthworks, concrete works and fit-out. Participation in a subcontractor role.',
-    },
-    description: {
-      az: 'Şahdağ Turizm Mərkəzində torpaq işləri, beton işləri və fit-out üzrə subpodratçı kimi iştirak.',
-      ru: 'Участие в роли субподрядчика в земляных, бетонных работах и fit-out на объекте туристического центра «Шахдаг».',
-      en: 'Participation as a subcontractor in earthworks, concrete works and fit-out at the Shahdag Tourism Center.',
-    },
-  },
-  {
-    slug: 'xeyal-adalari',
-    featured: true,
-    type: 'civil',
-    cover: '/images/projects/project-03.svg',
-    gallery: ['/images/projects/project-03.svg', '/images/projects/project-06.svg', '/images/projects/project-01.svg'],
-    period: PERIOD,
-    name: { az: 'Xəyal Adaları', ru: 'Khazar Islands (Xəyal Adaları)', en: 'Khazar Islands (Xəyal Adaları)' },
-    location: { az: 'Bakı, Azərbaycan', ru: 'Баку, Азербайджан', en: 'Baku, Azerbaijan' },
-    partner: { az: 'İNNOVA - ANTİK', ru: 'İNNOVA - ANTİK', en: 'İNNOVA - ANTİK' },
-    role: SUBCONTRACTOR,
-    activity: { az: 'Tikinti / Fit-out', ru: 'Строительство / Fit-out', en: 'Construction / Fit-out' },
-    short: {
-      az: 'Apartamentlərin tikintisi və fit-out işlərinin icrası. Subpodratçı.',
-      ru: 'Строительство и fit-out апартаментов. Субподрядчик.',
-      en: 'Construction and fit-out execution for apartments. Subcontractor.',
-    },
-    description: {
-      az: 'Layihə daxilində apartamentlərin tikintisi və fit-out işlərinin icrasında subpodratçı kimi iştirak.',
-      ru: 'Участие в роли субподрядчика в строительстве и fit-out апартаментов в рамках проекта.',
-      en: 'Participation as a subcontractor in the construction and fit-out execution of apartments within the project.',
-    },
-  },
-  {
-    slug: 'kyiv-chop-highway-ukraine',
-    featured: true,
-    type: 'infrastructure',
     cover: '/images/projects/project-04.svg',
-    gallery: ['/images/projects/project-04.svg', '/images/projects/project-07.svg', '/images/projects/project-05.svg'],
-    period: PERIOD,
-    name: { az: 'Kiyev - Çop avtomobil yolu', ru: 'Автодорога Киев - Чоп', en: 'Kyiv - Chop Highway' },
-    location: { az: 'Ukrayna', ru: 'Украина', en: 'Ukraine' },
-    partner: { az: 'TODİNİ - Akkord', ru: 'TODİNİ - Akkord', en: 'TODİNİ - Akkord' },
-    role: SUBCONTRACTOR,
-    activity: { az: 'İnfrastruktur · mühəndislik dəstəyi', ru: 'Инфраструктура · инженерная поддержка', en: 'Infrastructure · engineering support' },
-    short: {
-      az: 'Tenderin udulması və yolun tikintisində mühəndislik xidməti ilə iştirak. Subpodratçı.',
-      ru: 'Участие инженерными услугами в выигранном тендере и строительстве дороги. Субподрядчик.',
-      en: 'Participation through engineering services in tender success and road construction. Subcontractor.',
+    gallery: ['/images/projects/project-04.svg'],
+    name: {
+      az: 'Sumqayıt Texniki Xidmət Kompleksi',
+      ru: 'Технический сервисный комплекс, Сумгаит',
+      en: 'Sumgait Technical Service Complex',
     },
-    description: {
-      az: 'Kiyev - Çop avtomobil yolu üzrə tenderin udulmasında və yolun tikintisində mühəndislik dəstəyi ilə subpodratçı kimi iştirak.',
-      ru: 'Участие в роли субподрядчика с инженерной поддержкой в выигрыше тендера и строительстве автодороги Киев - Чоп.',
-      en: 'Participation as a subcontractor with engineering support in the tender success and construction of the Kyiv - Chop highway.',
-    },
-  },
-  {
-    slug: 'samtredia-grigoleti-highway-georgia',
-    featured: false,
-    type: 'infrastructure',
-    cover: '/images/projects/project-05.svg',
-    gallery: ['/images/projects/project-05.svg', '/images/projects/project-08.svg', '/images/projects/project-04.svg'],
-    period: PERIOD,
-    name: { az: 'Samtredi - Qriqoleti avtomobil yolu', ru: 'Автодорога Самтредиа - Григолети', en: 'Samtredia - Grigoleti Highway' },
-    location: { az: 'Gürcüstan', ru: 'Грузия', en: 'Georgia' },
-    partner: { az: 'Sinohydro', ru: 'Sinohydro', en: 'Sinohydro' },
-    role: SUBCONTRACTOR,
-    activity: { az: 'İnfrastruktur', ru: 'Инфраструктура', en: 'Infrastructure' },
-    short: {
-      az: 'Torpaq və kommunikasiya işləri. Subpodratçı.',
-      ru: 'Земляные работы и работы по коммуникациям. Субподрядчик.',
-      en: 'Earthworks and utility-line works. Subcontractor.',
-    },
-    description: {
-      az: 'Samtredi - Qriqoleti avtomobil yolu layihəsində torpaq və kommunikasiya xətləri işlərində subpodratçı kimi iştirak.',
-      ru: 'Участие в роли субподрядчика в земляных работах и прокладке коммуникаций на проекте автодороги Самтредиа - Григолети.',
-      en: 'Participation as a subcontractor in earthworks and utility-line works on the Samtredia - Grigoleti highway project.',
-    },
-  },
-  {
-    slug: 'alat-port-project',
-    featured: false,
-    type: 'infrastructure',
-    cover: '/images/projects/project-06.svg',
-    gallery: ['/images/projects/project-06.svg', '/images/projects/project-05.svg', '/images/projects/project-09.svg'],
-    period: PERIOD,
-    name: { az: 'Ələt Limanı Layihəsi', ru: 'Проект порта Алят', en: 'Alat Port Project' },
-    location: { az: 'Ələt, Bakı, Azərbaycan', ru: 'Алят, Баку, Азербайджан', en: 'Alat, Baku, Azerbaijan' },
-    partner: { az: 'EVRASCON', ru: 'EVRASCON', en: 'EVRASCON' },
-    role: SUBCONTRACTOR,
-    activity: { az: 'İnfrastruktur', ru: 'Инфраструктура', en: 'Infrastructure' },
-    short: {
-      az: 'Torpaq və beton işləri. Subpodratçı.',
-      ru: 'Земляные и бетонные работы. Субподрядчик.',
-      en: 'Earthworks and concrete works. Subcontractor.',
-    },
-    description: {
-      az: 'Ələt Limanı layihəsində torpaq və beton işləri üzrə subpodratçı kimi iştirak.',
-      ru: 'Участие в роли субподрядчика в земляных и бетонных работах на проекте порта Алят.',
-      en: 'Participation as a subcontractor in earthworks and concrete works on the Alat Port project.',
-    },
-  },
-  {
-    slug: 'baku-quba-highway',
-    featured: false,
-    type: 'infrastructure',
-    cover: '/images/projects/project-07.svg',
-    gallery: ['/images/projects/project-07.svg', '/images/projects/project-04.svg', '/images/projects/project-08.svg'],
-    period: PERIOD,
-    name: { az: 'Bakı - Quba avtomobil yolu', ru: 'Автодорога Баку - Губа', en: 'Baku - Quba Highway' },
-    location: { az: 'Azərbaycan', ru: 'Азербайджан', en: 'Azerbaijan' },
-    partner: { az: 'AKKORD', ru: 'AKKORD', en: 'AKKORD' },
-    role: SUBCONTRACTOR,
-    activity: { az: 'İnfrastruktur', ru: 'Инфраструктура', en: 'Infrastructure' },
-    short: {
-      az: 'Beton yolun təmir və rekonstruksiyası işləri. Subpodratçı.',
-      ru: 'Ремонт и реконструкция бетонной автодороги. Субподрядчик.',
-      en: 'Repair and reconstruction of the concrete road. Subcontractor.',
-    },
-    description: {
-      az: 'Bakı - Quba avtomobil yolunun beton hissəsinin təmir və rekonstruksiya işlərində subpodratçı kimi iştirak.',
-      ru: 'Участие в роли субподрядчика в ремонте и реконструкции бетонного участка автодороги Баку - Губа.',
-      en: 'Participation as a subcontractor in the repair and reconstruction of the concrete section of the Baku - Quba highway.',
-    },
-  },
-  {
-    slug: 'baku-astara-new-highway',
-    featured: false,
-    type: 'infrastructure',
-    cover: '/images/projects/project-08.svg',
-    gallery: ['/images/projects/project-08.svg', '/images/projects/project-07.svg', '/images/projects/project-05.svg'],
-    period: PERIOD,
-    name: { az: 'Bakı - Astara yeni avtomobil yolu', ru: 'Новая автодорога Баку - Астара', en: 'Baku - Astara New Highway' },
-    location: { az: 'Azərbaycan', ru: 'Азербайджан', en: 'Azerbaijan' },
-    partner: { az: 'POLAD YOL', ru: 'POLAD YOL', en: 'POLAD YOL' },
-    role: SUBCONTRACTOR,
-    activity: { az: 'İnfrastruktur', ru: 'Инфраструктура', en: 'Infrastructure' },
-    short: {
-      az: 'Körpülərin yanaşma yolları daxil olmaqla torpaq işlərinin icrası.',
-      ru: 'Земляные работы, включая подходные дороги к мостам.',
-      en: 'Earthworks including approach roads to bridges.',
-    },
-    description: {
-      az: 'Bakı - Astara yeni avtomobil yolu layihəsində körpülərin yanaşma yolları daxil olmaqla torpaq işlərinin icrasında iştirak.',
-      ru: 'Участие в выполнении земляных работ, включая подходные дороги к мостам, на проекте новой автодороги Баку - Астара.',
-      en: 'Participation in earthworks, including bridge approach roads, on the Baku - Astara new highway project.',
-    },
-  },
-  {
-    slug: 'sumgait-industrial-complex',
-    featured: true,
-    type: 'industrial',
-    cover: '/images/projects/project-09.svg',
-    gallery: ['/images/projects/project-09.svg', '/images/projects/project-02.svg', '/images/projects/project-06.svg'],
-    period: PERIOD,
-    name: { az: 'Sumqayıt inzibati və sənaye kompleksi', ru: 'Административно-промышленный комплекс «Сумгаит»', en: 'Sumgait Administrative & Industrial Complex' },
-    location: { az: 'Sumqayıt, Azərbaycan', ru: 'Сумгаит, Азербайджан', en: 'Sumgait, Azerbaijan' },
-    partner: { az: 'Fiziki şəxs (sifarişçi)', ru: 'Физическое лицо (заказчик)', en: 'Private individual (client)' },
+    location: { az: 'Bakı-Sumqayıt yolu, Azərbaycan', ru: 'Трасса Баку-Сумгаит, Азербайджан', en: 'Baku-Sumgait road, Azerbaijan' },
+    partner: { az: 'Fiziki şəxs', ru: 'Частное лицо', en: 'Private individual' },
     role: CONTRACTOR,
-    activity: { az: 'Tikinti (sənaye)', ru: 'Строительство (промышленное)', en: 'Construction (industrial)' },
+    activity: { az: 'İnzibati bina və tikinti', ru: 'Административное здание и строительство', en: 'Administrative building & construction' },
+    period: { az: '2015-2016', ru: '2015-2016', en: '2015-2016' },
     short: {
-      az: 'Ağır texnika təmir mərkəzi, TIR park və 4 mərtəbəli satış-servis binasının tikintisi. Podratçı.',
-      ru: 'Ремонтный центр тяжёлой техники, TIR-парк и 4-этажное здание сервис-центра. Подрядчик.',
-      en: 'Heavy-machinery repair centre, TIR park and a 4-storey sales-service building. Contractor.',
+      az: '3 ha ərazidə inzibati bina, texniki xidmət mərkəzi və anbar.',
+      ru: 'Административное здание, сервисный центр и склад на участке 3 га.',
+      en: 'Administrative building, service centre and warehouse on a 3 ha site.',
     },
     description: {
-      az: 'Ağır inşaat texnikaları və yük avtomobillərinin təmir mərkəzinin tikintisi, TIR park fəaliyyətinin təşkili, güc avadanlıqları və inşaat texnikalarının ehtiyat hissələrinin satış-servis mərkəzi üçün təməldən 4 mərtəbəli binanın tikintisi. Podratçı rolunda icra.',
-      ru: 'Строительство ремонтного центра для тяжёлой строительной техники и грузовых автомобилей, организация работы TIR-парка, строительство с фундамента 4-этажного здания для центра продажи и обслуживания силового оборудования и запчастей строительной техники. Исполнение в роли подрядчика.',
-      en: 'Construction of a heavy construction-machinery and truck repair centre, organization of TIR-park operations, and construction from foundation of a four-storey building for a power-equipment and construction-machinery spare-parts sales-service centre. Executed in a contractor role.',
+      az: 'AZBUILDING tərəfindən Bakı-Sumqayıt yolu üzərində 3 hektar ərazidə inzibati bina, texniki xidmət mərkəzi və anbar tikilmişdir. Bir zirzəmi və 4 yerüstü mərtəbədən ibarət bina təxminən 7 500 m² ümumi tikinti sahəsinə malikdir; texniki xidmət mərkəzində eyni anda 10 yük avtomobili təmir oluna bilir.',
+      ru: 'На трассе Баку-Сумгаит, на участке 3 гектара, силами AZBUILDING построены административное здание, центр технического обслуживания и склад. Здание с одним подвальным и 4 надземными этажами имеет около 7 500 м² общей площади; сервисный центр рассчитан на одновременный ремонт 10 грузовых автомобилей.',
+      en: 'On the Baku-Sumgait road, on a 3-hectare site, AZBUILDING built an administrative building, a technical-service centre and a warehouse. With one basement and 4 above-ground floors, the building has around 7,500 m² of total floor area; the service centre can repair 10 trucks simultaneously.',
     },
   },
   {
-    slug: 'garachukhur-residential-complex',
+    slug: 'asyl-arman-almaty',
     featured: true,
     type: 'residential',
-    confidential: true,
-    cover: '/images/projects/project-10.svg',
-    gallery: ['/images/projects/project-10.svg', '/images/projects/project-03.svg'],
-    period: PERIOD,
-    name: { az: 'Qaraçuxur Yaşayış Kompleksi', ru: 'Жилой комплекс «Гарачухур»', en: 'Garachukhur Residential Complex' },
-    location: { az: 'Qaraçuxur, Bakı, Azərbaycan', ru: 'Гарачухур, Баку, Азербайджан', en: 'Garachukhur, Baku, Azerbaijan' },
-    partner: { az: 'MTK (sifarişçi məxfidir)', ru: 'Девелопер (заказчик конфиденциален)', en: 'Developer (client confidential)' },
-    role: CONTRACTOR,
-    activity: { az: 'Tikinti (yaşayış)', ru: 'Строительство (жилое)', en: 'Construction (residential)' },
+    cover: '/images/projects/project-02.svg',
+    gallery: ['/images/projects/project-02.svg', '/images/projects/project-03.svg'],
+    name: {
+      az: 'Asıl Arman yaşayış kompleksi',
+      ru: 'Жилой комплекс «Asyl Arman»',
+      en: 'Asyl Arman residential complex',
+    },
+    location: { az: 'Qazaxıstan, Almatı yaxınlığı', ru: 'Казахстан, близ Алматы', en: 'Kazakhstan, near Almaty' },
+    partner: { az: 'ELİTSTROY / Modern Construction Group', ru: 'ELİTSTROY / Modern Construction Group', en: 'ELİTSTROY / Modern Construction Group' },
+    role: SUBCONTRACTOR,
+    activity: { az: 'Monolit-karkas tikinti', ru: 'Монолитно-каркасное строительство', en: 'Monolithic-frame construction' },
+    period: { az: '2013-2015', ru: '2013-2015', en: '2013-2015' },
     short: {
-      az: '12 mərtəbəli 2 yaşayış binasının tikintisi. Podratçı. Sifarişçi məxfidir.',
-      ru: 'Строительство двух 12-этажных жилых зданий. Подрядчик. Заказчик конфиденциален.',
-      en: 'Construction of two 12-storey residential buildings. Contractor. Client confidential.',
+      az: 'İki binanın kotlovan, bünövrə, monolit karkas və tamamlama işləri.',
+      ru: 'Котлован, фундамент, монолитный каркас и отделка двух зданий.',
+      en: 'Excavation, foundations, monolithic frame and finishing of two buildings.',
     },
     description: {
-      az: 'İki ədəd 12 mərtəbəli yaşayış binasının tikintisində podratçı kimi icra. Sifarişçi adının açıqlanmasını istəmir.',
-      ru: 'Исполнение в роли подрядчика при строительстве двух 12-этажных жилых зданий. Заказчик не желает раскрывать своё название.',
-      en: 'Executed as the contractor for the construction of two 12-storey residential buildings. The client prefers to remain confidential.',
+      az: '"ELİTSTROY" tərəfindən inşa edilən, 9 mərtəbəli monolit-karkas binalardan ibarət ekonom-klas yaşayış kompleksi. AZBUILDING layihədə subpodratçı qismində iştirak edərək iki binanın kotlovan qazıntı və bünövrə işlərini, monolit dəmir-beton karkasının inşasını və təmir-tamamlama işlərini icra etmişdir.',
+      ru: 'Жилой комплекс эконом-класса из 9-этажных монолитно-каркасных зданий, возводимый компанией «ELİTSTROY». AZBUILDING в качестве субподрядчика выполнил работы по котловану и фундаментам двух зданий, возведение монолитного железобетонного каркаса и отделочные работы.',
+      en: 'An economy-class residential complex of 9-storey monolithic-frame buildings developed by "ELİTSTROY". As a subcontractor, AZBUILDING carried out the excavation and foundation works for two buildings, the monolithic reinforced-concrete frame and the finishing works.',
     },
   },
   {
-    slug: 'jabrayil-beverage-factory',
-    featured: false,
-    type: 'industrial',
-    cover: '/images/projects/project-11.svg',
-    gallery: ['/images/projects/project-11.svg', '/images/projects/project-09.svg', '/images/projects/project-02.svg'],
-    period: PERIOD,
-    name: { az: 'Cəbrayıl, Alkoqolsuz İçkilər Zavodu', ru: 'Джебраил, завод безалкогольных напитков', en: 'Jabrayil, Soft-Drinks Factory' },
-    location: { az: 'Cəbrayıl, Azərbaycan', ru: 'Джебраил, Азербайджан', en: 'Jabrayil, Azerbaijan' },
-    partner: { az: 'İNNOVA - ANTİK', ru: 'İNNOVA - ANTİK', en: 'İNNOVA - ANTİK' },
+    slug: 'samtredia-grigoleti-highway',
+    featured: true,
+    type: 'infrastructure',
+    cover: '/images/projects/project-05.svg',
+    gallery: ['/images/projects/project-05.svg', '/images/projects/project-07.svg'],
+    name: {
+      az: 'Samtredia-Qriqoleti avtomagistralı',
+      ru: 'Автомагистраль Самтредиа-Григолети',
+      en: 'Samtredia-Grigoleti highway',
+    },
+    location: { az: 'Gürcüstan, Quriya regionu, Lançxuti', ru: 'Грузия, регион Гурия, Ланчхути', en: 'Georgia, Guria region, Lanchkhuti' },
+    partner: { az: 'China Railway 23rd Bureau Group Co. Ltd.', ru: 'China Railway 23rd Bureau Group Co. Ltd.', en: 'China Railway 23rd Bureau Group Co. Ltd.' },
     role: SUBCONTRACTOR,
-    activity: { az: 'Tikinti (sənaye)', ru: 'Строительство (промышленное)', en: 'Construction (industrial)' },
+    activity: { az: 'Avtomagistralın tikintisi və rekonstruksiyası', ru: 'Строительство и реконструкция автомагистрали', en: 'Highway construction & reconstruction' },
+    period: { az: '2017-2018', ru: '2017-2018', en: '2017-2018' },
     short: {
-      az: 'Subpodrat müqaviləsi əsasında zavodun tikintisi. Subpodratçı.',
-      ru: 'Строительство завода на основании субподрядного договора. Субподрядчик.',
-      en: 'Factory construction under a subcontract agreement. Subcontractor.',
+      az: 'Magistralın ~2 km hissəsində yol örtüyü, heyvan keçidləri və suötürücü qurğular.',
+      ru: 'Дорожная одежда, зверопроходы и водопропускные сооружения на ~2 км трассы.',
+      en: 'Pavement, animal underpasses and culverts on a ~2 km section.',
     },
     description: {
-      az: 'Cəbrayılda alkoqolsuz içkilər zavodunun subpodrat müqaviləsi əsasında tikintisində iştirak.',
-      ru: 'Участие в строительстве завода безалкогольных напитков в Джебраиле на основании субподрядного договора.',
-      en: 'Participation in the construction of a soft-drinks factory in Jabrayil under a subcontract agreement.',
+      az: 'Samtredia-Qriqoleti avtomagistralının tikintisi və rekonstruksiyası (IV Lot, 42-51-ci km). Sifarişçi Gürcüstan Avtomobil Yolları Departamenti, maliyyələşdirmə Avropa İnvestisiya Bankı (EIB), baş podratçı China Railway 23rd Bureau Group Co. Ltd. AZBUILDING Qrup MMC subpodratçı qismində yumşaq zəminli və qismən bataqlıq ərazilərdən keçən magistralın təxminən 2 km-lik hissəsində yol örtüyü konstruksiyasını, yeraltı heyvan keçidlərini və suötürücü qurğuları inşa etmiş, ümumilikdə 620 000 m³-dən çox dolğu materialından istifadə etmişdir.',
+      ru: 'Строительство и реконструкция автомагистрали Самтредиа-Григолети (IV Лот, 42-51 км). Заказчик - Департамент автомобильных дорог Грузии, финансирование - Европейский инвестиционный банк (EIB), генподрядчик - China Railway 23rd Bureau Group Co. Ltd. AZBUILDING Qrup MMC как субподрядчик построил дорожную одежду, подземные зверопроходы и водопропускные сооружения на участке около 2 км, проходящем по слабым и частично заболоченным грунтам, использовав более 620 000 м³ насыпного материала.',
+      en: 'Construction and reconstruction of the Samtredia-Grigoleti highway (Lot IV, km 42-51). Client - Georgian Roads Department, financing - European Investment Bank (EIB), main contractor - China Railway 23rd Bureau Group Co. Ltd. As a subcontractor, AZBUILDING Qrup MMC built the pavement structure, underground animal crossings and culverts on an approximately 2 km section crossing soft and partly marshy ground, using over 620,000 m³ of fill material.',
+    },
+  },
+  {
+    slug: 'alat-astara-highway',
+    featured: true,
+    type: 'infrastructure',
+    cover: '/images/projects/project-06.svg',
+    gallery: ['/images/projects/project-06.svg', '/images/projects/project-10.svg'],
+    name: {
+      az: 'Ələt-Astara avtomagistralı',
+      ru: 'Автомагистраль Алят-Астара',
+      en: 'Alat-Astara highway',
+    },
+    location: { az: 'Astara rayonu, Azərbaycan (Masallı-Astara hissəsi)', ru: 'Астаринский район, Азербайджан (участок Масаллы-Астара)', en: 'Astara district, Azerbaijan (Masalli-Astara section)' },
+    partner: { az: 'Polad Yol Yapı / AAYDA', ru: 'Polad Yol Yapı / AAYDA', en: 'Polad Yol Yapı / AAYDA' },
+    role: SUBCONTRACTOR,
+    activity: { az: 'Körpü yanaşma yolları', ru: 'Подходные пути моста', en: 'Bridge approach roads' },
+    period: { az: '2017', ru: '2017', en: '2017' },
+    short: {
+      az: 'Astara rayonunda tikilən körpünün yanaşma yollarının inşası.',
+      ru: 'Строительство подходных путей моста в Астаринском районе.',
+      en: 'Construction of the approach roads for a bridge in Astara district.',
+    },
+    description: {
+      az: 'Ələt-Astara, İranla dövlət sərhədinədək avtomagistralının tikintisi (5-ci, Masallı-Astara hissəsi). Sifarişçi AAYDA, podratçı Polad Yol Yapı, partnyor General İnşaat. AZBUILDING Qrup subpodratçı qismində Astara rayonu ərazisində tikilən körpünün yanaşma yollarını inşa etmişdir.',
+      ru: 'Строительство автомагистрали Алят-Астара до государственной границы с Ираном (5-й участок, Масаллы-Астара). Заказчик - AAYDA, подрядчик - Polad Yol Yapı, партнёр - General İnşaat. AZBUILDING Qrup в качестве субподрядчика построил подходные пути моста, возводимого на территории Астаринского района.',
+      en: 'Construction of the Alat-Astara highway up to the state border with Iran (section 5, Masalli-Astara). Client - AAYDA, contractor - Polad Yol Yapı, partner - General İnşaat. As a subcontractor, AZBUILDING Qrup built the approach roads for the bridge constructed in the Astara district.',
     },
   },
 ]

@@ -45,13 +45,12 @@ export const translations: Record<Lang, Tree> = {
       since: '2009-cu ildən',
       license: 'Tikinti-quraşdırma lisenziyası',
       tagline: 'Düşüncədən konstruksiyaya',
-      descriptor: 'Engineering · Contracting · Construction · Project Management',
+      descriptor: 'MÜHƏNDİSLİK · PODRAT · TİKİNTİ · İDARƏETMƏ',
     },
     hero: {
       eyebrow: 'TİKİNTİ · MÜLKİ-SƏNAYE · İNFRASTRUKTUR',
-      title: 'Tikinti və infrastrukturun icrası',
-      subtitle:
-        '2009-cu ildən AZBUILDING MMC mülki, sənaye və infrastruktur tikintisini Azərbaycan, Gürcüstan və Ukraynada təcrübəli, çoxprofilli icra tərəfdaşı kimi həyata keçirir.',
+      title: 'Düşüncədən konstruksiyaya',
+      subtitle: 'Mühəndislik, Layihə idarəetmə, Tikinti-Quraşdırma və İnşaat Sənayesi',
     },
     sections: {
       metricsTag: 'ŞİRKƏT QISACA',
@@ -174,9 +173,8 @@ export const translations: Record<Lang, Tree> = {
     },
     hero: {
       eyebrow: 'СТРОИТЕЛЬСТВО · ГРАЖД.-ПРОМ. · ИНФРАСТРУКТУРА',
-      title: 'Строительство и инфраструктура',
-      subtitle:
-        'С 2009 года AZBUILDING MMC реализует гражданское, промышленное и инфраструктурное строительство как опытный многопрофильный исполнительный партнёр в Азербайджане, Грузии и Украине.',
+      title: 'От идеи до конструкции',
+      subtitle: 'Инжиниринг, управление проектами, строительно-монтажные работы и строительная индустрия',
     },
     sections: {
       metricsTag: 'КОМПАНИЯ КРАТКО',
@@ -299,9 +297,8 @@ export const translations: Record<Lang, Tree> = {
     },
     hero: {
       eyebrow: 'CONSTRUCTION · CIVIL-INDUSTRIAL · INFRASTRUCTURE',
-      title: 'Construction & infrastructure execution',
-      subtitle:
-        'Since 2009, AZBUILDING MMC has delivered civil, industrial and infrastructure construction across Azerbaijan, Georgia and Ukraine as an experienced, multi-profile execution partner.',
+      title: 'From concept to construction',
+      subtitle: 'Engineering, project management, construction & installation, and the building industry',
     },
     sections: {
       metricsTag: 'COMPANY AT A GLANCE',
