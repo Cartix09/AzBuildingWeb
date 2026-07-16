@@ -7,7 +7,7 @@ import { useLanguage } from '../i18n/LanguageContext'
 // Real client project photography. `pos` sets object-position so the road /
 // building stays visible under the left cream scrim across all breakpoints.
 const slides = [
-  { src: '/images/hero/hero-road-samtredia-enhanced.jpg', pos: 'center 55%' },
+  { src: '/images/hero/hero-road-samtredia-enhanced.png', pos: 'center 55%' },
   { src: '/images/hero/hero-road-m07.jpg', pos: 'center 50%' },
   { src: '/images/hero/hero-industrial-cabrayil.jpg', pos: 'center 45%' },
 ]

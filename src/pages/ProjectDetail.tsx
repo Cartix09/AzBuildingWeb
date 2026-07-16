@@ -59,8 +59,8 @@ export function ProjectDetail() {
           <ZoomIn className="h-4 w-4" />
           <span className="hidden sm:inline">{t('cta.viewLarger')}</span>
         </button>
-        <div className="container-x relative z-10 flex h-full flex-col justify-end pb-12">
-          <Link to="/projects" className="mb-6 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-steel transition-colors hover:text-orange-brand">
+        <div className="container-x pointer-events-none relative z-10 flex h-full flex-col justify-end pb-12">
+          <Link to="/projects" className="pointer-events-auto mb-6 inline-flex w-fit items-center gap-2 font-mono text-xs uppercase tracking-widest text-steel transition-colors hover:text-orange-brand">
             <ArrowLeft className="h-4 w-4" /> {t('cta.backToPortfolio')}
           </Link>
           <span className="bg-orange-brand px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-white w-fit">
