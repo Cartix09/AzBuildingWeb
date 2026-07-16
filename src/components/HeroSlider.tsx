@@ -4,10 +4,12 @@ import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useLanguage } from '../i18n/LanguageContext'
 
+// Real client project photography. `pos` sets object-position so the road /
+// building stays visible under the left cream scrim across all breakpoints.
 const slides = [
-  '/images/hero/hero-1.svg',
-  '/images/hero/hero-2.svg',
-  '/images/hero/hero-3.svg',
+  { src: '/images/hero/hero-road-samtredia.jpg', pos: 'center 55%' },
+  { src: '/images/hero/hero-road-m07.jpg', pos: 'center 50%' },
+  { src: '/images/hero/hero-industrial-cabrayil.jpg', pos: 'center 45%' },
 ]
 
 const ROTATE_MS = 7000
@@ -33,9 +35,10 @@ export function HeroSlider() {
       <AnimatePresence>
         <motion.img
           key={active}
-          src={slides[active]}
+          src={slides[active].src}
           alt=""
           aria-hidden="true"
+          style={{ objectPosition: slides[active].pos }}
           className="absolute inset-0 h-full w-full object-cover"
           initial={{ opacity: 0, scale: 1.04 }}
           animate={{ opacity: 1, scale: 1 }}
