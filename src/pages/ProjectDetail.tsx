@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, ZoomIn } from 'lucide-react'
 import { SectionHeading } from '../components/SectionHeading'
 import { ProjectsGrid } from '../components/ProjectsGrid'
 import { ContactCta } from '../components/ContactCta'
 import { Reveal } from '../components/Reveal'
+import { Lightbox } from '../components/Lightbox'
 import { NotFound } from './NotFound'
 import { useLanguage, pick } from '../i18n/LanguageContext'
 import { useDocumentMeta } from '../lib/useDocumentMeta'
@@ -15,10 +16,15 @@ export function ProjectDetail() {
   const { t, lang } = useLanguage()
   const project = slug ? getProject(slug) : undefined
   const [activeImg, setActiveImg] = useState(0)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
   useDocumentMeta(project ? pick(project.name, lang) : 'Project', project ? pick(project.short, lang) : undefined)
 
   if (!project) return <NotFound />
 
+  // Full-size images shown in the big view and the lightbox (fall back to the
+  // cover when a project has no separate gallery).
+  const images = project.gallery.length ? project.gallery : [project.cover]
+  const safeIdx = Math.min(activeImg, images.length - 1)
   const related = relatedProjects(project.slug, project.type)
   const meta = [
     { label: t('misc.period'), value: pick(project.period, lang) },
@@ -33,8 +39,26 @@ export function ProjectDetail() {
     <>
       {/* Hero image */}
       <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden border-b border-white/10 bg-slate-deep">
-        <img src={project.gallery[activeImg] ?? project.cover} alt={pick(project.name, lang)} className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-deep via-slate-deep/50 to-slate-deep/30" />
+        <img src={images[safeIdx] ?? project.cover} alt={pick(project.name, lang)} className="absolute inset-0 h-full w-full object-cover" />
+        {/* Click the image area to open the full-size lightbox. Sits above the
+            image but below the caption content, so the back link / title stay
+            clickable. */}
+        <button
+          type="button"
+          onClick={() => setLightboxOpen(true)}
+          aria-label={t('cta.viewLarger')}
+          className="absolute inset-0 z-[5] cursor-zoom-in"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-deep via-slate-deep/50 to-slate-deep/30" />
+        {/* Visible "view larger" affordance */}
+        <button
+          type="button"
+          onClick={() => setLightboxOpen(true)}
+          className="group absolute right-4 top-4 z-20 flex items-center gap-2 border border-white/20 bg-navy-deep/50 px-3 py-2 font-mono text-[10px] uppercase tracking-widest text-[#F8FAFC] backdrop-blur-sm transition-colors hover:border-white/60 hover:bg-navy-deep/70 sm:right-6 sm:top-6"
+        >
+          <ZoomIn className="h-4 w-4" />
+          <span className="hidden sm:inline">{t('cta.viewLarger')}</span>
+        </button>
         <div className="container-x relative z-10 flex h-full flex-col justify-end pb-12">
           <Link to="/projects" className="mb-6 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-steel transition-colors hover:text-orange-brand">
             <ArrowLeft className="h-4 w-4" /> {t('cta.backToPortfolio')}
@@ -113,6 +137,15 @@ export function ProjectDetail() {
       )}
 
       <ContactCta />
+
+      <Lightbox
+        images={images}
+        index={safeIdx}
+        open={lightboxOpen}
+        alt={pick(project.name, lang)}
+        onClose={() => setLightboxOpen(false)}
+        onIndexChange={setActiveImg}
+      />
     </>
   )
 }

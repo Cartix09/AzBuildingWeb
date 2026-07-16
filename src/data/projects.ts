@@ -79,8 +79,8 @@ export const projects: Project[] = [
     slug: 'samtredia-grigoleti-highway',
     featured: true,
     type: 'infrastructure',
-    cover: '/images/projects/samtredia-qriqoleti-1.jpg',
-    gallery: ['/images/projects/samtredia-qriqoleti-1.jpg'],
+    cover: '/images/projects/samtredia-qriqoleti-enhanced.jpg',
+    gallery: ['/images/projects/samtredia-qriqoleti-enhanced.jpg'],
     name: {
       az: 'Samtredia-Qriqoleti avtomagistralı',
       ru: 'Автомагистраль Самтредиа-Григолети',
@@ -106,8 +106,8 @@ export const projects: Project[] = [
     slug: 'alat-astara-highway',
     featured: true,
     type: 'infrastructure',
-    cover: '/images/projects/alat-astara-1.jpg',
-    gallery: ['/images/projects/alat-astara-1.jpg'],
+    cover: '/images/projects/alat-astara-enhanced.jpg',
+    gallery: ['/images/projects/alat-astara-enhanced.jpg'],
     name: {
       az: 'Ələt-Astara avtomagistralı',
       ru: 'Автомагистраль Алят-Астара',
