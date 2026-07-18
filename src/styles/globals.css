@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  * {
+    /* Industrial = sharp. No rounded corners anywhere by default. */
+    border-radius: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-slate-deep text-base font-sans antialiased;
+    margin: 0;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  ::selection {
+    @apply bg-gold text-navy-deep;
+  }
+
+  /* Focus ring for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid #f5a524;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-container px-6 md:px-12;
+  }
+
+  /* Monospace technical eyebrow label, e.g. "[01] STRUCTURAL METRICS" */
+  .eyebrow {
+    @apply font-mono text-xs font-medium uppercase tracking-[0.25em] text-steel;
+  }
+
+  /* Display headline */
+  .display {
+    @apply font-display font-extrabold tracking-tight;
+  }
+
+  /* Primary CTA - calm warm gold→amber gradient (premium, not glossy).
+     The transparent 1px border matches .btn-ghost's box exactly so a primary
+     and a ghost button render at the same physical size. Add the `group` class
+     at call sites for the icon hover animations. `whitespace-nowrap` keeps
+     longer locales on a single line. */
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden whitespace-nowrap border border-transparent bg-gold-bar px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-navy-deep transition-colors hover:bg-gold-bar-hover;
+  }
+
+  /* Ghost / outline button - gold outline that warms on hover.
+     Uses an explicit near-white colour (not `text-base`, which collides with
+     Tailwind's text-base font-size utility) so `text-xs` is respected and this
+     matches .btn-primary's box exactly → a balanced button pair. */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap border border-gold/55 bg-transparent px-7 py-3.5 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[#F8FAFC] transition-colors hover:border-gold hover:bg-gold hover:text-navy-deep;
+  }
+
+  /* Vertical gold accent that precedes H2 headlines */
+  .orange-beam::before {
+    content: '';
+    @apply mb-5 block h-12 w-0.5 bg-gold;
+  }
+
+  /* Warm gold gradient text for select emphasis */
+  .text-gold-gradient {
+    @apply bg-gold-bar bg-clip-text text-transparent;
+  }
+}
+
+/* Hide scrollbars on horizontal scroll regions while keeping scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

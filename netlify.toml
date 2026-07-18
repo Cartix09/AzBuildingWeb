@@ -1,0 +1,20 @@
+# Netlify deployment config for the AZBUILDING MMC static site.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# SPA fallback so client-side routes (e.g. /projects/flame-towers-baku) work.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Basic security headers (kept CSP-free so Google Maps, Google Fonts, the PDF
+# preview and the contact-form endpoint keep working out of the box).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"

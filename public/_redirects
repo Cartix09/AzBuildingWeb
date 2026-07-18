@@ -1,0 +1,3 @@
+# SPA fallback for React Router (Netlify). Existing files (assets, /docs/*.pdf)
+# are served first; only unknown routes fall back to index.html.
+/*    /index.html   200
