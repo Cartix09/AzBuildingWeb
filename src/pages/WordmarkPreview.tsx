@@ -29,9 +29,9 @@ const maskStyle = {
 const headerNav = mainNav.filter((item) => item.labelKey !== 'nav.customers')
 
 const options = [
-  { key: 'monoton', label: 'Option 1 — Monoton', img: '/images/wordmark-options/wordmark-monoton.png' },
+  { key: 'paneuropa', label: 'Option 1 — Paneuropa Inline 1', img: '/images/wordmark-options/wordmark-paneuropa-inline-1.png' },
   { key: 'azote', label: 'Option 2 — Azote Regular 5', img: '/images/wordmark-options/wordmark-azote-regular-5.png' },
-  { key: 'paneuropa', label: 'Option 3 — Paneuropa Inline 1', img: '/images/wordmark-options/wordmark-paneuropa-inline-1.png' },
+  { key: 'monoton', label: 'Option 3 — Monoton', img: '/images/wordmark-options/wordmark-monoton.png' },
 ]
 
 /** A faithful copy of the real header band, with the wordmark as an image. */
