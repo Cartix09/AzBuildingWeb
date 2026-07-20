@@ -12,6 +12,7 @@ import { ProjectDetail } from './pages/ProjectDetail'
 import { Customers } from './pages/Customers'
 import { Partners } from './pages/Partners'
 import { Contact } from './pages/Contact'
+import { WordmarkPreview } from './pages/WordmarkPreview'
 import { NotFound } from './pages/NotFound'
 
 export default function App() {
@@ -37,6 +38,8 @@ export default function App() {
           <Route path="/customers" element={<Customers />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/contact" element={<Contact />} />
+          {/* Preview-only comparison page for the 3 wordmark image options */}
+          <Route path="/wordmark-preview" element={<WordmarkPreview />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
