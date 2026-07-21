@@ -3,7 +3,6 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Search, Menu, X, ChevronDown, ArrowUpRight } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Logo } from './Logo'
-import { Wordmark } from './Wordmark'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { SearchOverlay } from './SearchOverlay'
 import { useLanguage, pick } from '../i18n/LanguageContext'
@@ -74,7 +73,13 @@ export function Header() {
 
             {/* Company name + tagline - compact lockup tight to the A mark. */}
             <Link to="/" className="flex min-w-0 flex-col justify-center py-5 md:py-7 md:translate-y-[10px] lg:py-8 lg:translate-y-[13px]">
-              <Wordmark className="h-7 w-auto text-[#F8FAFC] sm:h-8 md:h-10 lg:h-12" />
+              {/* AZBUILDING wordmark — client-selected "Paneuropa Inline 1" image
+                  asset (white on transparent). Used as a picture, not a font. */}
+              <img
+                src="/images/wordmark-options/wordmark-paneuropa-inline-1.png"
+                alt="AZBUILDING"
+                className="h-7 w-auto max-w-[70vw] object-contain object-left sm:h-8 md:h-10 lg:h-12"
+              />
               <span className="mt-1 truncate text-[11px] font-medium tracking-wide text-steel md:text-xs">
                 {t('header.tagline')}
               </span>
