@@ -1,5 +1,4 @@
 import { PageHero } from '../components/PageHero'
-import { PartnersCarousel } from '../components/PartnersCarousel'
 import { ContactCta } from '../components/ContactCta'
 import { SectionHeading } from '../components/SectionHeading'
 import { Reveal } from '../components/Reveal'
@@ -27,27 +26,39 @@ export function Partners() {
         image="/images/pagehero/partners.svg"
       />
 
-      <section className="border-b border-white/5 bg-slate-deep py-20 md:py-28">
-        <PartnersCarousel />
-      </section>
-
       <section className="bg-slate-deep py-20 md:py-28">
         <div className="container-x">
           <SectionHeading index="[01]" eyebrow={t('sections.partnersTag')} title={pick({ az: 'Tərəfdaşlarımız', ru: 'Наши партнёры', en: 'Our partners' }, lang)} className="mb-14" />
-          {/* Typographic partner cards (name + specialty) until real logos are provided */}
-          <div className="grid grid-cols-1 items-stretch gap-px border border-white/10 bg-white/10 sm:grid-cols-2">
-            {partners.map((p, i) => (
-              <Reveal key={p.name} index={i % 2} className="h-full">
-                <div className="group flex h-full flex-col justify-between gap-6 bg-slate-deep p-8 transition-colors hover:bg-slate-surface/40">
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-orange-brand">{`0${i + 1}`}</span>
-                  <div>
-                    <h3 className="font-display text-2xl font-bold text-base">{p.name}</h3>
-                    {p.specialty && <p className="mt-2 text-sm text-steel">{pick(p.specialty, lang)}</p>}
+          {partners.length > 0 ? (
+            /* Typographic partner cards (name + specialty) until real logos are provided */
+            <div className="grid grid-cols-1 items-stretch gap-px border border-white/10 bg-white/10 sm:grid-cols-2">
+              {partners.map((p, i) => (
+                <Reveal key={p.name} index={i % 2} className="h-full">
+                  <div className="group flex h-full flex-col justify-between gap-6 bg-slate-deep p-8 transition-colors hover:bg-slate-surface/40">
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-orange-brand">{`0${i + 1}`}</span>
+                    <div>
+                      <h3 className="font-display text-2xl font-bold text-base">{p.name}</h3>
+                      {p.specialty && <p className="mt-2 text-sm text-steel">{pick(p.specialty, lang)}</p>}
+                    </div>
                   </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+                </Reveal>
+              ))}
+            </div>
+          ) : (
+            /* Logos not provided yet — clean, non-broken placeholder */
+            <Reveal className="border border-dashed border-white/15 bg-slate-surface/20 px-8 py-16 text-center">
+              <p className="mx-auto max-w-md text-sm leading-relaxed text-steel">
+                {pick(
+                  {
+                    az: 'Tərəfdaş loqoları tezliklə əlavə olunacaq.',
+                    ru: 'Логотипы партнёров будут добавлены в ближайшее время.',
+                    en: 'Partner logos will be added soon.',
+                  },
+                  lang,
+                )}
+              </p>
+            </Reveal>
+          )}
         </div>
       </section>
 

@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { Mail, MapPin, Phone, Instagram, Facebook, Linkedin, ArrowUpRight } from 'lucide-react'
-import { Logo } from './Logo'
 import { useLanguage, pick } from '../i18n/LanguageContext'
 import { company } from '../data/translations'
 import { mainNav } from '../data/nav'
@@ -24,7 +23,36 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-10 md:grid-cols-12">
           {/* Brand + summary */}
           <div className="col-span-2 md:col-span-5">
-            <Logo size="lg" />
+            {/* Footer brand: A mark + fully-gold "AZBUILDING MMC". The wordmark
+                reuses the selected Paneuropa Inline 1 image, recoloured gold via
+                a CSS mask; "MMC" follows in gold. No slogan, no nav strip. */}
+            <Link to="/" aria-label="AZBUILDING MMC - home" className="group flex items-center gap-3.5">
+              <img
+                src="/logos/azbuilding-mark.png"
+                alt=""
+                aria-hidden="true"
+                className="h-12 w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105 md:h-14"
+              />
+              <span className="flex items-end gap-2">
+                <span
+                  aria-hidden="true"
+                  className="block h-6 bg-gold md:h-7"
+                  style={{
+                    aspectRatio: '513 / 81',
+                    WebkitMaskImage: 'url(/images/wordmark-options/wordmark-paneuropa-inline-1.png)',
+                    maskImage: 'url(/images/wordmark-options/wordmark-paneuropa-inline-1.png)',
+                    WebkitMaskSize: 'contain',
+                    maskSize: 'contain',
+                    WebkitMaskRepeat: 'no-repeat',
+                    maskRepeat: 'no-repeat',
+                    WebkitMaskPosition: 'left center',
+                    maskPosition: 'left center',
+                  }}
+                />
+                <span className="font-display text-2xl font-extrabold leading-none tracking-tight text-gold md:text-3xl">MMC</span>
+                <span className="sr-only">AZBUILDING MMC</span>
+              </span>
+            </Link>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-steel">{t('footer.summary')}</p>
             <div className="mt-6 flex items-center gap-4">
               <a href={company.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="border border-white/10 p-2.5 text-steel transition-colors hover:border-orange-brand hover:text-orange-brand">
@@ -99,7 +127,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 font-mono text-xs text-steel sm:flex-row sm:items-center">
           <p>© 2026 {company.name}. {t('footer.rights')}</p>
-          <p className="uppercase tracking-widest">{company.domain}</p>
+          <p className="lowercase tracking-widest">{company.domain}</p>
         </div>
       </div>
     </footer>

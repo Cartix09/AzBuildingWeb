@@ -46,7 +46,7 @@ export const translations: Record<Lang, Tree> = {
       since: '2009-cu ildən',
       license: 'Tikinti-quraşdırma lisenziyası',
       tagline: 'Düşüncədən konstruksiyaya',
-      descriptor: 'MÜHƏNDİSLİK · PODRAT · TİKİNTİ · İDARƏETMƏ',
+      descriptor: 'engineering • project management • construction',
     },
     hero: {
       eyebrow: 'TİKİNTİ · MÜLKİ-SƏNAYE · İNFRASTRUKTUR',
@@ -70,8 +70,8 @@ export const translations: Record<Lang, Tree> = {
       partnersTitle: 'Sənaye tərəfdaşları',
       customersTag: 'TƏRƏFDAŞLAR VƏ MÜŞTƏRİLƏR',
       customersTitle: 'Seçilmiş tərəfdaşlar və müştərilər',
-      contactTag: 'ƏLAQƏ',
-      contactTitle: 'Növbəti layihənizi müzakirə edək.',
+      contactTag: 'Azbuilding MMC',
+      contactTitle: 'Yeni layihənizi müzakirə edək',
     },
     form: {
       name: 'Ad, Soyad',
@@ -95,7 +95,7 @@ export const translations: Record<Lang, Tree> = {
     },
     footer: {
       summary:
-        'AZBUILDING MMC 2009-cu ildən mülki-sənaye və infrastruktur tikinti sektorunda fəaliyyət göstərən, təcrübəli çoxprofilli icra tərəfdaşıdır.',
+        '2009-cu ildən mülki, sənaye və infrastruktur tikinti sahəsində mühəndislik, layihə idarəetmə və podrat üzrə etibarlı tərəfdaş.',
       quickNav: 'Naviqasiya',
       company: 'Şirkət',
       contact: 'Əlaqə',
@@ -134,7 +134,7 @@ export const translations: Record<Lang, Tree> = {
     },
     projects: {
       participationNote:
-        'Portfolio 2009-2025 və sonrakı dövrlərdə görülmüş işləri və iştirakı əks etdirir. Bəzi işlər tam rəsmi sənədləşmə ilə müşayiət olunmadığından, layihələr təcrübə / iştirak formatında, şirkətin rolu olduğu kimi göstərilməklə təqdim olunur.',
+        'Portfolioda təqdim olunan layihələr şirkətimizin müxtəlif illərdə müxtəlif icra modellərində iştirak etdiyi işləri əhatə edir. Məxfilik sazişlərinə (NDA) və sifarişçi siyasətinə uyğun olaraq, portfolioya yalnız nümayişinə rəsmi icazə verilmiş layihələr hazırlanmış və daxil edilmişdir.',
       confidentialNote: 'Sifarişçinin istəyi ilə bəzi layihə təfərrüatları məxfi saxlanılır.',
     },
   },
@@ -171,7 +171,7 @@ export const translations: Record<Lang, Tree> = {
       since: 'С 2009 года',
       license: 'Строительная лицензия',
       tagline: 'От идеи до конструкции',
-      descriptor: 'Engineering · Contracting · Construction · Project Management',
+      descriptor: 'engineering • project management • construction',
     },
     hero: {
       eyebrow: 'СТРОИТЕЛЬСТВО · ГРАЖД.-ПРОМ. · ИНФРАСТРУКТУРА',
@@ -195,8 +195,8 @@ export const translations: Record<Lang, Tree> = {
       partnersTitle: 'Отраслевые партнёры',
       customersTag: 'ПАРТНЁРЫ И КЛИЕНТЫ',
       customersTitle: 'Избранные партнёры и клиенты',
-      contactTag: 'СВЯЗАТЬСЯ',
-      contactTitle: 'Обсудим ваш следующий проект.',
+      contactTag: 'Azbuilding MMC',
+      contactTitle: 'Обсудим ваш новый проект.',
     },
     form: {
       name: 'Имя и фамилия',
@@ -220,7 +220,7 @@ export const translations: Record<Lang, Tree> = {
     },
     footer: {
       summary:
-        'AZBUILDING MMC работает в сфере гражданско-промышленного и инфраструктурного строительства с 2009 года как опытный многопрофильный исполнительный партнёр.',
+        'Надёжный партнёр в области инженерии, управления проектами и подряда в гражданском, промышленном и инфраструктурном строительстве с 2009 года.',
       quickNav: 'Навигация',
       company: 'Компания',
       contact: 'Контакты',
@@ -259,7 +259,7 @@ export const translations: Record<Lang, Tree> = {
     },
     projects: {
       participationNote:
-        'Портфолио отражает работы и участие, выполненные в период 2009-2025 и позже. Поскольку часть работ не сопровождалась полной формальной документацией, проекты представлены в формате опыта / участия, с указанием роли компании как есть.',
+        'Проекты в портфолио отражают работы, в которых компания участвовала в разные годы по разным моделям исполнения. В соответствии с соглашениями о конфиденциальности (NDA) и политикой заказчиков, в портфолио включены только проекты, на публикацию которых получено официальное разрешение.',
       confidentialNote: 'По просьбе заказчика отдельные детали проектов сохраняются конфиденциальными.',
     },
   },
@@ -296,7 +296,7 @@ export const translations: Record<Lang, Tree> = {
       since: 'Since 2009',
       license: 'Construction license',
       tagline: 'From concept to construction',
-      descriptor: 'Engineering · Contracting · Construction · Project Management',
+      descriptor: 'engineering • project management • construction',
     },
     hero: {
       eyebrow: 'CONSTRUCTION · CIVIL-INDUSTRIAL · INFRASTRUCTURE',
@@ -320,8 +320,8 @@ export const translations: Record<Lang, Tree> = {
       partnersTitle: 'Industry partners',
       customersTag: 'PARTNERS & CLIENTS',
       customersTitle: 'Selected partners and clients',
-      contactTag: 'GET IN TOUCH',
-      contactTitle: "Let's discuss your next project.",
+      contactTag: 'Azbuilding MMC',
+      contactTitle: "Let's discuss your new project.",
     },
     form: {
       name: 'Full Name',
@@ -345,7 +345,7 @@ export const translations: Record<Lang, Tree> = {
     },
     footer: {
       summary:
-        'AZBUILDING MMC has worked in civil-industrial and infrastructure construction since 2009 as an experienced, multi-profile execution partner.',
+        'A reliable partner in engineering, project management and contracting across civil, industrial and infrastructure construction since 2009.',
       quickNav: 'Navigation',
       company: 'Company',
       contact: 'Contact',
@@ -384,7 +384,7 @@ export const translations: Record<Lang, Tree> = {
     },
     projects: {
       participationNote:
-        'The portfolio reflects works and participation carried out during 2009-2025 and later. As some works were not accompanied by full formal documentation, projects are presented in an experience / participation format, with the company’s role shown as stated.',
+        'The portfolio covers works the company took part in over different years and under different execution models. In line with non-disclosure agreements (NDA) and client policy, only projects officially cleared for display have been prepared and included.',
       confidentialNote: 'At the client’s request, certain project details are kept confidential.',
     },
   },

@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { cn } from '../lib/cn'
 
 interface PageHeroProps {
   eyebrow: string
@@ -6,10 +7,12 @@ interface PageHeroProps {
   description?: string
   image?: string
   children?: ReactNode
+  /** Extra classes for the eyebrow (e.g. `normal-case` for a mixed-case brand). */
+  eyebrowClassName?: string
 }
 
 /** Reusable inner-page header band with dark overlay and blueprint grid. */
-export function PageHero({ eyebrow, title, description, image, children }: PageHeroProps) {
+export function PageHero({ eyebrow, title, description, image, children, eyebrowClassName }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden border-b border-white/10 bg-slate-deep">
       {image && (
@@ -24,7 +27,7 @@ export function PageHero({ eyebrow, title, description, image, children }: PageH
       )}
       <div aria-hidden="true" className="absolute inset-0 bg-blueprint-grid bg-[size:40px_40px] opacity-20" />
       <div className="container-x relative z-10 py-20 md:py-28">
-        <p className="eyebrow">
+        <p className={cn('eyebrow', eyebrowClassName)}>
           <span className="text-orange-brand">+ </span>
           {eyebrow}
         </p>

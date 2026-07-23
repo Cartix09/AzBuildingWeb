@@ -11,6 +11,8 @@ interface SectionHeadingProps {
   align?: 'left' | 'center'
   /** Render title with the second line italic (matches reference screenshots). */
   className?: string
+  /** Extra classes for the eyebrow (e.g. `normal-case` for a mixed-case brand). */
+  eyebrowClassName?: string
   light?: boolean
 }
 
@@ -21,6 +23,7 @@ export function SectionHeading({
   description,
   align = 'left',
   className,
+  eyebrowClassName,
   light = false,
 }: SectionHeadingProps) {
   return (
@@ -31,7 +34,7 @@ export function SectionHeading({
         className,
       )}
     >
-      <p className="eyebrow">
+      <p className={cn('eyebrow', eyebrowClassName)}>
         {index && <span className="text-orange-brand">{index} </span>}
         {eyebrow}
       </p>
