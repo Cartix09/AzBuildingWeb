@@ -39,7 +39,7 @@ export function Footer() {
                 aria-hidden="true"
                 className="block h-7 bg-gold md:h-9"
                 style={{
-                  aspectRatio: '2319 / 235',
+                  aspectRatio: '759 / 81',
                   WebkitMaskImage: 'url(/images/wordmark-options/footer-wordmark-azbuilding-mmc.png)',
                   maskImage: 'url(/images/wordmark-options/footer-wordmark-azbuilding-mmc.png)',
                   WebkitMaskSize: 'contain',

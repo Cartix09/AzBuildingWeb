@@ -13,7 +13,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
             onClick={() => setLang(l)}
             aria-pressed={lang === l}
             className={cn(
-              'uppercase tracking-widest transition-colors hover:text-gold',
+              'px-1 py-1 uppercase tracking-widest transition-colors hover:text-gold',
               lang === l ? 'font-bold text-gold' : 'text-steel',
             )}
           >

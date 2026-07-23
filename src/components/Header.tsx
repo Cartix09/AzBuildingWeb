@@ -221,9 +221,11 @@ export function Header() {
                 </NavLink>
               ))}
             </nav>
-            <div className="container-x mt-8 flex items-center justify-between">
+            {/* Stack the language switcher above a full-width CTA so the long
+                RU label can't overlap or clip the AZ | EN | RU buttons. */}
+            <div className="container-x mt-10 flex flex-col items-stretch gap-6">
               <LanguageSwitcher />
-              <Link to="/contact" className="group btn-primary">
+              <Link to="/contact" className="group btn-primary w-full justify-center">
                 {t('cta.order')}
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
