@@ -23,11 +23,9 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-10 md:grid-cols-12">
           {/* Brand + summary */}
           <div className="col-span-2 md:col-span-5">
-            {/* Footer brand: A mark + a SINGLE coherent, fully-gold "AZBUILDING MMC"
-                wordmark. The wordmark is one image (the selected Paneuropa Inline 1
-                "AZBUILDING" + a height-matched, baseline-aligned outlined "MMC" in
-                the same style), recoloured gold via a CSS mask so "MMC" reads as
-                part of the wordmark rather than separate text. No slogan, no nav. */}
+            {/* Footer brand: A mark + the client's EXACT uploaded "AZBUILDING MMC"
+                wordmark (single gold image, navy keyed to transparent). No CSS
+                mask, no separate/generated MMC. No slogan, no nav strip. */}
             <Link to="/" aria-label="AZBUILDING MMC - home" className="group flex items-center gap-3.5">
               <img
                 src="/logos/azbuilding-mark.png"
@@ -35,22 +33,11 @@ export function Footer() {
                 aria-hidden="true"
                 className="h-12 w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105 md:h-14"
               />
-              <span
-                aria-hidden="true"
-                className="block h-7 bg-gold md:h-9"
-                style={{
-                  aspectRatio: '759 / 81',
-                  WebkitMaskImage: 'url(/images/wordmark-options/footer-wordmark-azbuilding-mmc.png)',
-                  maskImage: 'url(/images/wordmark-options/footer-wordmark-azbuilding-mmc.png)',
-                  WebkitMaskSize: 'contain',
-                  maskSize: 'contain',
-                  WebkitMaskRepeat: 'no-repeat',
-                  maskRepeat: 'no-repeat',
-                  WebkitMaskPosition: 'left center',
-                  maskPosition: 'left center',
-                }}
+              <img
+                src="/images/wordmark-options/footer-azbuilding-mmc-exact.png"
+                alt="AZBUILDING MMC"
+                className="h-6 w-auto object-contain object-left md:h-7"
               />
-              <span className="sr-only">AZBUILDING MMC</span>
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-steel">{t('footer.summary')}</p>
             <div className="mt-6 flex items-center gap-4">
