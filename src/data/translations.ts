@@ -70,7 +70,7 @@ export const translations: Record<Lang, Tree> = {
       partnersTitle: 'Sənaye tərəfdaşları',
       customersTag: 'TƏRƏFDAŞLAR VƏ MÜŞTƏRİLƏR',
       customersTitle: 'Seçilmiş tərəfdaşlar və müştərilər',
-      contactTag: 'Azbuilding MMC',
+      contactTag: 'AZBUILDING MMC',
       contactTitle: 'Yeni layihənizi müzakirə edək',
     },
     form: {
@@ -195,7 +195,7 @@ export const translations: Record<Lang, Tree> = {
       partnersTitle: 'Отраслевые партнёры',
       customersTag: 'ПАРТНЁРЫ И КЛИЕНТЫ',
       customersTitle: 'Избранные партнёры и клиенты',
-      contactTag: 'Azbuilding MMC',
+      contactTag: 'AZBUILDING MMC',
       contactTitle: 'Обсудим ваш новый проект.',
     },
     form: {
@@ -320,7 +320,7 @@ export const translations: Record<Lang, Tree> = {
       partnersTitle: 'Industry partners',
       customersTag: 'PARTNERS & CLIENTS',
       customersTitle: 'Selected partners and clients',
-      contactTag: 'Azbuilding MMC',
+      contactTag: 'AZBUILDING MMC',
       contactTitle: "Let's discuss your new project.",
     },
     form: {

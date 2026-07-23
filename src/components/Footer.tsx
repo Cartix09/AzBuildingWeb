@@ -23,9 +23,11 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-10 md:grid-cols-12">
           {/* Brand + summary */}
           <div className="col-span-2 md:col-span-5">
-            {/* Footer brand: A mark + fully-gold "AZBUILDING MMC". The wordmark
-                reuses the selected Paneuropa Inline 1 image, recoloured gold via
-                a CSS mask; "MMC" follows in gold. No slogan, no nav strip. */}
+            {/* Footer brand: A mark + a SINGLE coherent, fully-gold "AZBUILDING MMC"
+                wordmark. The wordmark is one image (the selected Paneuropa Inline 1
+                "AZBUILDING" + a height-matched, baseline-aligned outlined "MMC" in
+                the same style), recoloured gold via a CSS mask so "MMC" reads as
+                part of the wordmark rather than separate text. No slogan, no nav. */}
             <Link to="/" aria-label="AZBUILDING MMC - home" className="group flex items-center gap-3.5">
               <img
                 src="/logos/azbuilding-mark.png"
@@ -33,25 +35,22 @@ export function Footer() {
                 aria-hidden="true"
                 className="h-12 w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105 md:h-14"
               />
-              <span className="flex items-end gap-2">
-                <span
-                  aria-hidden="true"
-                  className="block h-6 bg-gold md:h-7"
-                  style={{
-                    aspectRatio: '513 / 81',
-                    WebkitMaskImage: 'url(/images/wordmark-options/wordmark-paneuropa-inline-1.png)',
-                    maskImage: 'url(/images/wordmark-options/wordmark-paneuropa-inline-1.png)',
-                    WebkitMaskSize: 'contain',
-                    maskSize: 'contain',
-                    WebkitMaskRepeat: 'no-repeat',
-                    maskRepeat: 'no-repeat',
-                    WebkitMaskPosition: 'left center',
-                    maskPosition: 'left center',
-                  }}
-                />
-                <span className="font-display text-2xl font-extrabold leading-none tracking-tight text-gold md:text-3xl">MMC</span>
-                <span className="sr-only">AZBUILDING MMC</span>
-              </span>
+              <span
+                aria-hidden="true"
+                className="block h-7 bg-gold md:h-9"
+                style={{
+                  aspectRatio: '2319 / 235',
+                  WebkitMaskImage: 'url(/images/wordmark-options/footer-wordmark-azbuilding-mmc.png)',
+                  maskImage: 'url(/images/wordmark-options/footer-wordmark-azbuilding-mmc.png)',
+                  WebkitMaskSize: 'contain',
+                  maskSize: 'contain',
+                  WebkitMaskRepeat: 'no-repeat',
+                  maskRepeat: 'no-repeat',
+                  WebkitMaskPosition: 'left center',
+                  maskPosition: 'left center',
+                }}
+              />
+              <span className="sr-only">AZBUILDING MMC</span>
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-steel">{t('footer.summary')}</p>
             <div className="mt-6 flex items-center gap-4">

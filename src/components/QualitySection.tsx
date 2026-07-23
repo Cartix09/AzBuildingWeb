@@ -1,4 +1,3 @@
-import { Download } from 'lucide-react'
 import { SectionHeading } from './SectionHeading'
 import { Reveal } from './Reveal'
 import { useLanguage, pick } from '../i18n/LanguageContext'
@@ -39,18 +38,8 @@ export function QualitySection() {
           ))}
         </div>
 
-        {/* Dossier download - placeholder link, replace href with real PDF */}
-        <div className="mt-12 flex justify-center">
-          <a
-            href="#"
-            onClick={(e) => e.preventDefault()}
-            className="group btn-ghost"
-            title="Replace href with a real PDF in /public when available"
-          >
-            <Download className="h-4 w-4" />
-            {t('cta.downloadDossier')}
-          </a>
-        </div>
+        {/* Dossier download button hidden for now (no public PDF yet). The
+            cta.downloadDossier string is kept for when a real PDF is added. */}
       </div>
     </section>
   )
