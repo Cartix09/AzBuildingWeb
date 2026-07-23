@@ -52,19 +52,10 @@ export function HeroSlider() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#FBF3DD]/95 via-[#FBF3DD]/70 to-transparent" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#FBF3DD]/80 to-transparent" />
 
-      {/* Hero copy on the left */}
+      {/* Hero copy on the left (no eyebrow line above the heading, per client) */}
       <div className="container-x relative z-10 flex h-full flex-col justify-center pb-16">
-        <motion.p
-          className="font-mono text-xs uppercase tracking-[0.3em] text-orange-brand"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          {t('hero.eyebrow')}
-        </motion.p>
-
         <motion.h1
-          className="display mt-4 max-w-4xl text-4xl leading-[0.98] text-navy-deep sm:text-5xl md:text-6xl lg:text-7xl"
+          className="display max-w-4xl text-3xl leading-[1.0] text-navy-deep sm:text-4xl md:text-5xl lg:text-6xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -73,7 +64,7 @@ export function HeroSlider() {
         </motion.h1>
 
         <motion.p
-          className="mt-6 max-w-xl text-base text-navy/80 md:text-lg"
+          className="mt-5 max-w-xl text-sm font-medium text-orange-brand md:text-base"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
