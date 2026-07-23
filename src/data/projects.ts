@@ -49,6 +49,36 @@ const CONTRACTOR: Loc = { az: 'Podratçı', ru: 'Подрядчик', en: 'Contr
  */
 export const projects: Project[] = [
   {
+    // NOTE: placeholder entry — real client photos are attached, but the written
+    // details (client, years, role, location) are not confirmed yet, so neutral
+    // "Məlumat dəqiqləşdirilir" is used instead of invented specifics.
+    slug: 'shahdag-tourism-centre',
+    featured: true,
+    type: 'civil',
+    cover: '/images/projects/shahdag-tourism-centre-1.jpg',
+    gallery: ['/images/projects/shahdag-tourism-centre-1.jpg', '/images/projects/shahdag-tourism-centre-2.jpg'],
+    name: {
+      az: 'Şahdağ Turizm Mərkəzi',
+      ru: 'Туристический центр «Шахдаг»',
+      en: 'Shahdag Tourism Centre',
+    },
+    location: { az: 'Məlumat dəqiqləşdirilir', ru: 'Информация уточняется', en: 'Details to be confirmed' },
+    partner: { az: 'Məlumat dəqiqləşdirilir', ru: 'Информация уточняется', en: 'Details to be confirmed' },
+    role: { az: 'Məlumat dəqiqləşdirilir', ru: 'Информация уточняется', en: 'Details to be confirmed' },
+    activity: { az: 'Turizm infrastrukturu', ru: 'Туристическая инфраструктура', en: 'Tourism infrastructure' },
+    period: { az: 'Məlumat dəqiqləşdirilir', ru: 'Информация уточняется', en: 'Details to be confirmed' },
+    short: {
+      az: 'Şahdağ dağ turizmi və istirahət infrastrukturu obyekti. Ətraflı məlumat dəqiqləşdirilir.',
+      ru: 'Объект горного туризма и рекреационной инфраструктуры «Шахдаг». Подробности уточняются.',
+      en: 'A mountain-tourism and recreation infrastructure facility at Shahdag. Details to be confirmed.',
+    },
+    description: {
+      az: 'Şahdağ Turizm Mərkəzi — dağ turizmi və istirahət infrastrukturu obyekti. Layihə üzrə ətraflı məlumat (sifarişçi, illər və şirkətin rolu) hazırda dəqiqləşdirilir.',
+      ru: 'Туристический центр «Шахдаг» — объект горного туризма и рекреационной инфраструктуры. Подробная информация по проекту (заказчик, годы и роль компании) в настоящее время уточняется.',
+      en: 'Shahdag Tourism Centre — a mountain-tourism and recreation infrastructure facility. Detailed project information (client, years and the company’s role) is currently being confirmed.',
+    },
+  },
+  {
     slug: 'asyl-arman-almaty',
     featured: true,
     type: 'residential',
