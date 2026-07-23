@@ -15,6 +15,7 @@ export function Contact() {
     <>
       <PageHero
         eyebrow={t('sections.contactTag')}
+        eyebrowClassName="normal-case"
         title={t('sections.contactTitle')}
         description={t('hero.subtitle')}
         image="/images/pagehero/contact.svg"

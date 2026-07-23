@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { Mail, MapPin, Phone, Instagram, Facebook, Linkedin, ArrowUpRight } from 'lucide-react'
-import { Logo } from './Logo'
 import { useLanguage, pick } from '../i18n/LanguageContext'
 import { company } from '../data/translations'
 import { mainNav } from '../data/nav'
@@ -24,7 +23,22 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-10 md:grid-cols-12">
           {/* Brand + summary */}
           <div className="col-span-2 md:col-span-5">
-            <Logo size="lg" />
+            {/* Footer brand: A mark + the client's EXACT uploaded "AZBUILDING MMC"
+                wordmark (single gold image, navy keyed to transparent). No CSS
+                mask, no separate/generated MMC. No slogan, no nav strip. */}
+            <Link to="/" aria-label="AZBUILDING MMC - home" className="group flex items-center gap-3.5">
+              <img
+                src="/logos/azbuilding-mark.png"
+                alt=""
+                aria-hidden="true"
+                className="h-12 w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105 md:h-14"
+              />
+              <img
+                src="/images/wordmark-options/footer-azbuilding-mmc-exact.png"
+                alt="AZBUILDING MMC"
+                className="h-6 w-auto object-contain object-left md:h-7"
+              />
+            </Link>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-steel">{t('footer.summary')}</p>
             <div className="mt-6 flex items-center gap-4">
               <a href={company.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="border border-white/10 p-2.5 text-steel transition-colors hover:border-orange-brand hover:text-orange-brand">
@@ -99,7 +113,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 font-mono text-xs text-steel sm:flex-row sm:items-center">
           <p>© 2026 {company.name}. {t('footer.rights')}</p>
-          <p className="uppercase tracking-widest">{company.domain}</p>
+          <p className="lowercase tracking-widest">{company.domain}</p>
         </div>
       </div>
     </footer>

@@ -5,6 +5,7 @@ import { SectionHeading } from '../components/SectionHeading'
 import { ServicesGrid } from '../components/ServicesGrid'
 import { ProjectsGrid } from '../components/ProjectsGrid'
 import { PartnersCarousel } from '../components/PartnersCarousel'
+import { partners } from '../data/partners'
 import { ContactForm } from '../components/ContactForm'
 import { MapEmbed } from '../components/MapEmbed'
 import { useLanguage } from '../i18n/LanguageContext'
@@ -60,9 +61,11 @@ export function Home() {
         <div className="container-x">
           <SectionHeading index="[03]" eyebrow={t('sections.partnersTag')} title={t('sections.partnersTitle')} />
         </div>
-        <div className="mt-14">
-          <PartnersCarousel />
-        </div>
+        {partners.length > 0 && (
+          <div className="mt-14">
+            <PartnersCarousel />
+          </div>
+        )}
         <div className="container-x mt-12">
           <Link to="/partners" className="group btn-ghost">
             {t('cta.becomePartner')}
@@ -77,6 +80,7 @@ export function Home() {
           <SectionHeading
             index="[04]"
             eyebrow={t('sections.contactTag')}
+            eyebrowClassName="normal-case"
             title={t('sections.contactTitle')}
             className="mb-14"
           />

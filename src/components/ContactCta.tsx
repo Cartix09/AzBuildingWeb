@@ -13,7 +13,7 @@ export function ContactCta() {
           <div aria-hidden="true" className="absolute inset-0 bg-blueprint-grid bg-[size:40px_40px] opacity-30" />
           <div className="relative z-10 flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
             <div>
-              <p className="eyebrow">
+              <p className="eyebrow normal-case">
                 <span className="text-orange-brand">+ </span>
                 {t('sections.contactTag')}
               </p>

@@ -27,9 +27,9 @@ export function Projects() {
         title={pick({ az: 'Seçilmiş Layihələr', ru: 'Избранные проекты', en: 'Selected Projects' }, lang)}
         description={pick(
           {
-            az: 'Tikinti, fit-out, infrastruktur və mühəndislik dəstəyi üzrə işlərimizdən nümunələr. Bəzi layihələr məxfidir və sifarişçinin razılığı ilə paylaşılır.',
-            ru: 'Примеры наших работ по строительству, fit-out, инфраструктуре и инженерной поддержке. Некоторые проекты конфиденциальны и публикуются с согласия заказчика.',
-            en: 'Representative examples of our work across construction, fit-out, infrastructure and engineering support. Some projects are confidential and shown with client permission.',
+            az: '2009-cu ildən etibarən mühəndislik dəstəyi, infrastruktur, mülki tikinti, təmir-tamamlama üzrə icra etdiyimiz və iştirak etdiyimiz bəzi işlərdən qısa nümunələr.',
+            ru: 'Краткие примеры работ, которые мы выполнили и в которых участвовали с 2009 года — инженерное сопровождение, инфраструктура, гражданское строительство, ремонт и отделка.',
+            en: 'Brief examples of works we have carried out and taken part in since 2009 — engineering support, infrastructure, civil construction, repair and finishing.',
           },
           lang,
         )}
