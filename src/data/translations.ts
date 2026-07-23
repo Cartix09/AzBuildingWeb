@@ -51,7 +51,7 @@ export const translations: Record<Lang, Tree> = {
     hero: {
       eyebrow: 'TİKİNTİ · MÜLKİ-SƏNAYE · İNFRASTRUKTUR',
       title: 'Düşüncədən konstruksiyaya',
-      subtitle: 'Mühəndislik, Layihə idarəetmə, Tikinti-Quraşdırma və İnşaat Sənayesi',
+      subtitle: 'mülki, sənaye və infrastruktur layihələr',
     },
     sections: {
       metricsTag: 'ŞİRKƏT QISACA',
@@ -176,7 +176,7 @@ export const translations: Record<Lang, Tree> = {
     hero: {
       eyebrow: 'СТРОИТЕЛЬСТВО · ГРАЖД.-ПРОМ. · ИНФРАСТРУКТУРА',
       title: 'От идеи до конструкции',
-      subtitle: 'Инжиниринг, управление проектами, строительно-монтажные работы и строительная индустрия',
+      subtitle: 'гражданские, промышленные и инфраструктурные проекты',
     },
     sections: {
       metricsTag: 'КОМПАНИЯ КРАТКО',
@@ -301,7 +301,7 @@ export const translations: Record<Lang, Tree> = {
     hero: {
       eyebrow: 'CONSTRUCTION · CIVIL-INDUSTRIAL · INFRASTRUCTURE',
       title: 'From concept to construction',
-      subtitle: 'Engineering, project management, construction & installation, and the building industry',
+      subtitle: 'civil, industrial and infrastructure projects',
     },
     sections: {
       metricsTag: 'COMPANY AT A GLANCE',
