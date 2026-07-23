@@ -49,11 +49,41 @@ const CONTRACTOR: Loc = { az: 'Podratçı', ru: 'Подрядчик', en: 'Contr
  */
 export const projects: Project[] = [
   {
+    // NOTE: placeholder entry — real client photos are attached, but the written
+    // details (client, years, role, location) are not confirmed yet, so neutral
+    // "Məlumat dəqiqləşdirilir" is used instead of invented specifics.
+    slug: 'shahdag-tourism-centre',
+    featured: true,
+    type: 'civil',
+    cover: '/images/projects/shahdag-tourism-centre-1.jpg',
+    gallery: ['/images/projects/shahdag-tourism-centre-1.jpg', '/images/projects/shahdag-tourism-centre-2.jpg'],
+    name: {
+      az: 'Şahdağ Turizm Mərkəzi',
+      ru: 'Туристический центр «Шахдаг»',
+      en: 'Shahdag Tourism Centre',
+    },
+    location: { az: 'Məlumat dəqiqləşdirilir', ru: 'Информация уточняется', en: 'Details to be confirmed' },
+    partner: { az: 'Məlumat dəqiqləşdirilir', ru: 'Информация уточняется', en: 'Details to be confirmed' },
+    role: { az: 'Məlumat dəqiqləşdirilir', ru: 'Информация уточняется', en: 'Details to be confirmed' },
+    activity: { az: 'Turizm infrastrukturu', ru: 'Туристическая инфраструктура', en: 'Tourism infrastructure' },
+    period: { az: 'Məlumat dəqiqləşdirilir', ru: 'Информация уточняется', en: 'Details to be confirmed' },
+    short: {
+      az: 'Şahdağ dağ turizmi və istirahət infrastrukturu obyekti. Ətraflı məlumat dəqiqləşdirilir.',
+      ru: 'Объект горного туризма и рекреационной инфраструктуры «Шахдаг». Подробности уточняются.',
+      en: 'A mountain-tourism and recreation infrastructure facility at Shahdag. Details to be confirmed.',
+    },
+    description: {
+      az: 'Şahdağ Turizm Mərkəzi — dağ turizmi və istirahət infrastrukturu obyekti. Layihə üzrə ətraflı məlumat (sifarişçi, illər və şirkətin rolu) hazırda dəqiqləşdirilir.',
+      ru: 'Туристический центр «Шахдаг» — объект горного туризма и рекреационной инфраструктуры. Подробная информация по проекту (заказчик, годы и роль компании) в настоящее время уточняется.',
+      en: 'Shahdag Tourism Centre — a mountain-tourism and recreation infrastructure facility. Detailed project information (client, years and the company’s role) is currently being confirmed.',
+    },
+  },
+  {
     slug: 'asyl-arman-almaty',
     featured: true,
     type: 'residential',
-    cover: '/images/projects/asil-arman-1.jpg',
-    gallery: ['/images/projects/asil-arman-1.jpg', '/images/projects/asil-arman-2.jpg'],
+    cover: '/images/projects/asil-arman-1-web.jpg',
+    gallery: ['/images/projects/asil-arman-1-web.jpg', '/images/projects/asil-arman-2-web.jpg'],
     name: {
       az: 'Asıl Arman yaşayış kompleksi',
       ru: 'Жилой комплекс «Asyl Arman»',
@@ -79,8 +109,8 @@ export const projects: Project[] = [
     slug: 'samtredia-grigoleti-highway',
     featured: true,
     type: 'infrastructure',
-    cover: '/images/projects/samtredia-qriqoleti-gigapixel.jpg',
-    gallery: ['/images/projects/samtredia-qriqoleti-gigapixel.jpg'],
+    cover: '/images/projects/samtredia-qriqoleti-web.jpg',
+    gallery: ['/images/projects/samtredia-qriqoleti-web.jpg'],
     name: {
       az: 'Samtredia-Qriqoleti avtomagistralı',
       ru: 'Автомагистраль Самтредиа-Григолети',
@@ -106,8 +136,8 @@ export const projects: Project[] = [
     slug: 'alat-astara-highway',
     featured: true,
     type: 'infrastructure',
-    cover: '/images/projects/alat-astara-gigapixel.jpg',
-    gallery: ['/images/projects/alat-astara-gigapixel.jpg'],
+    cover: '/images/projects/alat-astara-web.jpg',
+    gallery: ['/images/projects/alat-astara-web.jpg'],
     name: {
       az: 'Ələt-Astara avtomagistralı',
       ru: 'Автомагистраль Алят-Астара',
@@ -133,8 +163,8 @@ export const projects: Project[] = [
     slug: 'cabrayil-drinks-factory',
     featured: true,
     type: 'industrial',
-    cover: '/images/projects/cabrayil-drinks-factory-1.jpg',
-    gallery: ['/images/projects/cabrayil-drinks-factory-1.jpg', '/images/projects/cabrayil-drinks-factory-3.jpg'],
+    cover: '/images/projects/cabrayil-drinks-factory-1-web.jpg',
+    gallery: ['/images/projects/cabrayil-drinks-factory-1-web.jpg', '/images/projects/cabrayil-drinks-factory-3-web.jpg'],
     name: {
       az: 'Alkoqolsuz İçkilər İstehsalı Kombinatı',
       ru: 'Комбинат по производству безалкогольных напитков',
@@ -160,8 +190,8 @@ export const projects: Project[] = [
     slug: 'm07-kyiv-yahodyn-highway',
     featured: true,
     type: 'infrastructure',
-    cover: '/images/projects/m07-kyiv-yahodyn-1.jpg',
-    gallery: ['/images/projects/m07-kyiv-yahodyn-1.jpg', '/images/projects/m07-kyiv-yahodyn-2.jpg'],
+    cover: '/images/projects/m07-kyiv-yahodyn-1-web.jpg',
+    gallery: ['/images/projects/m07-kyiv-yahodyn-1-web.jpg', '/images/projects/m07-kyiv-yahodyn-2-web.jpg'],
     name: {
       az: 'M-07 Kiyev-Kovel-Yaqodin avtomobil yolu',
       ru: 'Автодорога М-07 Киев-Ковель-Ягодин',
