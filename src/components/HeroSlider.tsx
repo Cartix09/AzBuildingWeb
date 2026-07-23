@@ -55,7 +55,7 @@ export function HeroSlider() {
       {/* Hero copy on the left (no eyebrow line above the heading, per client) */}
       <div className="container-x relative z-10 flex h-full flex-col justify-center pb-16">
         <motion.h1
-          className="display max-w-4xl text-3xl leading-[1.0] text-navy-deep sm:text-4xl md:text-5xl lg:text-6xl"
+          className="display max-w-3xl text-2xl leading-[1.05] text-navy-deep sm:text-3xl md:text-4xl lg:text-5xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -64,7 +64,7 @@ export function HeroSlider() {
         </motion.h1>
 
         <motion.p
-          className="mt-5 max-w-xl text-sm font-medium text-orange-brand md:text-base"
+          className="mt-5 max-w-xl text-sm font-medium text-navy-deep md:text-[1.05rem]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
