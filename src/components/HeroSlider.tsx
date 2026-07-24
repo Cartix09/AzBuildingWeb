@@ -47,10 +47,11 @@ export function HeroSlider() {
         />
       </AnimatePresence>
 
-      {/* Soft cream scrim on the left for legible dark text (no heavy dark veil),
-          plus a light bottom fade to ground the indicators. */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#FBF3DD]/95 via-[#FBF3DD]/70 to-transparent" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#FBF3DD]/80 to-transparent" />
+      {/* Lighter cream scrim: enough on the left to keep the heading + orange
+          subtitle readable, but much less pale across the image so the photo
+          looks clear and sharp (not dusty/foggy). */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#FBF3DD]/80 via-[#FBF3DD]/25 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#FBF3DD]/45 to-transparent" />
 
       {/* Hero copy on the left (no eyebrow line above the heading, per client) */}
       <div className="container-x relative z-10 flex h-full flex-col justify-center pb-16">
@@ -64,7 +65,7 @@ export function HeroSlider() {
         </motion.h1>
 
         <motion.p
-          className="mt-5 max-w-xl text-sm font-medium text-navy-deep md:text-[1.05rem]"
+          className="mt-5 max-w-xl text-sm font-semibold text-orange-brand md:text-[1.05rem]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
