@@ -62,23 +62,25 @@ export function Header() {
             <Link
               to="/"
               aria-label="AZBUILDING - home"
-              className="relative z-30 -ml-[3px] flex w-24 shrink-0 items-start justify-center overflow-visible bg-navy-deep pt-2 sm:w-28 md:w-36 lg:w-44"
+              className="relative z-30 -ml-[3px] flex w-20 shrink-0 items-start justify-center overflow-visible bg-navy-deep pt-1 sm:w-24 md:w-32 lg:w-40"
             >
+              {/* A mark ~10% smaller than before (was lg:h-48) */}
               <span
                 aria-hidden="true"
-                className="block aspect-[357/380] h-24 bg-[#F8FAFC] drop-shadow-[0_10px_22px_rgba(5,15,35,0.55)] sm:h-28 md:h-40 lg:h-48"
+                className="block aspect-[357/380] h-20 bg-[#F8FAFC] drop-shadow-[0_10px_22px_rgba(5,15,35,0.55)] sm:h-24 md:h-36 lg:h-44"
                 style={maskStyle}
               />
             </Link>
 
             {/* Company name + tagline - compact lockup tight to the A mark. */}
-            <Link to="/" className="flex min-w-0 flex-col justify-center py-5 md:py-7 md:translate-y-[10px] lg:py-8 lg:translate-y-[13px]">
+            <Link to="/" className="flex min-w-0 flex-col justify-center py-3 md:translate-y-[6px] md:py-4 lg:translate-y-[8px] lg:py-5">
               {/* AZBUILDING wordmark — client-selected "Paneuropa Inline 1" image
-                  asset (white on transparent). Used as a picture, not a font. */}
+                  asset (white on transparent). Used as a picture, not a font.
+                  ~20% smaller than before (was lg:h-12). */}
               <img
                 src="/images/wordmark-options/wordmark-paneuropa-inline-1.png"
                 alt="AZBUILDING"
-                className="h-7 w-auto max-w-[70vw] object-contain object-left sm:h-8 md:h-10 lg:h-12"
+                className="h-6 w-auto max-w-[70vw] object-contain object-left sm:h-7 md:h-8 lg:h-10"
               />
               <span className="mt-1 truncate text-[11px] font-medium tracking-wide text-steel md:text-xs">
                 {t('header.tagline')}
@@ -94,13 +96,15 @@ export function Header() {
               </span>
             </div>
 
-            {/* Right: silver search button (icon only, wider) */}
-            <div className="ml-auto hidden items-center lg:flex">
+            {/* Right: language switcher (moved here from the removed top strip)
+                + silver search button */}
+            <div className="ml-auto hidden items-center gap-5 lg:flex">
+              <LanguageSwitcher />
               <button
                 type="button"
                 onClick={() => setSearchOpen(true)}
                 aria-label={t('search.short')}
-                className="flex h-11 w-20 items-center justify-center border border-white/25 bg-[#DCDEE2] text-navy-deep shadow-sm transition-colors hover:bg-white"
+                className="flex h-9 w-16 items-center justify-center border border-white/25 bg-[#DCDEE2] text-navy-deep shadow-sm transition-colors hover:bg-white"
               >
                 <Search className="h-[18px] w-[18px]" />
               </button>
@@ -123,15 +127,17 @@ export function Header() {
             white "Sifariş et" CTA on the right; navy shows on both sides.
             Pulled up so the A mark's legs dip into the gold bar (client note);
             the mark keeps z-30 so it sits over the bar without covering links. */}
-        <div className="relative z-20 hidden bg-navy-deep lg:-mt-8 lg:block">
+        <div className="relative z-20 hidden bg-navy-deep lg:-mt-7 lg:block">
           <div className="container-x">
-            <div className="flex h-11 items-stretch bg-gold">
-              {/* Spacer under the overlapping logo mark */}
-              <div className="w-44 shrink-0" aria-hidden="true" />
-              <nav className="flex flex-1 items-center justify-center gap-7 px-4 xl:gap-9" aria-label="Primary">
+            <div className="flex h-10 items-stretch bg-gold">
+              {/* Spacer under the overlapping logo mark (clears the A mark legs) */}
+              <div className="w-40 shrink-0" aria-hidden="true" />
+              {/* Items spread evenly from just after the mark to the CTA so there
+                  is no large empty gap at the start or the right. */}
+              <nav className="flex flex-1 items-center justify-between px-4 xl:px-8" aria-label="Primary">
                 {headerNav.map((item) =>
                   item.labelKey === 'nav.services' ? (
-                    <div key={item.to} className="group relative flex h-11 items-center">
+                    <div key={item.to} className="group relative flex h-10 items-center">
                       <NavLink
                         to={item.to}
                         className={({ isActive }) =>
