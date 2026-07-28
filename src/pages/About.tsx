@@ -18,9 +18,21 @@ export function About() {
       <PageHero
         eyebrow={pick(a.eyebrow, lang)}
         title={pick(a.title, lang)}
-        description={pick(a.intro, lang)}
         image="/images/pagehero/about.svg"
       />
+
+      {/* Haqqımızda body — client-approved text, one <p> per paragraph */}
+      <section className="border-b border-white/5 bg-slate-deep py-16 md:py-24">
+        <div className="container-x max-w-3xl space-y-6">
+          {pick(a.intro, lang)
+            .split('\n\n')
+            .map((para, i) => (
+              <p key={i} className="text-base leading-relaxed text-steel md:text-lg">
+                {para}
+              </p>
+            ))}
+        </div>
+      </section>
 
       {/* Mission / Vision */}
       <section className="border-b border-white/5 bg-slate-deep py-24 md:py-32">
