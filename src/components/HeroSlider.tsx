@@ -57,6 +57,7 @@ export function HeroSlider() {
       <div className="container-x relative z-10 flex h-full flex-col justify-center pb-16">
         <motion.h1
           className="display max-w-3xl text-2xl leading-[1.05] text-navy-deep sm:text-3xl md:text-4xl lg:text-5xl"
+          style={{ textShadow: '0 2px 8px rgba(0,0,0,0.18)' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -66,6 +67,7 @@ export function HeroSlider() {
 
         <motion.p
           className="mt-5 max-w-xl text-sm font-semibold text-orange-brand md:text-[1.05rem]"
+          style={{ textShadow: '0 1px 5px rgba(0,0,0,0.22)' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
@@ -83,10 +85,11 @@ export function HeroSlider() {
             {t('cta.viewPortfolio')}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
-          {/* Dark-outline variant so the ghost button reads on the light hero */}
+          {/* Dark navy FILLED by default (was ghost/transparent) so it always
+              reads on the light hero; hover just brightens slightly. Same size/shape. */}
           <Link
             to="/contact"
-            className="group inline-flex items-center justify-center gap-2 whitespace-nowrap border border-navy-deep/70 bg-transparent px-7 py-3.5 font-mono text-xs font-medium uppercase tracking-[0.2em] text-navy-deep transition-colors hover:bg-navy-deep hover:text-[#F8FAFC]"
+            className="group inline-flex items-center justify-center gap-2 whitespace-nowrap border border-navy-deep bg-navy-deep px-7 py-3.5 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[#F8FAFC] transition-colors hover:bg-navy hover:border-navy"
           >
             {t('cta.requestProject')}
             <ArrowUpRight className="h-4 w-4" />
