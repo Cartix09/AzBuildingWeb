@@ -60,6 +60,8 @@ export function ContactForm() {
   const [form, setForm] = useState<FormState>(empty)
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({})
   const [status, setStatus] = useState<Status>('idle')
+  // Honeypot: real users never see/fill this; bots that auto-fill it are dropped.
+  const [botField, setBotField] = useState('')
 
   const update = (key: keyof FormState, value: string) => {
     setForm((f) => ({ ...f, [key]: value }))
@@ -87,6 +89,13 @@ export function ContactForm() {
     e.preventDefault()
     if (!validate()) return
 
+    // Honeypot tripped -> silently drop (show success so bots don't retry).
+    if (botField) {
+      setForm(empty)
+      setStatus('success')
+      return
+    }
+
     if (!ENDPOINT) {
       // Do not pretend it sent.
       setStatus('unconfigured')
@@ -99,7 +108,14 @@ export function ContactForm() {
       const trimmed = Object.fromEntries(
         Object.entries(form).map(([k, v]) => [k, v.trim()]),
       ) as Record<string, string>
-      const payload: Record<string, string> = { ...trimmed, source: 'azbuilding.az contact form' }
+      const payload: Record<string, string> = {
+        ...trimmed,
+        // Web3Forms uses these for the notification email.
+        subject: 'AZBUILDING website contact form',
+        from_name: trimmed.name || 'AZBUILDING website contact',
+        source: 'azbuilding.az contact form',
+        botcheck: '',
+      }
       if (WEB3FORMS_KEY) payload.access_key = WEB3FORMS_KEY
 
       const res = await fetch(ENDPOINT, {
@@ -137,6 +153,17 @@ export function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} noValidate className="space-y-5">
+      {/* Honeypot — hidden from real users, catches naive bots. */}
+      <input
+        type="text"
+        name="botcheck"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        value={botField}
+        onChange={(e) => setBotField(e.target.value)}
+        className="hidden"
+      />
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <Field label={t('form.name')} required error={errors.name}>
           <input className={fieldClass('name')} value={form.name} onChange={(e) => update('name', e.target.value)} autoComplete="name" />
