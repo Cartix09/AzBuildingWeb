@@ -49,33 +49,30 @@ const CONTRACTOR: Loc = { az: 'Podratçı', ru: 'Подрядчик', en: 'Contr
  */
 export const projects: Project[] = [
   {
-    // NOTE: placeholder entry — real client photos are attached, but the written
-    // details (client, years, role, location) are not confirmed yet, so neutral
-    // "Məlumat dəqiqləşdirilir" is used instead of invented specifics.
     slug: 'shahdag-tourism-centre',
     featured: true,
     type: 'civil',
     cover: '/images/projects/shahdag-tourism-centre-1.jpg',
     gallery: ['/images/projects/shahdag-tourism-centre-1.jpg', '/images/projects/shahdag-tourism-centre-2.jpg'],
     name: {
-      az: 'Şahdağ Turizm Mərkəzi',
-      ru: 'Туристический центр «Шахдаг»',
-      en: 'Shahdag Tourism Centre',
+      az: 'Şahdağ Qış-Yay Turizm Mərkəzi',
+      ru: 'Зимне-летний туристический центр «Шахдаг»',
+      en: 'Shahdag Winter-Summer Tourism Centre',
     },
-    location: { az: 'Məlumat dəqiqləşdirilir', ru: 'Информация уточняется', en: 'Details to be confirmed' },
-    partner: { az: 'Məlumat dəqiqləşdirilir', ru: 'Информация уточняется', en: 'Details to be confirmed' },
-    role: { az: 'Məlumat dəqiqləşdirilir', ru: 'Информация уточняется', en: 'Details to be confirmed' },
+    location: { az: 'Qusar rayonu, Ləzə yolu, Kuzun kəndi', ru: 'Гусарский район, Лязинская дорога, село Кузун', en: 'Qusar district, Ləzə road, Kuzun village' },
+    partner: { az: 'Azərbaycan Respublikası Mədəniyyət və Turizm Nazirliyi', ru: 'Министерство культуры и туризма Азербайджанской Республики', en: 'Ministry of Culture and Tourism of the Republic of Azerbaijan' },
+    role: { az: 'Subpodratçı və partnyor', ru: 'Субподрядчик и партнёр', en: 'Subcontractor and partner' },
     activity: { az: 'Turizm infrastrukturu', ru: 'Туристическая инфраструктура', en: 'Tourism infrastructure' },
-    period: { az: 'Məlumat dəqiqləşdirilir', ru: 'Информация уточняется', en: 'Details to be confirmed' },
+    period: { az: '2010-2013', ru: '2010-2013', en: '2010-2013' },
     short: {
-      az: 'Şahdağ dağ turizmi və istirahət infrastrukturu obyekti. Ətraflı məlumat dəqiqləşdirilir.',
-      ru: 'Объект горного туризма и рекреационной инфраструктуры «Шахдаг». Подробности уточняются.',
-      en: 'A mountain-tourism and recreation infrastructure facility at Shahdag. Details to be confirmed.',
+      az: 'Subpodratçı və partnyor qismində torpaq işləri, bina tikintisi, tikinti-quraşdırma və təmir-tamamlama işləri.',
+      ru: 'Земляные работы, строительство зданий, строительно-монтажные и ремонтно-отделочные работы в качестве субподрядчика и партнёра.',
+      en: 'Earthworks, building construction, installation and finishing works as a subcontractor and partner.',
     },
     description: {
-      az: 'Şahdağ Turizm Mərkəzi — dağ turizmi və istirahət infrastrukturu obyekti. Layihə üzrə ətraflı məlumat (sifarişçi, illər və şirkətin rolu) hazırda dəqiqləşdirilir.',
-      ru: 'Туристический центр «Шахдаг» — объект горного туризма и рекреационной инфраструктуры. Подробная информация по проекту (заказчик, годы и роль компании) в настоящее время уточняется.',
-      en: 'Shahdag Tourism Centre — a mountain-tourism and recreation infrastructure facility. Detailed project information (client, years and the company’s role) is currently being confirmed.',
+      az: 'Şahdağ Qış-Yay Turizm Mərkəzi. Baş podratçı DİA HOLDİNQ. Subpodratçı və partnyor qismində müxtəlif infrastruktur layihələrində torpaq işləri, bina tikintisi, tikinti-quraşdırma və təmir-tamamlama işləri görülmüşdür.',
+      ru: 'Зимне-летний туристический центр «Шахдаг». Генеральный подрядчик — DİA HOLDİNQ. В качестве субподрядчика и партнёра в рамках различных инфраструктурных проектов выполнены земляные работы, строительство зданий, строительно-монтажные и ремонтно-отделочные работы.',
+      en: 'Shahdag Winter-Summer Tourism Centre. Main contractor — DİA HOLDİNQ. As a subcontractor and partner, earthworks, building construction, installation and finishing works were carried out across various infrastructure projects.',
     },
   },
   {
