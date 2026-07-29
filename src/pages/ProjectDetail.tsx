@@ -93,9 +93,14 @@ export function ProjectDetail() {
             <div className="border border-white/10 bg-slate-surface/30 p-8">
               <dl className="space-y-5">
                 {meta.map((m) => (
-                  <div key={m.label} className="flex items-center justify-between border-b border-white/10 pb-4 last:border-0 last:pb-0">
-                    <dt className="font-mono text-xs uppercase tracking-widest text-steel">{m.label}</dt>
-                    <dd className="font-display font-bold text-base">{m.value}</dd>
+                  <div
+                    key={m.label}
+                    className="flex flex-col gap-1.5 border-b border-white/10 pb-4 last:border-0 last:pb-0 sm:flex-row sm:items-start sm:justify-between sm:gap-8"
+                  >
+                    <dt className="font-mono text-xs uppercase tracking-widest text-steel sm:shrink-0 sm:pt-0.5">{m.label}</dt>
+                    <dd className="font-display text-[0.95rem] font-bold leading-snug text-[#F8FAFC] [overflow-wrap:anywhere] sm:max-w-[62%] sm:text-right sm:text-base">
+                      {m.value}
+                    </dd>
                   </div>
                 ))}
               </dl>
